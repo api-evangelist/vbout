@@ -1,0 +1,100 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Automation API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Automation
+paths:
+  Automation/GetGuides:
+    get:
+      summary: GetGuides
+      operationId: post-automation-getguides
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - Automation
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: '142'
+                    name:
+                      type: string
+                      example: Facebook Comment Automation
+                    description:
+                      type: string
+                      example: Turn Facebook comments to direct message automation, and convert engagement to emails and leads.
+                    tags:
+                      type: array
+                      items:
+                        type: string
+                        example: Facebook
+                      example:
+                      - Facebook
+                      - Social Automation
+                    content:
+                      type: object
+                      properties:
+                        emails:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              graphid:
+                                type: string
+                                example: b1931b5d-9ac7-42c5-8d72-14ad229999db
+                              label:
+                                type: string
+                                example: Send Email
+      x-codeSamples:
+      - lang: cURL
+        source: 'POST https://api.vbout.com/1/Automations/GetGuides?key={YOUR_API_ID}
+
+          '
+      deprecated: false
+      parameters:
+      - name: API KEY
+        in: query
+        description: list of guideIDs of the automation.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: integer
+  Automation/CreateAutomationFromGuide:
+    post:
+      summary: CreateAutomationFromGuide
+      operationId: post-automation-CreateAutomationFromGuide
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - Automation
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    item:
+                      type: string
+                      example: Your automation has been created successfully.
+                    recid:
+                      type: string
+                      example: '[id]'
+      x-codeSamples:
+      - lang: cURL
+        source: 'POST https://api.vbout.com/1/Automations/CreateAutomationFromGuide?key={YOUR_API_ID}
+
+          '
+      deprecated: false

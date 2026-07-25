@@ -1,0 +1,162 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Account API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Account
+paths:
+  Register/CreateAccount:
+    post:
+      summary: Create Account
+      operationId: post-Register-CreateAccount
+      tags:
+      - Account
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/register/createaccount.json?key={YOUR_API_ID}\n   contact_name=VBOUT TEST\n   business_name=VBOUT TEST\n   business_email=info@vbout.com\n   business_phone=123456789\n   business_vbout_name=VBOUT TEST\n   business_password=xxxxxxxxxxx\n   business_vat_number=123\n   timezone=America/Los_Angeles\n   plan_id=10\n   commission_structure=1\n   disable_billing_access=0\n   disable_settings_access=1\n   pay_on_signup=1\n"
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/RegisterWS.php');\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new RegisterWS($user_key);\n $params = array(\n     'contact_name' => 'VBOUT TEST',\n     'business_name' => 'VBOUT TEST',\n     'business_email' => 'info@vbout.com',\n     'business_phone' => '123456789',\n     'business_vbout_name' => 'VBOUT TEST',\n     'business_password' => 'xxxxxxxxxxx',\n     'business_vat_number' => '123',\n     'timezone' => 'America/Los_Angeles',\n     'plan_id' => '10',\n     'commission_structure' => '1',\n     'disable_billing_access' => '0',\n     'disable_settings_access' => '1',\n     'pay_on_signup' => '1',\n );\n $results = $app->createAccount( $params );\n print_r($results);\n ?>\n"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: contact_name
+        description: The contact name.<br>**Possible values:**  (Text)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: business_name
+        description: The business name.<br>**Possible values:**  (Text)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: business_email
+        description: The business email.<br>**Possible values:**  (Email)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: business_phone
+        description: The business phone.<br>**Possible values:**  (Text)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: business_vbout_name
+        description: The business VBOUT name.<br>**Possible values:**  (Text)
+        required: true
+      - schema:
+          type: number
+          default: None
+        in: query
+        name: plan_id
+        description: The custom plan id.<br>**Possible values:**  (Number)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: business_password
+        description: The business password.<br>**Possible values:**   (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: business_vat_number
+        description: The business VAT number.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: America/New_York
+        in: query
+        name: timezone
+        description: The business timezone.<br>**Possible values:**  https://www.php.net/manual/en/timezones.php
+      - schema:
+          type: integer
+          default: '1'
+        in: query
+        name: commission_structure
+        description: 'The commission structure.<br>**Possible values:**    (1: Discount to paid amount) | (2: Normal commission payout)'
+      - schema:
+          type: integer
+          default: '0'
+        in: query
+        name: disable_billing_access
+        description: Disable Billing Access.<br>**Possible values:**  0 | 1
+      - schema:
+          type: integer
+          default: '0'
+        in: query
+        name: disable_settings_access
+        description: Disable Settings Access.<br>**Possible values:**  0 | 1
+      - schema:
+          type: integer
+          default: '0'
+        in: query
+        name: pay_on_signup
+        description: Pay using agency saved card on success signup, and save the card to the newly created account.<br>**Possible values:**  0 | 1
+  Account/GetSubAccountAutoLogin:
+    post:
+      summary: Subscriber Account Auto Login
+      operationId: post-GetSubAccountAutoLogin
+      tags:
+      - Account
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n- - -  \n**Note:** `It should work with Agencies only.`"
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/account/getsubaccountautologin.json?key={YOUR_API_ID}&id=3
+
+          '
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  email:
+                    type: string
+                  login-url:
+                    type: string
+                x-examples:
+                  example-1:
+                    id: 123
+                    name: Sub Account 1
+                    email: test01@example.com
+                    login-url: https://xxxxx
+              examples:
+                example-1:
+                  value:
+                    id: 123
+                    name: Sub Account 1
+                    email: test01@example.com
+                    login-url: https://xxxxx
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        description: The ID of the sub-account.<br>**Possible values:**   (ID)
+        required: true
+      - schema:
+          type: integer
+          default: 3600
+        in: query
+        name: expire
+        description: the number of seconds that the returned auto-login url will remain valid before it expire (MAX 3600 Seconds).<br>**Possible values:**   1800

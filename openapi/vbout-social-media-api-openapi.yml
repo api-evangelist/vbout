@@ -1,0 +1,725 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Social Media API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Social Media
+paths:
+  SocialMedia/Channels:
+    get:
+      summary: Channels
+      tags:
+      - Social Media
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    channels:
+                      Facebook:
+                        count: 1
+                        pages:
+                        - id: '510584708978405'
+                          name: Spotless TV
+                      Twitter:
+                        count: 1
+                        profiles:
+                        - id: '333248756'
+                          screenname: Hugoo236
+                          fullname: Hugo First
+                      Linkedin:
+                        count: 0
+                        profiles: []
+                properties:
+                  channels:
+                    type: object
+                    properties:
+                      Facebook:
+                        type: object
+                        properties:
+                          count:
+                            type: integer
+                          pages:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+                      Twitter:
+                        type: object
+                        properties:
+                          count:
+                            type: integer
+                          profiles:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                screenname:
+                                  type: string
+                                fullname:
+                                  type: string
+                      Linkedin:
+                        type: object
+                        properties:
+                          count:
+                            type: integer
+                          profiles:
+                            type: array
+                            items: {}
+              examples:
+                example-1:
+                  value:
+                    channels:
+                      Facebook:
+                        count: 1
+                        pages:
+                        - id: '510584708978405'
+                          name: Spotless TV
+                      Twitter:
+                        count: 1
+                        profiles:
+                        - id: '333248756'
+                          screenname: Oli16
+                          fullname: Olive Tree
+                      Linkedin:
+                        count: 0
+                        profiles: []
+      operationId: get-SocialMedia-Channels
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+      x-codeSamples:
+      - lang: cURL
+        source: GET https://api.vbout.com/1/socialmedia/channels.json?key={YOUR_API_ID}
+      - lang: PHP
+        source: '<?php
+
+          require_once(''../PATH/TO/services/SocialMediaWS.php'');
+
+          $user_key = array(''api_key'' => ''{YOUR_API_KEY}'');
+
+          $app = new SocialMediaWS($user_key);
+
+          $results = $app->getChannels();
+
+          print_r($results);
+
+          ?>
+
+          '
+  SocialMedia/Calendar:
+    get:
+      summary: Calendar
+      tags:
+      - Social Media
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    calendar:
+                      count: 168
+                      items:
+                        '2013-08-15':
+                          '1':
+                            id: '2347'
+                            message: http://vbout.com/goto/b0 welcome my man ... how are you [delete url] http://vbout.com/goto/b2
+                            photo:
+                              thumb: http://www.kickstarter.com/images/compass/site/facebook_thumb.jpg
+                              original: http://www.kickstarter.com/images/compass/site/facebook_thumb.jpg
+                            channel:
+                              network: Facebook
+                              type: Page
+                              id: '510584708978405'
+                              name: Spotless TV
+                              date: 08/15/2013 14:52 PM
+                          '...': null
+                        '2013-08-16':
+                          '2':
+                            id: '2366'
+                            message: test facebook headers
+                            channel:
+                              network: Facebook
+                              type: Page
+                              id: '510584708978405'
+                              name: Spotless TV
+                              date: 08/16/2013 13:39 PM
+                          '3':
+                            id: '2367'
+                            message: test facebook post with url  http://vbout.com/goto/bz
+                            photo:
+                              thumb: https://www.facebook.com/images/fb_icon_325x325.png
+                              original: https://www.facebook.com/images/fb_icon_325x325.png
+                            channel:
+                              network: Facebook
+                              type: Page
+                              id: '510584708978405'
+                              name: Spotless TV
+                              date: 08/16/2013 13:40 PM
+                          '4':
+                            id: '2368'
+                            message: test all socials spiders  http://vbout.com/goto/bA
+                            photo:
+                              thumb: http://www.domaintools.com/images/logos/dt-logo-gear-50x50.png
+                              original: http://www.domaintools.com/images/logos/dt-logo-gear-50x50.png
+                            channel:
+                              network: Facebook
+                              type: Page
+                              id: '510584708978405'
+                              name: Spotless TV
+                              date: 08/16/2013 13:49 PM
+                          '...': null
+                properties:
+                  calendar:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                      items:
+                        type: object
+                        properties:
+                          '2013-08-15':
+                            type: object
+                            properties:
+                              '1':
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  message:
+                                    type: string
+                                  photo:
+                                    type: object
+                                    properties:
+                                      thumb:
+                                        type: string
+                                      original:
+                                        type: string
+                                  channel:
+                                    type: object
+                                    properties:
+                                      network:
+                                        type: string
+                                      type:
+                                        type: string
+                                      id:
+                                        type: string
+                                      name:
+                                        type: string
+                                      date:
+                                        type: string
+                              '...':
+                                type: 'null'
+                          '2013-08-16':
+                            type: object
+                            properties:
+                              '2':
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  message:
+                                    type: string
+                                  channel:
+                                    type: object
+                                    properties:
+                                      network:
+                                        type: string
+                                      type:
+                                        type: string
+                                      id:
+                                        type: string
+                                      name:
+                                        type: string
+                                      date:
+                                        type: string
+                              '3':
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  message:
+                                    type: string
+                                  photo:
+                                    type: object
+                                    properties:
+                                      thumb:
+                                        type: string
+                                      original:
+                                        type: string
+                                  channel:
+                                    type: object
+                                    properties:
+                                      network:
+                                        type: string
+                                      type:
+                                        type: string
+                                      id:
+                                        type: string
+                                      name:
+                                        type: string
+                                      date:
+                                        type: string
+                              '4':
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  message:
+                                    type: string
+                                  photo:
+                                    type: object
+                                    properties:
+                                      thumb:
+                                        type: string
+                                      original:
+                                        type: string
+                                  channel:
+                                    type: object
+                                    properties:
+                                      network:
+                                        type: string
+                                      type:
+                                        type: string
+                                      id:
+                                        type: integer
+                                      name:
+                                        type: string
+                                      date:
+                                        type: string
+                              '...':
+                                type: 'null'
+              examples:
+                example-1:
+                  value:
+                    calendar:
+                      count: 168
+                      items:
+                        '2013-08-15':
+                          '1':
+                            id: '2347'
+                            message: http://vbout.com/goto/b0 welcome my man ... how are you [delete url] http://vbout.com/goto/b2
+                            photo:
+                              thumb: http://www.kickstarter.com/images/compass/site/facebook_thumb.jpg
+                              original: http://www.kickstarter.com/images/compass/site/facebook_thumb.jpg
+                            channel:
+                              network: Facebook
+                              type: Page
+                              id: '510584708978405'
+                              name: Spotless TV
+                              date: 08/15/2013 14:52 PM
+                          '...': null
+                        '2013-08-16':
+                          '2':
+                            id: '2366'
+                            message: test facebook headers
+                            channel:
+                              network: Facebook
+                              type: Page
+                              id: '510584708978405'
+                              name: Spotless TV
+                              date: 08/16/2013 13:39 PM
+                          '3':
+                            id: '2367'
+                            message: test facebook post with url  http://vbout.com/goto/bz
+                            photo:
+                              thumb: https://www.facebook.com/images/fb_icon_325x325.png
+                              original: https://www.facebook.com/images/fb_icon_325x325.png
+                            channel:
+                              network: Facebook
+                              type: Page
+                              id: '510584708978405'
+                              name: Spotless TV
+                              date: 08/16/2013 13:40 PM
+                          '4':
+                            id: '2368'
+                            message: test all socials spiders  http://vbout.com/goto/bA
+                            photo:
+                              thumb: http://www.domaintools.com/images/logos/dt-logo-gear-50x50.png
+                              original: http://www.domaintools.com/images/logos/dt-logo-gear-50x50.png
+                            channel:
+                              network: Facebook
+                              type: Page
+                              id: '510584708978405'
+                              name: Spotless TV
+                              date: 08/16/2013 13:49 PM
+                          '...': null
+      operationId: get-SocialMedia-Calendar
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: all
+        in: query
+        name: channels
+        description: The channels from where the posts are gathered.<br>**Possible Values:**  all | facebook | twitter | linkedin
+      - schema:
+          type: string
+          format: date
+          default: none
+          pattern: m/d/Y | Y-m-d
+        in: query
+        name: from
+        required: true
+        description: 'The from date which the reviews are returned. The filter must be `date` for this parameter to work.<br>**Possible Values:** (Date) '
+      - schema:
+          type: string
+          format: date
+          default: none
+          pattern: m/d/Y | Y-m-d
+        in: query
+        name: to
+        required: true
+        description: 'The to date which the reviews are returned. The filter must be `date` for this parameter to work.<br>**Possible Values:** (Date) '
+      - schema:
+          type: boolean
+          default: 'false'
+        in: query
+        name: includeposted
+        description: Include already scheduled posts inside the results.<br>**Possible Values:** true | false
+      - schema:
+          type: number
+          default: 10
+        in: query
+        name: limit
+        description: Set your record limit number per page.<br>**Possible Values:**(Number)
+      - schema:
+          type: number
+          default: 1
+        in: query
+        name: page
+        description: Set which page you wanna get.<br>**Possible Values:**(Number)
+      - schema:
+          type: string
+          default: asc
+        in: query
+        name: sort
+        description: Record Sorting.<br>**Possible Values:**  asc | desc
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/socialmedia/calendar.json?key={YOUR_API_ID}\n   channels=all\n   includeposted=true\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/SocialMediaWS.php');\n$user_key = array('api_key' => '{YOUR_API_KEY}');\n$app = new SocialMediaWS($user_key);\n$params = array(\n    'channels' => 'all',\n    'includeposted' => 'true',\n);\n$results = $app->getCalendar( $params );\nprint_r($results);\n?>\n"
+  SocialMedia/Stats:
+    get:
+      summary: Stats
+      tags:
+      - Social Media
+      responses:
+        '200':
+          description: Successfull operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  stats:
+                    type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            shortenurl:
+                              type: string
+                            realurl:
+                              type: string
+                            message:
+                              type: string
+                            date:
+                              type: string
+                            tracks:
+                              type: integer
+                            clicks:
+                              type: object
+                              properties:
+                                facebook:
+                                  type: integer
+              examples:
+                example-1:
+                  value:
+                    stats:
+                      items:
+                      - id: '2236'
+                        shortenurl: A4
+                        realurl: http://munchies.com/index.php?route=information/contact&__vbtrk=NjkzNDowOnNvY2lhbG1lZGlhOmZhY2Vib29r&__vbtrk=MjgzNTowOnNvY2lhbG1lZGlhOnR3aXR0ZXI=
+                        message: http://vbout.com/goto/A4 click here
+                        date: '1402401420'
+                        tracks: 9
+                        clicks:
+                          facebook: '9'
+                      - id: '2436'
+                        shortenurl: Di
+                        realurl: http://www.munchie.com/?__vbtrk=NzkxNjowOnNvY2lhbG1lZGlhOmZhY2Vib29r
+                        message: Test leadscoring  https://www.vbout.com/goto/Di
+                        date: '1408031400'
+                        tracks: 8
+                        clicks:
+                          facebook: '8'
+                      - '...'
+      operationId: get-SocialMedia-Stats
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: all
+        in: query
+        name: channels
+        description: The channels where the posts are gathered from.<br>**Possible values:**  all | facebook | twitter | linkedin | pinterest
+      - schema:
+          type: string
+          default: asc
+        in: query
+        name: sort
+        description: Record Sorting.<br>**Possible values:**  asc | desc
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/socialmedia/stats.json?key={YOUR_API_ID}&channels=facebook
+
+          '
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/SocialMediaWS.php');\n$user_key = array('api_key' => '{YOUR_API_KEY}');\n$app = new SocialMediaWS($user_key);\n$params = array(\n    'channels' => 'facebook',\n);\n$results = $app->getStats( $params );\nprint_r($results);\n?>\n"
+  SocialMedia/GetPost:
+    get:
+      summary: Post
+      tags:
+      - Social Media
+      responses:
+        '200':
+          description: Successfull operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    item:
+                      id: '682'
+                      title: OSV Treats & Chews provides a big nutritional boost of phytonutrients & antioxidants from fruits & vegetables; tomatoes, spinach & carrots! http://www.clearconsciencepet.com/osv-meaty-treats/
+                      datetime: 05/16/2013 10:34 AM
+                      item:
+                        uid: '0'
+                      type: facebook
+                      image: ''
+                      profile: '166346373390497'
+                properties:
+                  item:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      title:
+                        type: string
+                      datetime:
+                        type: string
+                      item:
+                        type: object
+                        properties:
+                          uid:
+                            type: integer
+                      type:
+                        type: string
+                      image:
+                        type: string
+                      profile:
+                        type: string
+              examples:
+                example-1:
+                  value:
+                    item:
+                      id: '682'
+                      title: OSV Treats & Chews provides a big nutritional boost of phytonutrients & antioxidants from fruits & vegetables; tomatoes, spinach & carrots! http://www.clearconsciencepet.com/osv-meaty-treats/
+                      datetime: 05/16/2013 10:34 AM
+                      item:
+                        uid: '0'
+                      type: facebook
+                      image: ''
+                      profile: '166346373390497'
+      operationId: get-SocialMedia-post
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: none
+        in: query
+        name: ID
+        description: The id of the post<br>**Possible values:** (ID)
+        required: true
+      - schema:
+          type: string
+          default: none
+        in: query
+        name: Channel
+        description: The channel where the post is created.<br>**Possible values:** facebook | twitter | linkedin
+        required: true
+      x-coxdeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/socialmedia/getpost.json?key={YOUR_API_ID}&id=682&channel=facebook
+
+          '
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/SocialMediaWS.php');\n$user_key = array('api_key' => '{YOUR_API_KEY}');\n$app = new SocialMediaWS($user_key);\n$params = array(\n    'id' => '682',\n    'channel' => 'facebook',\n);\n$results = $app->getMyPost( $params );\nprint_r($results);\n?>\n"
+  SocialMedia/AddPost:
+    post:
+      summary: Add Post
+      operationId: post-SocialMedia-AddPost
+      responses:
+        '200':
+          description: Successful operation
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: none
+        in: query
+        name: message
+        required: true
+        description: The post message to be scheduled/sent<br> **Possible values:**"Text"
+      - schema:
+          type: string
+          default: none
+        in: query
+        name: channel
+        description: The channels which the post will be sent to.<br>**Possible values:** facebook | twitter | linkedin | pinterest | instagram
+        required: true
+      - schema:
+          type: integer
+          default: none
+        in: query
+        name: channelid
+        required: true
+        description: The channels which the post will be sent to.<br> **Possible values:** 1 | 2 | 3 | 4
+      - schema:
+          type: string
+        in: query
+        name: photo
+        description: The photo which will be attached to the post.<br> **Possible values:** (Link) or (Uploaded Image)
+      - schema:
+          type: boolean
+          default: 'false'
+        in: query
+        name: isscheduled
+        description: This flag will make the post to be scheduled for future.<br> **Possible values:** true | false
+      - schema:
+          type: string
+          pattern: '  m/d/Y | Y-m-d'
+          default: none
+          format: date
+        in: query
+        name: scheduleddate
+        description: Date of the post to be scheduled.<br> **Possible values:** (Date)
+      - schema:
+          type: string
+          format: time
+          default: none
+        in: query
+        name: scheduledhours
+        description: Time of the post to be scheduled.<br> **Possible values:** (Time)
+      - schema:
+          type: string
+        in: query
+        description: AMPM of the post to be scheduled.<br> **Possible values:** AM | PM | am | pm
+        name: scheduledampm
+      - schema:
+          type: boolean
+          default: 'false'
+        in: query
+        name: trackableLinks
+        description: Convert all links inside message to short urls.<br> **Possible values:** true | false
+      tags:
+      - Social Media
+      x-codeSamples:
+      - lang: cURL
+        source: 'POST https://api.vbout.com/1/socialmedia/addpost.json?key={YOUR_API_ID}
+
+          message=Hello World
+
+          '
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/SocialMediaWS.php');\n $user_key = array('api_key' => '{YOUR_API_KEY}');\n $app = new SocialMediaWS($user_key);\n $params = array(\n  'message' => 'Hello World',\n );\n $results = $app->AddNewpost( $params );\n print_r($results);\n ?>\n"
+  SocialMedia/EditPost:
+    post:
+      summary: Edit Post
+      operationId: post-SocialMedia-EditPost
+      responses: {}
+      tags:
+      - Social Media
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/socialmedia/editpost.json?key={YOUR_API_ID}\n  id=1\n  channel=facebook\n  message=Hello World!\n  scheduleddatetime=2020-10-20 15:30:00\n"
+      parameters:
+      - schema:
+          type: integer
+          default: none
+        in: query
+        name: id
+        description: ID of the post message to be edited.<br>**Possible values:** (ID)
+        required: true
+      - schema:
+          type: string
+          default: none
+        in: query
+        name: channel
+        description: The channel where the post was scheduled.<br>**Possible values:** facebook | twitter | linkedin | pinterest | instagram
+        required: true
+      - schema:
+          type: string
+          default: none
+        in: query
+        name: message
+        description: The post message to be scheduled/sent.<br>**Possible values:** (Text)
+      - schema:
+          type: string
+          pattern: ISO-8601 (Y-m-d H:i:s)
+          format: date-time
+        in: query
+        name: scheduleddatetime
+        description: Date/Time of the post to be scheduled<br>**Possible values:** (Datetime)
+  SocialMedia/DeletePost:
+    delete:
+      summary: Delete Post
+      operationId: delete-SocialMedia-DeletePost
+      responses:
+        '200':
+          description: Successful operation
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/socialmedia/deletepost.json?key={YOUR_API_ID}\n  id=1\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/SocialMediaWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}')\t\n$app = new SocialMediaWS($user_key);\n$id = '1';\n$results = $app->removePost($id);\nprint_r($results);\n?>\n"
+      parameters:
+      - schema:
+          type: integer
+          default: none
+        in: query
+        name: id
+        required: true
+        description: ID of the post message to be deleted.<br>**Possible Values:**(ID)
+      - schema:
+          type: string
+          default: none
+        in: query
+        name: channel
+        description: The channels which the post will be sent to.<br>**Possible Values:** facebook | twitter | linkedin
+      tags:
+      - Social Media

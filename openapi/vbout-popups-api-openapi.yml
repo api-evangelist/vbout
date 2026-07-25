@@ -1,0 +1,418 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Popups API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Popups
+paths:
+  WebHook/lists:
+    get:
+      summary: lists
+      tags:
+      - Popups
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    webhooks:
+                      count: 1
+                      items:
+                      - id: '107'
+                        name: Doctor Request Poll!
+                        type: On Page Exit
+                        domain_id: '1'
+                        url:
+                          filter: Matches Exactly
+                          link: ''
+                        action_type: HTML Message
+                        action_rules:
+                          execute_for: All Visitors
+                          device_filter: All Devices
+                          interval: Repeats
+                          delay:
+                            hours: '0'
+                            minutes: '0'
+                            seconds: '0'
+                        action_stype: Popup
+                      - '...'
+      operationId: get-WebHook-lists
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/webhook/lists.json?key={YOUR_API_ID}
+
+          '
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/WebhookWS.php');\t\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new WebhookWS($user_key);\n $results = $app->getWebhooks();\n print_r($results);\n?>\n"
+  Webhook/show:
+    get:
+      summary: Show
+      tags:
+      - Popups
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              examples:
+                Example 1:
+                  value:
+                    webhook:
+                      id: '107'
+                      name: Poll on who will be elected!
+                      type: On Page Exit
+                      domain_id: '1'
+                      url:
+                        filter: Matches Exactly
+                        link: ''
+                      action_type: HTML Message
+                      action_rules:
+                        execute_for: All Visitors
+                        device_filter: All Devices
+                        interval: Repeats
+                        delay:
+                          hours: '0'
+                          minutes: '0'
+                          seconds: '0'
+                      action_stype: Popup
+      operationId: get-Webhook-show
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: id
+        description: The ID of the webhook.<br> **Possible values:**  (ID)
+        required: true
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/webhook/show.json?key={YOUR_API_ID}&id=107
+
+          '
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/WebhookWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new WebhookWS($user_key);\n$params = array(\n    'id' => '107',\n);\n$results = $app->getWebhook( $params );\nprint_r($results);\n ?>\n"
+  Webhook/Add:
+    post:
+      summary: Add
+      tags:
+      - Popups
+      operationId: post-Webhook-Add
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/webhook/add.json?key={YOUR_API_ID}\n  id=1\n  name=webhook Name\n  action_type=page_exit\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/WebhookWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new WebhookWS($user_key);\n$params = array(\n    'id' => '1',\n    'name' => 'webhook Name',\n    'action_type' => 'page_exit',\n);\n$results = $app->addNewWebhook( $params );\nprint_r($results);\n ?>\n"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: name
+        description: The name of the Popup.<br>**Possible values:**  (Text)
+        required: true
+      - schema:
+          type: string
+          default: page_exit
+        in: query
+        name: type
+        description: The type of the Popup.<br>**Possible values:**  page_exit | page_entry | goal_trigger
+        required: true
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: domainid
+        description: The Domain id of the Popup.<br>**Possible values:**  (ID)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_url
+        description: Page Url.<br>**Possible values:**   (Text)
+      - schema:
+          type: string
+          default: html_msg
+        in: query
+        name: action_type
+        description: The type of the action.<br>**Possible values:**   html_msg | form | poll | redirection | trigger_js
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: redirection_url
+        description: Redirection URL.<br>**Possible values:**   (Link)
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: list_id
+        description: The List ID.<br>**Possible values:**   (ID)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: poll_question
+        description: The Polling Question.<br>**Possible values:**   (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: poll_choices
+        description: The polling Choices.<br>**Possible values:**   (Text)<br>**Allow multiple:**  `yes`
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: js_code
+        description: The Javascript Code.<br>**Possible values:**   (Text)
+      - schema:
+          type: string
+          default: None
+          format: date
+        in: query
+        name: action_startdate
+        description: The Action Trigger Start Date.<br>**Possible values:**  (Date)
+      - schema:
+          type: string
+          format: date
+          default: None
+        in: query
+        name: action_enddate
+        description: The Action Trigger End Date.<br>**Possible values:**  (Date)
+      - schema:
+          type: string
+          default: all
+        in: query
+        name: action_targetusers
+        description: The Target Users.<br>**Possible values:**  all | subscribers | anonymous
+      - schema:
+          type: string
+          default: all
+        in: query
+        name: action_devicefilter
+        description: The Device Filter.<br>**Possible values:**  all | desktop | mobile
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_ppcfilter
+        description: The PPC Referral Network Filter.<br>**Possible values:**   google | bing | facebook | twitter | linkedin
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_geofilter
+        description: The Geo-Location Filter.<br>**Possible values:**    (Text)<br>**Allow Multiple:**  `yes`
+      - schema:
+          type: string
+          default: repeat
+        in: query
+        name: action_frequency
+        description: The Action Frequency.<br>**Possible values:**    repeat | one_time
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: delay_hours
+        description: The Delay Number of Hours.<br>**Possible values:**   (Number)
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: delay_minutes
+        description: The Delay Number of Minutes.<br>**Possible values:**   (Number)
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: delay_seconds
+        description: The Delay Number of Seconds.<br>**Possible values:**   (Number)
+      - schema:
+          type: string
+          default: popup
+        in: query
+        name: action_style
+        description: Choose Action Style.<br>**Possible values:**   popup | sticky_bar
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_text
+        description: Action Text.<br>**Possible values:**    (Text)
+  Webhook/Edit:
+    post:
+      summary: Edit
+      tags:
+      - Popups
+      operationId: post-Webhook-Edit
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/webhook/edit.json?key={YOUR_API_ID}\n   id=1\n   name=webhook Name\n   action_type=page_exit\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/WebhookWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new WebhookWS($user_key);\n$params = array(\n    'id' => '1',\n    'name' => 'webhook Name',\n    'action_type' => 'page_exit',\n);\n$results = $app->addNewWebhook( $params );\nprint_r($results);\n ?>\n"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: name
+        description: The name of the Popup.<br>**Possible values:**  (Text)
+        required: true
+      - schema:
+          type: string
+          default: page_exit
+        in: query
+        required: true
+        name: type
+        description: The type of the Popup.<br>**Possible values:**  page_exit | page_entry | goal_trigger
+      - schema:
+          type: string
+          default: None
+        in: query
+        required: true
+        name: id
+        description: The ID of the Popup.<br>**Possible values:** (ID)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_url
+        description: Page Url.<br>**Possible values:**  (Link)
+      - schema:
+          type: string
+          default: html_msg
+        in: query
+        name: action_type
+        description: The type of the action.<br>**Possible values:**  html_msg | form | poll | redirection | trigger_js
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: redirection_url
+        description: Redirection URL.<br>**Possible values:**  (Link)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: list_id
+        description: The List ID.<br>**Possible values:**  (ID)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: poll_question
+        description: The Polling Question.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: poll_choices
+        description: The polling Choices.<br>**Possible values:**  (Text)<br>**Allow multiple:** `Yes`
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: js_code
+        description: The Javascript Code.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_startdate
+        description: The Action Trigger Start Date.<br>**Possible values:**  (Date)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_enddate
+        description: The Action Trigger End Date.<br>**Possible values:**  (Date)
+      - schema:
+          type: string
+          default: all
+        in: query
+        name: action_targetusers
+        description: The Target Users.<br>**Possible values:**  all | subscribers | anonymous
+      - schema:
+          type: string
+          default: all
+        in: query
+        name: action_devicefilter
+        description: The Device Filter.<br>**Possible values:**   all | desktop | mobile
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_ppcfilter
+        description: The PPC Referral Network Filter.<br>**Possible values:**  google | bing | facebook | twitter | linkedin
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_geofilter
+        description: action_geofilter<br>**Possible values:** (Text)<br>**Allow multiple:** `Yes`
+      - schema:
+          type: string
+          default: repeat
+        in: query
+        name: action_frequency
+        description: The Action Frequency.<br>**Possible values:** repeat | one_time
+      - schema:
+          type: string
+          default: Number
+        in: query
+        name: delay_hours
+        description: The Delay Number of Hours.<br>**Possible values:** (Number)
+      - schema:
+          type: string
+          default: Number
+        in: query
+        name: delay_minutes
+        description: The Delay Number of Minutes.<br>**Possible values:** (Number)
+      - schema:
+          type: string
+          default: Number
+        in: query
+        name: delay_seconds
+        description: The Delay Number of Seconds.<br>**Possible values:** (Number)
+      - schema:
+          type: string
+          default: popup
+        in: query
+        name: action_style
+        description: Choose Action Style<br>**Possible values:**  popup | sticky_bar
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: action_text
+        description: Action Text.<br>**Possible values:**  (Text)
+  Webhook/Delete:
+    delete:
+      summary: Delete
+      tags:
+      - Popups
+      operationId: delete-Webhook-Delete
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/webhook/delete.json?key={YOUR_API_ID}\n   id=1\n"
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/WebhookWS.php');\t\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new WebhookWS($user_key);\n $params = array(\n     'id' => '1',\n );\n $results = $app->removeWebhook( $params );\n print_r($results);\n ?>\n"
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        required: true
+        name: id
+        description: 'The ID of the Popup to delete.<br>**Possible values:**  (ID) '

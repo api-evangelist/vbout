@@ -1,0 +1,464 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Users & Workflow API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Users & Workflow
+paths:
+  User/Lists:
+    get:
+      summary: Lists
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: object
+                    properties:
+                      items:
+                        type: object
+                        properties:
+                          '34':
+                            type: object
+                            properties:
+                              users:
+                                type: object
+                                properties:
+                                  '34':
+                                    type: object
+                                    properties:
+                                      fullname:
+                                        type: string
+                                      username:
+                                        type: string
+                          '193':
+                            type: object
+                            properties:
+                              users:
+                                type: object
+                                properties:
+                                  '45':
+                                    type: object
+                                    properties:
+                                      fullname:
+                                        type: string
+                                      username:
+                                        type: string
+                                      group:
+                                        type: string
+                                      status:
+                                        type: string
+              examples:
+                example-1:
+                  value:
+                    users:
+                      count: 2
+                      items:
+                        '34':
+                          users:
+                            '34':
+                              fullname: John Quil
+                              username: John Quil@example.com
+                            '...': null
+                        '193':
+                          users:
+                            '45':
+                              fullname: Test
+                              username: test22@yopmail.com
+                              group: '-'
+                              status: Active
+                            '...': null
+      operationId: get-User-Lists
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: businessid
+        description: The ID of the business if it's an agency to return its contacts.<br> **Possible values:**  (ID)
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/user/lists.json?key={YOUR_API_ID}&businessid=124
+
+          '
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/UserWS.php');\t\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new UserWS($user_key);\n $params = array(\n     'businessid' => '124',\n );\n $results = $app->getusers( $params );\n print_r($results);\n  ?>\n"
+      tags:
+      - Users & Workflow
+  User/Managers:
+    get:
+      summary: Managers
+      tags:
+      - Users & Workflow
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    users:
+                      count: 7
+                      items:
+                      - id: '2'
+                        fullname: Frank N. Stein
+                        email: Frank16@yopmail.com
+                        status: Active
+                      - id: '10'
+                        fullname: Isabelle Ringing
+                        email: Isab.e16@yopmail.com
+                        status: Active
+                      - '...'
+                properties:
+                  users:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                      items:
+                        type: array
+                        items:
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                            fullname:
+                              type: string
+                            email:
+                              type: string
+                            status:
+                              type: string
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                            fullname:
+                              type: string
+                            email:
+                              type: string
+                            status:
+                              type: string
+              examples:
+                example-1:
+                  value:
+                    users:
+                      count: 7
+                      items:
+                      - id: '2'
+                        fullname: Hank R. Cheef
+                        email: Hank3000@yopmail.com
+                        status: Active
+                      - id: '10'
+                        fullname: Oscar Nommanee
+                        email: oscarnom773@yopmail.com
+                        status: Active
+                      - '...'
+      operationId: get-User-Managers
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n- - -\n**Parameters:** `None`"
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/user/managers.json?key={YOUR_API_ID}
+
+          '
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/UserWS.php');\t\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new UserWS($user_key);\n $results = $app->getManagers();\n print_r($results);\n?>\n"
+  User/Status:
+    post:
+      summary: Status
+      operationId: post-User-Status
+      tags:
+      - Users & Workflow
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        description: The ID of the user to change status.<br>**Possible values:**  (ID)
+        required: true
+      - schema:
+          type: string
+          default: User
+        in: query
+        name: type
+        required: true
+        description: The type of the user.<br>**Possible values:**  user | manager
+      - schema:
+          type: string
+          default: enable
+        in: query
+        name: status
+        required: true
+        description: The status of the user.<br>**Possible values:**  enable | disable
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/user/status.json?key={YOUR_API_ID}\n   id=1\n   type=user\n   status=0\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/UserWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new UserWS($user_key);\n$params = array(\n    'id' => '1',\n    'type' => 'user',\n    'status' => '0',\n);\n$results = $app->changeStatus( $params );\nprint_r($results);\n?>\n"
+  User/Add:
+    post:
+      summary: Add
+      operationId: post-User-Add
+      tags:
+      - Users & Workflow
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/user/add.json?key={YOUR_API_ID}\n   fullname=John Smith\n   username=john@example.com\n   password=user123\n   type=user\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/UserWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new UserWS($user_key);\n$params = array(\n    'fullname' => 'John Smith',\n    'username' => 'john@example.com',\n    'password' => 'user123',\n    'type' => 'user',\n);\n$results = $app->addNewUser( $params );\nprint_r($results);\n  ?>\n"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: fullname
+        required: true
+        description: The name of the user.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+        in: query
+        name: username
+        description: The username of the user.<br>**Possible values:**  (Email Address)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        required: true
+        name: password
+        description: The password of the user.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: User
+        in: query
+        required: true
+        name: type
+        description: The type of the user.<br>**Possible values:**  user | manager
+      - schema:
+          type: string
+          default: '0'
+        in: query
+        name: group
+        description: The group id of the user.<br>**Possible values:**   (ID)
+      - schema:
+          type: string
+          default: 'Null'
+        in: query
+        name: permissions
+        description: 'Optional<br>`Required`: if **no group** is selected.<br>The permissions of the user. (comma-separated values) <br>**Possible values:**   all | reputation_center | foursquare | pinterest | social_media | email_marketing | master_reporting | users_and_workflow | user_groups | smart_calendar | site_builder | asset_manager | task_manager | notes | social_tracker | google_analytics | email_automation_workflow | live_hashtags | goal_conversion_tracking | expedia_affiliate_network | behavioral_webhooks | lead_scoring | landingpages | sms_automation | heatmap | email_test | salesforce_sync | browser_push | hubspot_sync | zoho_sync | pipeline_manager | campaign_groups | webinars | content_bank | insightly_sync | ftp_sync | simplifi_reports | custom_smtp | call_center'
+  User/Edit:
+    post:
+      summary: Edit
+      operationId: post-User-Edit
+      tags:
+      - Users & Workflow
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/user/edit.json?key={YOUR_API_ID}\n   fullname=John Smith\n   username=john@example.com\n   password=user123\n   type=user\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/UserWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new UserWS($user_key);\n$params = array(\n    'fullname' => 'John Smith',\n    'username' => 'john@example.com',\n    'password' => 'user123',\n    'type' => 'user',\n);\n$results = $app->updateUser( $params );\nprint_r($results);\n?>\n"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        description: The ID of the user.<br>**Possible values:**  (ID)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: fullname
+        required: true
+        description: The name of the user.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: username
+        required: true
+        description: The username of the user.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: User
+        in: query
+        name: type
+        description: The type of the user.<br>**Possible values:**   (user | manager)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: password
+        description: The password of the user.<br>**Possible values:**    (Text)
+      - schema:
+          type: string
+          default: '0'
+        in: query
+        name: group
+        description: The group id of the user.<br>**Possible values:**  (ID)
+      - schema:
+          type: string
+          default: 'Null'
+        in: query
+        name: permissions
+        description: 'Optional<br>`Required`: if **no group** is selected.<br>The permissions of the user. (comma-separated values) <br>**Possible values:**  all | reputation_center | foursquare | pinterest | social_media | email_marketing | master_reporting | users_and_workflow | user_groups | smart_calendar | site_builder | asset_manager | task_manager | notes | social_tracker | google_analytics | email_automation_workflow | live_hashtags | goal_conversion_tracking | expedia_affiliate_network | behavioral_webhooks | lead_scoring | landingpages | sms_automation | heatmap | email_test | salesforce_sync | browser_push | hubspot_sync | zoho_sync | pipeline_manager | campaign_groups | webinars | content_bank | insightly_sync | ftp_sync | simplifi_reports | custom_smtp | call_center'
+  User/Delete:
+    delete:
+      summary: Delete
+      operationId: delete-User-Delete
+      tags:
+      - Users & Workflow
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: id
+        required: true
+        description: The ID of the user to delete.<br>**Possible values:**  (ID)
+      - schema:
+          type: string
+          default: User
+        in: query
+        description: The type of the user.<br>**Possible values:**  user | manager
+        name: type
+        required: true
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/user/delete.json?key={YOUR_API_ID}\n  id=1\n  type=user\n"
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/UserWS.php');\t\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new UserWS($user_key);\n $params = array(\n     'id' => '1',\n     'type' => 'user',\n );\n $results = $app->removeUser( $params );\n print_r($results);\n  ?>\n"
+  User/Groups:
+    get:
+      summary: Groups
+      tags:
+      - Users & Workflow
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    groups:
+                      count: 3
+                      items:
+                      - id: '4'
+                        name: 'Sales Team #Chicago'
+                        status: Active
+                      - id: '5'
+                        name: 'Sales Team #New York'
+                        status: Active
+                      - '...'
+                properties:
+                  groups:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                      items:
+                        type: array
+                        items:
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            status:
+                              type: string
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            status:
+                              type: string
+              examples:
+                example-1:
+                  value:
+                    groups:
+                      count: 3
+                      items:
+                      - id: '4'
+                        name: 'Sales Team #Chicago'
+                        status: Active
+                      - id: '5'
+                        name: 'Sales Team #New York'
+                        status: Active
+                      - '...'
+      operationId: get-User-Groups
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/user/groups.json?key={YOUR_API_ID}
+
+          '
+      - lang: PHP
+        source: "<?ph\nrequire_once('../PATH/TO/services/UserWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new UserWS($user_key);\n$results = $app->getGroups();\nprint_r($results);\n?>\n"
+  User/GroupDelete:
+    delete:
+      summary: Group Delete
+      operationId: delete-User-GroupDelete
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      tags:
+      - Users & Workflow
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/user/groupdelete.json?key={YOUR_API_ID}\n   id=1\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/UserWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new UserWS($user_key);\n$params = array(\n    'id' => '1',\n);\n$results = $app->removeGroup( $params );\nprint_r($results);\n?>\n"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: id
+        description: The ID of the group to delete.<br>**Possible values:**  (ID)
+        required: true
+  User/GroupStatus:
+    get:
+      summary: Group Status
+      tags:
+      - Users & Workflow
+      responses: {}
+      operationId: get-User-GroupStatus
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/user/groupstatus.json?key={YOUR_API_ID}\n   id=1\n   status=0\n"
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/UserWS.php');\t\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new UserWS($user_key);\n $params = array(\n     'id' => '1',\n     'status' => '0',\n );\n $results = $app->changeGroupStatus( $params );\n print_r($results);\n  ?>\n"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: id
+        required: true
+        description: The ID of the group to change status.<br>**Possible values:**   (ID)
+      - schema:
+          type: string
+          default: enable
+        in: query
+        name: status
+        required: true
+        description: The status of the group.<br>**Possible values:**    enable | disable

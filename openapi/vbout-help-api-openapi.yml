@@ -1,0 +1,28 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Help API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Help
+paths:
+  /Help/Commands:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  commands:
+                    type: array
+                    items:
+                      type: string
+      operationId: get-Help-Commands
+      description: Get list of available commands when asking for help
+      tags:
+      - Help

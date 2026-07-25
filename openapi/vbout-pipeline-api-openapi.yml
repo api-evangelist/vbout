@@ -1,0 +1,155 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Pipeline API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Pipeline
+paths:
+  Pipeline/GetBoardGuideCategories:
+    get:
+      summary: GetBoardGuideCategories
+      operationId: post-pipeline-GetBoardGuideCategories
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - Pipeline
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: '2'
+                    name:
+                      type: string
+                      example: Capture Leads & Sell
+                    description:
+                      type: string
+                      nullable: true
+                      example: null
+                    order:
+                      type: string
+                      example: '2'
+                    status:
+                      type: integer
+                      example: 1
+      x-codeSamples:
+      - lang: cURL
+        source: 'POST https://app-stg.vbout.com/1/Pipeline/GetBoardGuideCategories?key={YOUR_API_ID}
+
+          '
+      deprecated: false
+      parameters:
+      - name: API KEY
+        in: query
+        description: The API KEY of the Account.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: integer
+  Pipeline/GetBoardGuides:
+    get:
+      summary: GetBoardGuides
+      operationId: post-pipeline-GetBoardGuides
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - Pipeline
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: '2'
+                    name:
+                      type: string
+                      example: Internal custom
+                    description:
+                      type: string
+                      example: Internal custom description
+                    category:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: '5'
+                        name:
+                          type: string
+                          example: Internal & Custom Bots
+                    status:
+                      type: integer
+                      example: 1
+      x-codeSamples:
+      - lang: cURL
+        source: 'POST https://api.vbout.com/1/Pipeline/GetBoardGuides?key={YOUR_API_ID}
+
+          '
+      deprecated: false
+      parameters:
+      - name: API KEY
+        in: query
+        description: The API KEY of the Account.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: integer
+  Pipeline/CreateBoardFromGuide:
+    post:
+      summary: CreateBoardFromGuide
+      operationId: post-pipeline-CreateBoardFromGuide
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - Pipeline
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    item:
+                      type: string
+                      example: Your pipeline board has been created successfully.
+                    recid:
+                      type: string
+                      example: '[ID]'
+      x-codeSamples:
+      - lang: cURL
+        source: 'POST https://api.vbout.com/1/Pipeline/CreateBoardFromGuide?key={YOUR_API_ID}
+
+          '
+      deprecated: false
+      parameters:
+      - name: API KEY
+        in: query
+        description: The API KEY of the Account.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: number
+      - name: guideid
+        in: query
+        description: The guideid of the pipeline.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: integer
+      - name: Title
+        in: query
+        description: The Title of the pipeline.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: string

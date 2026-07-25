@@ -1,0 +1,391 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing SocialMedia API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: SocialMedia
+paths:
+  /SocialMedia/Channels:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  channels:
+                    type: object
+                    properties:
+                      Facebook:
+                        type: object
+                        properties:
+                          count:
+                            type: integer
+                          pages:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+                      Twitter:
+                        type: object
+                        properties:
+                          count:
+                            type: integer
+                          profiles:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                screenname:
+                                  type: string
+                                fullname:
+                                  type: string
+                      Linkedin:
+                        type: object
+                        properties:
+                          count:
+                            type: integer
+                          profiles:
+                            type: array
+      operationId: get-SocialMedia-Channels
+      description: Get Channels
+      tags:
+      - SocialMedia
+  /SocialMedia/Calendar:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  calendar:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                      items:
+                        type: object
+                        additionalProperties:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            message:
+                              type: string
+                            photo:
+                              type: object
+                              properties:
+                                thumb:
+                                  type: string
+                                original:
+                                  type: string
+                            channel:
+                              type: object
+                              properties:
+                                network:
+                                  type: string
+                                type:
+                                  type: string
+                                id:
+                                  type: string
+                                name:
+                                  type: string
+                                date:
+                                  type: string
+      operationId: get-SocialMedia-Calendar
+      description: Get Calendar
+      parameters:
+      - schema:
+          type: string
+        in: query
+        name: channels
+        description: The channels from where the posts are gathered (all, facebook, twitter, linkedin)
+      - schema:
+          type: string
+          format: date
+          pattern: ^(\d{2}/\d{2}/\d{4}|\d{4}-\d{2}-\d{2})$
+        in: query
+        name: from
+        description: The from date which the reviews are returned. The filter must be date for this parameter to work.
+        required: true
+      - schema:
+          type: string
+          format: date
+          pattern: ^(\d{2}/\d{2}/\d{4}|\d{4}-\d{2}-\d{2})$
+        in: query
+        name: to
+        description: The to date which the reviews are returned. The filter must be date for this parameter to work.
+        required: true
+      - schema:
+          type: boolean
+        in: query
+        name: includeposted
+        description: Include already scheduled posts inside the results.
+      - schema:
+          type: number
+        in: query
+        name: limit
+        description: Set your record limit number per page.
+      - schema:
+          type: number
+        in: query
+        name: page
+        description: Set which page you wanna get.
+      - schema:
+          type: string
+        in: query
+        name: sort
+        description: Record Sorting (asc|desc)
+      tags:
+      - SocialMedia
+  /SocialMedia/Stats:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  stats:
+                    type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            shortenurl:
+                              type: string
+                            realurl:
+                              type: string
+                            message:
+                              type: string
+                            date:
+                              type: string
+                            tracks:
+                              type: integer
+                            clicks:
+                              type: object
+                              additionalProperties:
+                                type: integer
+      operationId: get-SocialMedia-Stats
+      description: Get Stats
+      parameters:
+      - schema:
+          type: string
+        in: query
+        name: channels
+        description: The channels from where the posts are gathered (all, facebook, twitter, linkedin)
+      - schema:
+          type: string
+        in: query
+        name: sort
+        description: Record Sorting (asc|desc)
+      tags:
+      - SocialMedia
+  /SocialMedia/GetPost:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  item:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      title:
+                        type: string
+                      datetime:
+                        type: string
+                      item:
+                        type: object
+                        properties:
+                          uid:
+                            type: integer
+                      type:
+                        type: string
+                      image:
+                        type: string
+                      profile:
+                        type: string
+      operationId: get-SocialMedia-GetPost
+      description: Get Post
+      parameters:
+      - schema:
+          type: integer
+        in: query
+        name: id
+        description: The id of the post.
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: channel
+        description: The channel where the post is created. Must be in lower case. Convert it to lower case.
+        required: true
+      tags:
+      - SocialMedia
+  /SocialMedia/AddPost:
+    post:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  post_id:
+                    type: integer
+                  item:
+                    type: string
+      operationId: post-SocialMedia-AddPost
+      description: Add Post
+      parameters:
+      - schema:
+          type: string
+        in: query
+        name: message
+        description: The post message to be scheduled/sent.
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: channel
+        description: The channels which the post will be sent to. Must be in lower case. Convert it to lower case.
+        required: true
+      - schema:
+          type: integer
+        in: query
+        name: channelid
+        description: The channels which the post will be sent to.
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: photo
+        description: The photo which will be attached to the post.
+      - schema:
+          type: boolean
+        in: query
+        name: isscheduled
+        description: This flag will make the post to be scheduled for future.
+      - schema:
+          type: string
+          format: date
+          pattern: ^(\d{2}/\d{2}/\d{4}|\d{4}-\d{2}-\d{2})$
+        in: query
+        name: scheduleddate
+        description: Date of the post to be scheduled.
+      - schema:
+          type: string
+          format: time
+        in: query
+        name: scheduledhours
+        description: Time of the post to be scheduled.
+      - schema:
+          type: boolean
+        in: query
+        name: trackableLinks
+        description: Convert all links inside message to short urls.
+      - schema:
+          type: string
+        in: query
+        name: scheduledampm
+        description: AM/PM of the post to be scheduled.
+      tags:
+      - SocialMedia
+  /SocialMedia/EditPost:
+    post:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  item:
+                    type: string
+      operationId: post-SocialMedia-EditPost
+      description: Edit Post
+      parameters:
+      - schema:
+          type: string
+        in: query
+        name: message
+        description: The post message to be scheduled/sent.
+      - schema:
+          type: string
+        in: query
+        name: channel
+        description: The channel where the post was scheduled. Must be in lower case. Convert it to lower case.
+        required: true
+      - schema:
+          type: integer
+        in: query
+        name: id
+        description: ID of the post message to be edited.
+        required: true
+      - schema:
+          type: string
+          format: date-time
+        in: query
+        name: scheduleddatetime
+        description: Date/Time of the post to be scheduled.
+        examples:
+          example1:
+            value: '2023-05-23 10:30:00'
+      tags:
+      - SocialMedia
+  /SocialMedia/DeletePost:
+    post:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  item:
+                    type: string
+      operationId: post-SocialMedia-DeletePost
+      description: Delete Post
+      parameters:
+      - schema:
+          type: string
+        in: query
+        name: channel
+        description: The channels which the post will be sent to. Must be in lower case. Convert it to lower case.
+      - schema:
+          type: integer
+        in: query
+        name: id
+        description: ID of the post message to be deleted.
+        required: true
+      tags:
+      - SocialMedia

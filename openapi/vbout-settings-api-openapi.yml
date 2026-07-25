@@ -1,0 +1,315 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Settings API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Settings
+paths:
+  Settings/CustomShortcodes:
+    get:
+      summary: Custom Short codes
+      operationId: GET-Settings-CustomShortcodes
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`  \r\n - - -  \r\n **Parameters:** `None`"
+      tags:
+      - Settings
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  shortcodes:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            title:
+                              type: string
+                            content:
+                              type: string
+              example:
+                shortcodes:
+                  count: 3
+                  items:
+                  - id: 12
+                    name: Vbout Product Info
+                    title: Title for Vbout Product Info
+                    content: 'Check out our latest product: {vbout_product_name}. It''s only {vbout_product_price}!'
+  Settings/AddCustomShortcode:
+    post:
+      summary: Add Custom Short Code
+      operationId: post-settings-addcustomshortcode
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - Settings
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              example:
+                item: Shortcode created successfully.
+                recid: '[shortcode_id]'
+      x-codeSamples:
+      - lang: cURL
+        source: 'POST https://api.vbout.com/1/Settings/AddCustomShortcode.json?key={YOUR_API_ID}
+
+          '
+      deprecated: false
+      parameters:
+      - name: Content
+        in: query
+        description: The content of the short code.<br>**Possible values:**  (Text)
+        required: true
+        schema:
+          type: string
+          default: none
+          format: none
+      - name: 'Name '
+        in: query
+        description: The name of the short code.<br>**Possible values:**  (Text)
+        required: true
+        schema:
+          type: string
+          default: none
+          format: none
+      - name: 'Title '
+        in: query
+        description: The title of the short code.<br>**Possible values:**  (Text)
+        required: true
+        schema:
+          type: string
+          default: none
+          format: none
+  Settings/EditCustomShortCode:
+    post:
+      summary: Edit Custom Short Code
+      operationId: post-settings-editcustomshortcode
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - Settings
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              example:
+                item: Shortcode updated successfully.
+                recid: '[shortcode_id]'
+      x-codeSamples:
+      - lang: cURL
+        source: 'POST https://api.vbout.com/1/Settings/EditCustomShortcode.json?key={YOUR_API_ID}
+
+          '
+      deprecated: false
+      parameters:
+      - name: ID
+        in: query
+        description: The id of the short code.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: number
+          default: none
+          format: none
+      - name: 'Title '
+        in: query
+        description: The title of the short code.<br>**Possible values:**  (Text)
+        required: true
+        schema:
+          type: string
+          default: none
+          format: none
+      - name: Name
+        in: query
+        description: The name of the short code.<br>**Possible values:**  (Text)
+        required: true
+        schema:
+          type: string
+          default: none
+          format: none
+      - name: Content
+        in: query
+        description: The content of the short code.<br>**Possible values:**  (Text)
+        required: true
+        schema:
+          type: string
+          default: none
+          format: none
+  Settings/DeleteCustomShortcode:
+    delete:
+      summary: Delete Custom Short Code
+      operationId: delete-settings-deletecustomshortcode
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`  "
+      tags:
+      - Settings
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              example:
+                item: Your shortcode has been removed successfully.
+      x-codeSamples:
+      - lang: cURL
+        source: 'DELETE https://api.vbout.com/1/Settings/DeleteCustomShortcode.json?key={YOUR_API_ID}
+
+          '
+      deprecated: false
+      parameters:
+      - name: ID
+        in: query
+        description: The id of the short code.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: number
+          default: none
+          format: none
+  /Settings/CustomShortCodes:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  shortcodes:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            title:
+                              type: string
+                            content:
+                              type: string
+      operationId: get-Settings-CustomShortCodes
+      description: Get Custom Shortcodes
+      tags:
+      - Settings
+  /Settings/AddCustomShortCode:
+    post:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  recid:
+                    type: integer
+                  item:
+                    type: string
+      operationId: post-Settings-AddCustomShortCode
+      description: Add Custom Shortcode
+      parameters:
+      - schema:
+          type: string
+        in: query
+        name: content
+        description: The content of the shortcode.
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: name
+        description: The name of the shortcode.
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: title
+        description: The title of the shortcode.
+        required: true
+      tags:
+      - Settings
+  /Settings/EditCustomShortCode:
+    post:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  recid:
+                    type: integer
+                  item:
+                    type: string
+      operationId: post-Settings-EditCustomShortCode
+      description: Edit Custom Shortcode
+      parameters:
+      - schema:
+          type: string
+        in: query
+        name: content
+        description: The content of the shortcode.
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: name
+        description: The name of the shortcode.
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: title
+        description: The title of the shortcode.
+        required: true
+      - schema:
+          type: number
+        in: query
+        name: id
+        description: The id of the shortcode.
+        required: true
+      tags:
+      - Settings
+  /Settings/DeleteCustomShortCode:
+    post:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  item:
+                    type: string
+      operationId: post-Settings-DeleteCustomShortCode
+      description: Delete Custom Shortcode
+      parameters:
+      - schema:
+          type: number
+        in: query
+        name: id
+        description: The id of the shortcode.
+        required: true
+      tags:
+      - Settings

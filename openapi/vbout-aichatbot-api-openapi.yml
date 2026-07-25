@@ -1,0 +1,158 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing AIchatbot API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: AIchatbot
+paths:
+  AIchatbot/aichatbottemplates:
+    get:
+      summary: aichatbottemplates
+      operationId: post-aichatbot-aichatbottemplates
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - AIchatbot
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 13
+                    name:
+                      type: string
+                      example: Internal Knowledge Bot
+                    description:
+                      type: string
+                      example: Create a private chatbot for your team using internal documents or APIs. Perfect for onboarding, SOPs, and internal support.
+                    thumbnail:
+                      type: string
+                      example: https://assets.vbt.io/uploads/automation_guide/thumb_guide_6573106813.png
+                    category:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 7
+                        name:
+                          type: string
+                          example: Internal & Custom Bots
+                    tags:
+                      type: array
+                      items:
+                        type: string
+                      example:
+                      - Internal Use
+                      - Documents
+                      - API
+                      - Custom Data
+      x-codeSamples:
+      - lang: cURL
+        source: 'get https://api.vbout.com/1/aichatbottemplates/index?key={YOUR_API_ID}
+
+          '
+      deprecated: false
+  AIchatbot/categories:
+    get:
+      summary: categories
+      operationId: post-aichatbot-aichatbotcategories
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - AIchatbot
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 5
+                    name:
+                      type: string
+                      example: Ecommerce & Products
+                    template_count:
+                      type: integer
+                      example: 1
+  AIchatbot/tags:
+    get:
+      summary: tags
+      operationId: post-aichatbot-aichatbottags
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - AIchatbot
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    tag:
+                      type: string
+                      example: Documents
+                    template_count:
+                      type: integer
+                      example: 3
+  AIchatbot/copy:
+    post:
+      summary: copy
+      operationId: post-aichatbot-aichatbotcopy
+      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      tags:
+      - AIchatbot
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 3319
+                    name:
+                      type: string
+                      example: Template name
+      x-codeSamples:
+      - lang: cURL
+        source: get https://api.vbout.com/1/aichatbottemplates/copy?key={YOUR_API_ID}
+      deprecated: false
+      parameters:
+      - name: API KEY
+        in: query
+        description: The API KEY of the Account.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: number
+      - name: template_id
+        in: query
+        description: The template_id from index.<br>**Possible values:** (ID)
+        required: true
+        schema:
+          type: number
+      - name: name
+        in: query
+        description: The Custom name of the chatbot.<br>**Possible values:** (ID)
+        required: false
+        schema:
+          type: string

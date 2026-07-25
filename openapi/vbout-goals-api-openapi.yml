@@ -1,0 +1,574 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Goals API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Goals
+paths:
+  Goal/Lists:
+    get:
+      summary: Lists
+      tags:
+      - Goals
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    goals:
+                      count: 8
+                      items:
+                      - id: '41'
+                        name: Cart conversion (All Links)
+                        goal_value:
+                          type: Fixed
+                          value: '80.0000'
+                        type: Event Triggered
+                        event_type: Link(s) Clicked
+                        event_link_rule: All of these link(s) clicked
+                        links:
+                        - http://yogashop.com/index.php?route=information/contact
+                        - http://yogashop.com/index.php?route=blog/blog
+                        has_action: 'Yes'
+                        action:
+                          id: '69'
+                          name: Action is deleted!
+                      - '...'
+                properties:
+                  goals:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            goal value:
+                              type: object
+                              properties:
+                                type:
+                                  type: string
+                                value:
+                                  type: integer
+                            type:
+                              type: string
+                            event_type:
+                              type: string
+                            event_link_rule:
+                              type: string
+                            links:
+                              type: array
+                              items:
+                                type: string
+                            url:
+                              type: string
+                            has_action:
+                              type: string
+                            action:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+              examples:
+                example-1:
+                  value:
+                    goals:
+                      count: 8
+                      items:
+                      - id: '41'
+                        name: Cart conversion (All Links)
+                        goal_value:
+                          type: Fixed
+                          value: '80.0000'
+                        type: Event Triggered
+                        event_type: Link(s) Clicked
+                        event_link_rule: All of these link(s) clicked
+                        links:
+                        - http://yogashop.com/index.php?route=information/contact
+                        - http://yogashop.com/index.php?route=blog/blog
+                        has_action: 'Yes'
+                        action:
+                          id: '69'
+                          name: Action is deleted!
+                      - '...'
+      operationId: get-Goal-Lists
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/goal/lists.json?key={YOUR_API_ID}
+
+          '
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/GoalWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new GoalWS($user_key);\n$results = $app->getGoals();\nprint_r($results);\n?>\n"
+  Goal/ListByDomain:
+    get:
+      summary: List By Domain
+      tags:
+      - Goals
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    goals:
+                      count: 7
+                      items:
+                      - id: '41'
+                        name: Test Goal Action (All Links)
+                        goal_value:
+                          type: Fixed
+                          value: '0.0000'
+                        type: Event Triggered
+                        event_type: Link(s) Clicked
+                        event_link_rule: All of these link(s) clicked
+                        links:
+                        - http://yogashop.com/index.php?route=information/contact
+                        - http://yogashop.com/index.php?route=blog/blog
+                        has_action: 'Yes'
+                        action:
+                          id: '69'
+                          name: Action is deleted!
+                      - '...'
+                properties:
+                  goals:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            goal_value:
+                              type: object
+                              properties:
+                                type:
+                                  type: string
+                                value:
+                                  type: integer
+                            type:
+                              type: string
+                            event_type:
+                              type: string
+                            links:
+                              type: array
+                              items: {}
+                            url:
+                              type: string
+                            has_action:
+                              type: string
+                            action:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+              examples:
+                example-1:
+                  value:
+                    goals:
+                      count: 7
+                      items:
+                      - id: '41'
+                        name: Test Goal Action (All Links)
+                        goal_value:
+                          type: Fixed
+                          value: '0.0000'
+                        type: Event Triggered
+                        event_type: Link(s) Clicked
+                        event_link_rule: All of these link(s) clicked
+                        links:
+                        - http://yogashop.com/index.php?route=information/contact
+                        - http://yogashop.com/index.php?route=blog/blog
+                        has_action: 'Yes'
+                        action:
+                          id: '69'
+                          name: Action is deleted!
+                      - '...'
+      operationId: get-Goal-ListByDomain
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/goal/listbydomain.json?key={YOUR_API_ID}&domainid=41
+
+          '
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/GoalWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new GoalWS($user_key);\n$params = array(\n    'domainid' => '41',\n);\n$results = $app->getGoalsByDomain( $params );\nprint_r($results);\n ?>\n"
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: domainid
+        required: true
+        description: The ID of the domain to return its goals.<br>**Possible values:**  (ID)
+  Goal/Show:
+    get:
+      summary: Show
+      tags:
+      - Goals
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    goal:
+                      id: '41'
+                      name: Test Goal Action (All Links)
+                      goal_value:
+                        type: Fixed
+                        value: '0.0000'
+                      type: Event Triggered
+                      event_type: Link(s) Clicked
+                      event_link_rule: All of these link(s) clicked
+                      links:
+                      - http://yogashop.com/index.php?route=information/contact
+                      - http://yogashop.com/index.php?route=blog/blog
+                      has_action: 'Yes'
+                      action:
+                        id: '69'
+                        name: Action is deleted!
+                properties:
+                  goal:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      goal_value:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                          value:
+                            type: string
+                      type:
+                        type: string
+                      event_type:
+                        type: string
+                      event_link_rule:
+                        type: string
+                      links:
+                        type: array
+                        items:
+                          type: string
+                      has_action:
+                        type: string
+                      action:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+              examples:
+                example-1:
+                  value:
+                    goal:
+                      id: '41'
+                      name: Test Goal Action (All Links)
+                      goal_value:
+                        type: Fixed
+                        value: '0.0000'
+                      type: Event Triggered
+                      event_type: Link(s) Clicked
+                      event_link_rule: All of these link(s) clicked
+                      links:
+                      - http://yogashop.com/index.php?route=information/contact
+                      - http://yogashop.com/index.php?route=blog/blog
+                      has_action: 'Yes'
+                      action:
+                        id: '69'
+                        name: Action is deleted!
+      operationId: get-Goal-Show
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/goal/show.json?key={YOUR_API_ID}&id=46
+
+          '
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/GoalWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new GoalWS($user_key);\n$params = array(\n    'id' => '46',\n);\n$results = $app->getGoal( $params );\nprint_r($results);\n ?>\n"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: id
+        description: The ID of the goal.<br>**Possible values:**  (ID)
+        required: true
+  Goal/Add:
+    post:
+      summary: Add
+      operationId: post-Goal-Add
+      tags:
+      - Goals
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: domainid
+        required: true
+        description: The Domain id of the goal.<br>**Possible values:**  (ID)
+      - schema:
+          type: string
+          default: None
+        in: query
+        required: true
+        name: name
+        description: The name of the goal.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: Url
+        in: query
+        required: true
+        name: type
+        description: The type of the goal.<br>**Possible values:**  url | duration | pages | ppc | event | funnel
+      - schema:
+          type: number
+          default: Fixed
+        in: query
+        name: value_type
+        description: Goal Value Type.<br>**Possible values:**  fixed | variable
+      - schema:
+          type: string
+          default: '0'
+        in: query
+        name: value
+        description: Goal Value if the value type is fixed.<br>**Possible values:**  (Number)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: destination_url
+        description: The Destination URL.<br>**Possible values:**   (Link)
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: duration_hours
+        description: The Duration Number of Hours.<br>**Possible values:**   (Number)
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: duration_minutes
+        description: The Duration Number of Minutes.<br>**Possible values:**   (Number)
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: duration_seconds
+        description: The Duration Number of Seconds.<br>**Possible values:**   (Number)
+      - schema:
+          type: number
+          default: None
+        in: query
+        name: pages
+        description: The Number of Pages.<br>**Possible values:**   (Number)
+      - schema:
+          type: string
+        in: query
+        name: ppc_networks
+        description: The type of Referral Networks.<br>**Possible values:**   google | bing | facebook | twitter | linkedin
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: event_type
+        description: The type of Event.<br>**Possible values:**    links | videos | form
+      - schema:
+          type: string
+          default: any
+        in: query
+        name: goal_event_filter
+        description: Goal will be met if.<br>**Possible values:**   any | all
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: event_links
+        description: The Event Links.<br>**Possible values:**   (Link)
+      - schema:
+          type: integer
+          default: 'yes'
+        in: query
+        name: event_videos
+        description: links of embedded video.<br>**Possible values:**   (Links) <br>**Allow Multiple:**  `yes`
+      - schema:
+          type: string
+          default: id
+        in: query
+        name: form_identity_type
+        description: Form catch by<br>**Possible values:**  id | name
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: form_identity
+        description: The Form identity.<br>**Possible values:**  (Text)
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/goal/add.json?key={YOUR_API_ID}\n  domainid=1\n  name=goal Name\n  type=url\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/GoalWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new GoalWS($user_key);\n$params = array(\n    'domainid' => '1',\n    'name' => 'goal Name',\n    'type' => 'url',\n);\n$results = $app->addNewGoal( $params );\nprint_r($results);\n ?>\n"
+  Goal/Edit:
+    post:
+      summary: Edit
+      operationId: post-Goal-Edit
+      tags:
+      - Goals
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/goal/edit.json?key={YOUR_API_ID}\n   id=1\n   name=goal Name\n   type=url\n"
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/GoalWS.php');\t\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new GoalWS($user_key);\n $params = array(\n     'id' => '1',\n     'name' => 'goal Name',\n     'type' => 'url',\n );\n $results = $app->updateGoal( $params );\n print_r($results);\n?>\n"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        description: The ID of the goal.<br> **Possible values:**  (ID)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: name
+        description: The name of the goal.<br> **Possible values:**  (Text)
+        required: true
+      - schema:
+          type: string
+          default: url
+        in: query
+        name: type
+        description: The type of the goal.<br> **Possible values:**  url | duration | pages | ppc | event | funnel
+        required: true
+      - schema:
+          type: string
+          default: fixed
+        in: query
+        name: value_type
+        description: Goal Value Type.<br> **Possible values:**  fixed | variable
+      - schema:
+          type: string
+          default: '0'
+        in: query
+        name: value
+        description: Goal Value if the value type is fixed.<br> **Possible values:**   (Number)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: destination_url
+        description: The Destination URL.<br> **Possible values:**   (Link)
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: duration_hours
+        description: The Duration Number of Hours.<br> **Possible values:**   (Number)
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: duration_minutes
+        description: The Duration Number of Minutes.<br> **Possible values:**   (Number)
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: duration_seconds
+        description: The Duration Number of Minutes.<br> **Possible values:**   (Number)
+      - schema:
+          type: number
+          default: '0'
+        in: query
+        name: pages
+        description: The Number of Pages.<br> **Possible values:**   (Number)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: ppc_networks
+        description: The type of Referral Networks.<br> **Possible values:**  google | bing | facebook | twitter | linkedin
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: event_type
+        description: The type of Event.<br> **Possible values:** links | videos | form
+      - schema:
+          type: string
+          default: Any
+        in: query
+        name: goal_event_filter
+        description: Goal will be met if.<br> **Possible values:**  any | all | all
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: event_links
+        description: The Event Links.<br> **Possible values:**  Link
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: event_videos
+        description: links of embedded video.<br> **Allow multiple:**  `yes` <br> **Possible values:** (Links)
+      - schema:
+          type: string
+          default: id
+        in: query
+        name: form_identity_type
+        description: Form catch by.<br> **Possible values:**  id | name
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: form_identity
+        description: The Form identity.<br> **Possible values:** (Text)
+  Goal/Delete:
+    delete:
+      summary: Delete
+      operationId: delete-Goal-Delete
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Goals
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"

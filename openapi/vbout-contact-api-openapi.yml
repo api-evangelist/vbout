@@ -1,0 +1,1671 @@
+openapi: 3.1.0
+info:
+  title: VBOUT EmailMarketing Contact API
+  version: '1.0'
+  description: VBOUT Features API documentation
+servers:
+- url: https://api.vbout.com/1
+tags:
+- name: Contact
+paths:
+  EmailMarketing/GetContacts:
+    get:
+      summary: Contacts
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    contacts:
+                      count: 15
+                      items:
+                      - id: '3'
+                        email: jim@tester.com
+                        status: '1'
+                        registration_date: 11/30/2014 00:00
+                      - id: '4'
+                        email: joe@tester.com
+                        status: '1'
+                        registration_date: 11/30/2014 00:00
+                      - id: '62'
+                        email: jim@tester222.com
+                        status: '1'
+                        registration_date: 11/30/2014 00:00
+                      - '...'
+                properties:
+                  contacts:
+                    type: object
+                  count:
+                    type: integer
+                  items:
+                    type: array
+                    items:
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                        email:
+                          type: string
+                        status:
+                          type: string
+                        registration_date:
+                          type: string
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                        email:
+                          type: string
+                        status:
+                          type: string
+                        registration_date:
+                          type: string
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                        email:
+                          type: string
+                        status:
+                          type: string
+                        registration_date:
+                          type: string
+              examples:
+                example-1:
+                  value:
+                    contacts:
+                      count: 15
+                      items:
+                      - id: '3'
+                        email: jim@tester.com
+                        status: '1'
+                        registration_date: 11/30/2014 00:00
+                      - id: '4'
+                        email: joe@tester.com
+                        status: '1'
+                        registration_date: 11/30/2014 00:00
+                      - id: '62'
+                        email: jim@tester222.com
+                        status: '1'
+                        registration_date: 11/30/2014 00:00
+                      - '...'
+      operationId: get-EmailMarketing-GetContacts
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: '0'
+        in: query
+        name: ' listid'
+        description: The ID of the list to return its contacts.<br>**Possible values:**  (IDs)
+        required: true
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/emailmarketing/getcontacts.json?key={YOUR_API_ID}&listid=524
+
+          '
+      - lang: PHP
+        source: '<?php
+
+          require_once(''../PATH/TO/services/EmailMarketingWS.php'');
+
+          $user_key = array(''api_key'' => ''{YOUR_API_KEY}'');
+
+          $app = new EmailMarketingWS($user_key);
+
+          $listid = ''524'';
+
+          $results = $app->getMyContacts($listid);
+
+          print_r($results);
+
+          ?>
+
+          '
+      tags:
+      - Contact
+  EmailMarketing/GetContactsByPhoneNumber:
+    get:
+      summary: Contacts By Phone Number
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contacts:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                      items:
+                        type: array
+                        items:
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                            email:
+                              type: string
+                            status:
+                              type: string
+                            registration_date:
+                              type: string
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                            email:
+                              type: string
+                            status:
+                              type: string
+                            registration_date:
+                              type: string
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                            email:
+                              type: string
+                            status:
+                              type: string
+                            registration_date:
+                              type: string
+              examples:
+                example-1:
+                  value:
+                    contacts:
+                      count: 15
+                      items:
+                      - id: '3'
+                        email: jim@tester.com
+                        status: '1'
+                        registration_date: 11/30/2014 00:00
+                      - id: '4'
+                        email: joe@tester.com
+                        status: '1'
+                        registration_date: 11/30/2014 00:00
+                      - id: '62'
+                        email: jim@tester222.com
+                        status: '1'
+                        registration_date: 11/30/2014 00:00
+                      - '...'
+      operationId: get-EmailMarketing-GetContactsByPhoneNumber
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: '0'
+        in: query
+        name: listid
+        required: true
+        description: The ID of the list to return its contacts.<br>**Possible values:**  (IDs)
+      x-codeSamples:
+      - lang: cURL
+        source: GET https://api.vbout.com/1/EmailMarketing/GetContactsByPhoneNumber.json?key= {YOUR_API_ID}&phone=+19123456789&listid=524
+      - lang: PHP
+        source: '<?php
+
+          require_once(''../PATH/TO/services/EmailMarketingWS.php'');
+
+          $user_key = array(''api_key'' => ''{YOUR_API_KEY}'');
+
+          $app = new EmailMarketingWS($user_key);
+
+          $phone = ''+19123456789'';
+
+          $listid = ''524'';
+
+          $results = $app->getContactsByPhoneNumber($phone, $listid);
+
+          print_r($results);
+
+          ?>
+
+          '
+      tags:
+      - Contact
+  EmailMarketing/GetContactByEmail:
+    get:
+      summary: Contact By Email
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    contact:
+                      id: '3'
+                      email: jim@tester.com
+                      status: '1'
+                      registration_date: 11/30/1998 00:00
+                properties:
+                  contact:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      email:
+                        type: string
+                      status:
+                        type: string
+                      registration_date:
+                        type: string
+              examples:
+                example-1:
+                  value:
+                    contact":
+                      id: '3'
+                      email: jim@tester.com
+                      status: '1'
+                      registration_date: 11/30/1998 00:00
+      operationId: get-EmailMarketing-GetContactByEmail
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: https://api.vbout.com/1/emailmarketing/getcontactbyemail
+      - lang: PHP
+        source: '<?php
+
+          require_once(''../PATH/TO/services/EmailMarketingWS.php'');
+
+          $user_key = array(''api_key'' => ''{YOUR_API_KEY}'');
+
+          $app = new EmailMarketingWS($user_key);
+
+          $phone = ''+19123456789'';
+
+          $listid = ''524'';
+
+          $results = $app->getContactsByPhoneNumber($phone, $listid);
+
+          print_r($results);
+
+          ?>
+
+          '
+      parameters:
+      - schema:
+          type: string
+          default: none
+          format: email
+        in: query
+        name: email
+        required: true
+        description: The Email of the contact to return.**Possible values:** (Email)
+      - schema:
+          type: integer
+          default: none
+        in: query
+        name: listid
+        description: The List id of which this contact does belong to.**Possible values:**(ID)
+      tags:
+      - Contact
+  EmailMarketing/GetContact:
+    get:
+      summary: Contact
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    contact:
+                      id: '3'
+                      email: jim@tester.com
+                      status: '1'
+                      registration_date: 11/30/1998 00:00
+                properties:
+                  contact:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      email:
+                        type: string
+                      status:
+                        type: string
+                      registration_date:
+                        type: string
+              examples:
+                example-1:
+                  value:
+                    contact":
+                      id: '3'
+                      email: jim@tester.com
+                      status: '1'
+                      registration_date: 11/30/1998 00:00
+      operationId: get-EmailMarketing-GetContact
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: none
+        in: query
+        name: id
+        required: true
+        description: The ID of the contact to return.<br>**Possible values:** (ID)
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/emailmarketing/getcontact.json?key={YOUR_API_ID}&id=3
+
+          '
+      - lang: PHP
+        source: '<?php
+
+          require_once(''../PATH/TO/services/EmailMarketingWS.php'');
+
+          $user_key = array(''api_key'' => ''{YOUR_API_KEY}'');
+
+          $app = new EmailMarketingWS($user_key);
+
+          $id = ''3'';
+
+          $results = $app->getMyContact($id);
+
+          print_r($results);
+
+          ?>
+
+          '
+      tags:
+      - Contact
+  EmailMarketing/AddContact:
+    post:
+      summary: Add Contact
+      operationId: post-EmailMarketing-AddContact
+      tags:
+      - Contact
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: ' status'
+        description: The status of the contact.<br>**Possible values:** (Active | Disactive)
+        required: true
+      - schema:
+          type: integer
+        in: query
+        name: listid
+        description: The ID of the list to assign this contact to.<br>**Possible values:** (ID)
+        required: true
+      - schema:
+          type: string
+          default: None
+          format: email
+        in: query
+        name: email
+        description: The email of the contact.<br>**Possible values:** (Email)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: ipaddress
+        description: The ip of the contact.<br>**Possible values:** (IP)
+      - schema:
+          type: array
+          default: None
+        in: query
+        name: fields
+        description: The list of custom fields added to a specific list.<br>**Possible values:**  Array('fieldID'=>'fieldValue')<br><b>Accepted Date Formats:</b> Y-m-d | d-m-Y | m/d/Y
+      x-codeSamples:
+      - lang: cURL
+        source: POST https://api.vbout.com/1/emailmarketing/addcontact.json?key={YOUR_API_ID} email=info@example.com status=active listid=24 fields[125]=John fields[1204]=Doe fields[325]=1983-9-1
+      - lang: PHP
+        source: '<?php
+
+          require_once(''../PATH/TO/services/EmailMarketingWS.php'');
+
+          $user_key = array(''api_key'' => ''{YOUR_API_KEY}'');
+
+          $app = new EmailMarketingWS($user_key);
+
+          $id = ''3'';
+
+          $results = $app->getMyContact($id);
+
+          print_r($results);
+
+          ?>
+
+          '
+  EmailMarketing/EditContact:
+    post:
+      summary: Edit Contact
+      operationId: post-EmailMarketing-EditContact
+      tags:
+      - Contact
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        description: The ID of the contact.<br>**Possible values:** (ID)
+        required: true
+      - schema:
+          type: string
+          default: None
+          format: email
+        in: query
+        name: email
+        description: The email of the contact.<br>**Possible values:** (Email)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: ipaddress
+        description: The ip of the contact.<br>**Possible values:** (IP)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: status
+        description: The status of the contact.<br>**Possible values:** (Active | Disactive)
+      - schema:
+          type: array
+          default: None
+        in: query
+        name: fields
+        description: The list of custom fields added to a specific list.<br>**Possible values:**  Array('fieldID'=>'fieldValue')<br><b>Accepted Date Formats:</b> Y-m-d | d-m-Y | m/d/Y
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/emailmarketing/editcontact.json?key={YOUR_API_ID}\n  id=1\n  email=info@example.com\n  status=active\n  listid=24\n  fields[125]=John\n  fields[1204]=Doe\n  fields[325]=1983-9-1\n"
+      - lang: PHP
+        source: "\"<?php\nrequire_once('../PATH/TO/services/EmailMarketingWS.php');\n$user_key = array('api_key' => '{YOUR_API_KEY}');\n$app = new EmailMarketingWS($user_key);\n$params = array(\n    'id' => '1',\n    'email' => 'info@example.com',\n    'status' => 'active',\n    'listid' => '24',\n    'fields' => array('125' => 'John','1204' => 'Doe','325' => '1983-9-1',),\n);\n$results = $app->updateContact( $params );\nprint_r($results);\n?>\n"
+  EmailMarketing/SyncContact:
+    post:
+      summary: Sync Contact
+      operationId: post-EmailMarketing-SyncContact
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n  - - -  \n**Note:** All emails having the same email text available in the provided list will be updated if exists (case email is not required)."
+      tags:
+      - Contact
+      parameters:
+      - schema:
+          type: string
+          default: None
+          format: email
+        in: query
+        name: email
+        description: The email of the contact.<br>**Possible values:** (Email)
+        required: true
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: listid
+        description: 'The ID of the list to assign this contact to.<br>**Possible values:** (ID) '
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: ipaddress
+        description: The ip of the contact.<br>**Possible values:** (IP)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: status
+        description: The status of the contact.<br>**Possible values:** (Active | Disactive)
+      - schema:
+          type: array
+          default: None
+        in: query
+        name: fields
+        description: The list of custom fields added to a specific list.<br>**Possible values:** Array('fieldID'=>'fieldValue')<br><b>Accepted Date Formats:</b> Y-m-d | d-m-Y | m/d/Y
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/emailmarketing/synccontact.json?key={YOUR_API_ID}\n   email=info@example.com\n   status=active\n   listid=24,25,12\n   fields[125]=John\n   fields[1204]=Doe\n   fields[325]=1983-9-1\n"
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/EmailMarketingWS.php');\n $user_key = array('api_key' => '{YOUR_API_KEY}');\n $app = new EmailMarketingWS($user_key);\n $params = array(\n     'email' => 'info@example.com',\n     'status' => 'active',\n     'listid' => '24,25,12',\n     'fields' => array('125' => 'John','1204' => 'Doe','325' => '1983-9-1',),\n );\n $results = $app->syncContactMethod( $params );\n print_r($results);\n?>\n"
+  EmailMarketing/DeleteContact:
+    delete:
+      summary: Delete Contact
+      operationId: delete-EmailMarketing-DeleteContact
+      tags:
+      - Contact
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        description: The ID of the contact to delete.<br> **Possible values:** (ID)
+        required: true
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: listid
+        description: The ID of the list to delete from.<br> **Possible values:** (ID)
+        required: true
+      x-codeSamples:
+      - lang: cURL
+        source: POST https://api.vbout.com/1/emailmarketing/deletecontact.json?key={YOUR_API_ID} id=14523 listid=45678
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/EmailMarketingWS.php');\n $user_key = array('api_key' => '{YOUR_API_KEY}');\n $app = new EmailMarketingWS($user_key);\n $params = array(\n     'email' => 'info@example.com',\n     'status' => 'active',\n     'listid' => '24,25,12',\n     'fields' => array('125' => 'John','1204' => 'Doe','325' => '1983-9-1',),\n );\n $results = $app->syncContactMethod( $params );\n print_r($results);\n?>\n"
+  EmailMarketing/MoveContact:
+    post:
+      summary: Move Contact
+      operationId: post-EmailMarketing-MoveContact
+      tags:
+      - Contact
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        description: The ID of the contact.<br>**Possible Values:** (ID)
+        required: true
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: listid
+        description: 'The ID of the list to assign this contact to.<br>**Possible values:** (ID) '
+        required: true
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: sourceid
+        description: 'The ID of the list to assign this contact to.<br>**Possible values:** (ID) '
+        required: true
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/emailmarketing/movecontact.json?key={YOUR_API_ID}\n  id=1\n  listid=24\n"
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/EmailMarketingWS.php');\n $user_key = array('api_key' => '{YOUR_API_KEY}');\n $app = new EmailMarketingWS($user_key);\n $params = array(\n     'id' => '1',\n     'listid' => '24',\n );\n $results = $app->moveContact( $params );\n print_r($results);\n ?>\n"
+  EmailMarketing/GetContactTimeline:
+    get:
+      summary: Contact Timeline
+      tags:
+      - Contact
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  email:
+                    type: string
+                  timeline:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            key:
+                              type: string
+                            snippet:
+                              type: string
+                            timestamp:
+                              type: integer
+                            datetime:
+                              type: string
+                            details:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  key:
+                                    type: string
+                                  label:
+                                    type: string
+                                  value:
+                                    type:
+                                    - integer
+                                    - string
+                      count:
+                        type: integer
+                      total:
+                        type: integer
+                  utm:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            link:
+                              type: string
+                            utm:
+                              type: object
+                              properties:
+                                campaign:
+                                  type: string
+                                source:
+                                  type: string
+                                medium:
+                                  type: string
+                                term:
+                                  type: string
+                                content:
+                                  type: string
+                            timestamp:
+                              type: integer
+                            datetime:
+                              type: string
+                      count:
+                        type: integer
+                  automated:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            type:
+                              type: string
+                            timestamp:
+                              type: integer
+                            datetime:
+                              type: string
+                            details:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  key:
+                                    type: string
+                                  value:
+                                    type: string
+                      count:
+                        type: integer
+                x-examples:
+                  example-1:
+                    id: 123
+                    email: example@example.com
+                    timeline:
+                      data:
+                      - key: email-campaign-sent
+                        snippet: 'Message: A test email campaign'
+                        timestamp: 1653576048
+                        datetime: 2022-05-26 05:40 PM
+                        details:
+                        - key: send-date
+                          label: Send Date
+                          value: 2022-05-26 05:40PM
+                        - key: open-date
+                          label: Opened
+                          value: N/A
+                        - key: links-clicked
+                          label: Links Clicked
+                          value: 0
+                      - key: automation-triggered
+                        snippet: 'Automation Triggered: Send Automation'
+                        timestamp: 1648048427
+                        datetime: 23-03-2022 05:13 PM
+                        details:
+                        - key: steps
+                          label: Steps
+                          value: 6
+                        - key: actions
+                          label: Actions
+                          value: 6
+                      count: 2
+                      total: 2
+                    utm:
+                      data:
+                      - link: https://www.test.com/page?utm_source=facebook&utm_medium=mobile&utm_campaign=ad-camoaign
+                        utm:
+                          campaign: ad-camoaign
+                          source: facebook
+                          medium: mobile
+                          term: ''
+                          content: ''
+                        timestamp: 1656056618
+                        datetime: 24-06-2022 10:43 AM
+                      count: 1
+                    automated:
+                      data:
+                      - name: Followup Message
+                        type: sms
+                        timestamp: 1648047960
+                        datetime: 23-03-2022 05:06 PM
+                        details:
+                        - key: message
+                          value: '[#FIRSTNAME#], thanks for contacting us! Just sent you an email with more details.'
+                        - key: click-date
+                          value: '-'
+                      - name: Welcome Message
+                        type: email
+                        timestamp: 1648047900
+                        datetime: 23-03-2022 05:05 PM
+                        details:
+                        - key: subject
+                          value: Welcome to our company
+                        - key: open-date
+                          value: 27-03-2022 11:25 PM
+                        - key: click-date
+                          value: '-'
+                      count: 2
+              examples:
+                example-1:
+                  value:
+                    id: 123
+                    email: example@example.com
+                    timeline:
+                      data:
+                      - key: email-campaign-sent
+                        snippet: 'Message: A test email campaign'
+                        timestamp: 1653576048
+                        datetime: 2022-05-26 05:40 PM
+                        details:
+                        - key: send-date
+                          label: Send Date
+                          value: 2022-05-26 05:40PM
+                        - key: open-date
+                          label: Opened
+                          value: N/A
+                        - key: links-clicked
+                          label: Links Clicked
+                          value: 0
+                      - key: automation-triggered
+                        snippet: 'Automation Triggered: Send Automation'
+                        timestamp: 1648048427
+                        datetime: 23-03-2022 05:13 PM
+                        details:
+                        - key: steps
+                          label: Steps
+                          value: 6
+                        - key: actions
+                          label: Actions
+                          value: 6
+                      count: 2
+                      total: 2
+                    utm:
+                      data:
+                      - link: https://www.test.com/page?utm_source=facebook&utm_medium=mobile&utm_campaign=ad-camoaign
+                        utm:
+                          campaign: ad-camoaign
+                          source: facebook
+                          medium: mobile
+                          term: ''
+                          content: ''
+                        timestamp: 1656056618
+                        datetime: 24-06-2022 10:43 AM
+                      count: 1
+                    automated:
+                      data:
+                      - name: Followup Message
+                        type: sms
+                        timestamp: 1648047960
+                        datetime: 23-03-2022 05:06 PM
+                        details:
+                        - key: message
+                          value: '[#FIRSTNAME#], thanks for contacting us! Just sent you an email with more details.'
+                        - key: click-date
+                          value: '-'
+                      - name: Welcome Message
+                        type: email
+                        timestamp: 1648047900
+                        datetime: 23-03-2022 05:05 PM
+                        details:
+                        - key: subject
+                          value: Welcome to our company
+                        - key: open-date
+                          value: 27-03-2022 11:25 PM
+                        - key: click-date
+                          value: '-'
+                      count: 2
+      operationId: get-EmailMarketing-GetContactTimeline
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: ' id'
+        description: 'The ID of the contact to return his timeline activities.<br>**Possible values:** (ID) '
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: include
+        description: 'Comma separated keys to return other details with the timeline activities. <br>**Possible values:** utm | automated '
+      x-codeSamples:
+      - lang: cURL
+        source: GET https://api.vbout.com/1/emailmarketing/getcontacttimeline.json?key={YOUR_API_ID}&id=3
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/EmailMarketingWS.php');\n $user_key = array('api_key' => '{YOUR_API_KEY}');\n $app = new EmailMarketingWS($user_key);\n $params = array(\n     'id' => '1',\n     'listid' => '24',\n );\n $results = $app->moveContact( $params );\n print_r($results);\n ?>\n"
+  EmailMarketing/GetContactTimelineByEmailAddress:
+    get:
+      summary: Contact Timeline By Email Address
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  email:
+                    type: string
+                  timeline:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            key:
+                              type: string
+                            snippet:
+                              type: string
+                            timestamp:
+                              type: integer
+                            datetime:
+                              type: string
+                            details:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  key:
+                                    type: string
+                                  label:
+                                    type: string
+                                  value:
+                                    type:
+                                    - integer
+                                    - string
+                      count:
+                        type: integer
+                      total:
+                        type: integer
+                  utm:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            link:
+                              type: string
+                            utm:
+                              type: object
+                              properties:
+                                campaign:
+                                  type: string
+                                source:
+                                  type: string
+                                medium:
+                                  type: string
+                                term:
+                                  type: string
+                                content:
+                                  type: string
+                            timestamp:
+                              type: integer
+                            datetime:
+                              type: string
+                      count:
+                        type: integer
+                  automated:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            type:
+                              type: string
+                            timestamp:
+                              type: integer
+                            datetime:
+                              type: string
+                            details:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  key:
+                                    type: string
+                                  value:
+                                    type: string
+                      count:
+                        type: integer
+                x-examples:
+                  example-1:
+                    id: 123
+                    email: example@example.com
+                    timeline:
+                      data:
+                      - key: email-campaign-sent
+                        snippet: 'Message: A test email campaign'
+                        timestamp: 1653576048
+                        datetime: 2022-05-26 05:40 PM
+                        details:
+                        - key: send-date
+                          label: Send Date
+                          value: 2022-05-26 05:40PM
+                        - key: open-date
+                          label: Opened
+                          value: N/A
+                        - key: links-clicked
+                          label: Links Clicked
+                          value: 0
+                      - key: automation-triggered
+                        snippet: 'Automation Triggered: Send Automation'
+                        timestamp: 1648048427
+                        datetime: 23-03-2022 05:13 PM
+                        details:
+                        - key: steps
+                          label: Steps
+                          value: 6
+                        - key: actions
+                          label: Actions
+                          value: 6
+                      count: 2
+                      total: 2
+                    utm:
+                      data:
+                      - link: https://www.test.com/page?utm_source=facebook&utm_medium=mobile&utm_campaign=ad-camoaign
+                        utm:
+                          campaign: ad-camoaign
+                          source: facebook
+                          medium: mobile
+                          term: ''
+                          content: ''
+                        timestamp: 1656056618
+                        datetime: 24-06-2022 10:43 AM
+                      count: 1
+                    automated:
+                      data:
+                      - name: Followup Message
+                        type: sms
+                        timestamp: 1648047960
+                        datetime: 23-03-2022 05:06 PM
+                        details:
+                        - key: message
+                          value: '[#FIRSTNAME#], thanks for contacting us! Just sent you an email with more details.'
+                        - key: click-date
+                          value: '-'
+                      - name: Welcome Message
+                        type: email
+                        timestamp: 1648047900
+                        datetime: 23-03-2022 05:05 PM
+                        details:
+                        - key: subject
+                          value: Welcome to our company
+                        - key: open-date
+                          value: 27-03-2022 11:25 PM
+                        - key: click-date
+                          value: '-'
+                      count: 2
+              examples:
+                example-1:
+                  value:
+                    id: 123
+                    email: example@example.com
+                    timeline:
+                      data:
+                      - key: email-campaign-sent
+                        snippet: 'Message: A test email campaign'
+                        timestamp: 1653576048
+                        datetime: 2022-05-26 05:40 PM
+                        details:
+                        - key: send-date
+                          label: Send Date
+                          value: 2022-05-26 05:40PM
+                        - key: open-date
+                          label: Opened
+                          value: N/A
+                        - key: links-clicked
+                          label: Links Clicked
+                          value: 0
+                      - key: automation-triggered
+                        snippet: 'Automation Triggered: Send Automation'
+                        timestamp: 1648048427
+                        datetime: 23-03-2022 05:13 PM
+                        details:
+                        - key: steps
+                          label: Steps
+                          value: 6
+                        - key: actions
+                          label: Actions
+                          value: 6
+                      count: 2
+                      total: 2
+                    utm:
+                      data:
+                      - link: https://www.test.com/page?utm_source=facebook&utm_medium=mobile&utm_campaign=ad-camoaign
+                        utm:
+                          campaign: ad-camoaign
+                          source: facebook
+                          medium: mobile
+                          term: ''
+                          content: ''
+                        timestamp: 1656056618
+                        datetime: 24-06-2022 10:43 AM
+                      count: 1
+                    automated:
+                      data:
+                      - name: Followup Message
+                        type: sms
+                        timestamp: 1648047960
+                        datetime: 23-03-2022 05:06 PM
+                        details:
+                        - key: message
+                          value: '[#FIRSTNAME#], thanks for contacting us! Just sent you an email with more details.'
+                        - key: click-date
+                          value: '-'
+                      - name: Welcome Message
+                        type: email
+                        timestamp: 1648047900
+                        datetime: 23-03-2022 05:05 PM
+                        details:
+                        - key: subject
+                          value: Welcome to our company
+                        - key: open-date
+                          value: 27-03-2022 11:25 PM
+                        - key: click-date
+                          value: '-'
+                      count: 2
+      operationId: get-GetContactTimelineByEmailAddress
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: Email
+        description: The email address for the contact to return his timeline activities.<br>**Possible values:**  (ID)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: Include
+        description: Comma separated keys to return other details with the timeline activities.<br>**Possible values:**  utm | automated
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/emailmarketing/getcontacttimelinebyemailaddress.json?key={YOUR_API_ID}&id=3
+
+          '
+      tags:
+      - Contact
+  EmailMarketing/GetAudiences:
+    get:
+      summary: Audiences
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    audiences:
+                      count: 41
+                      items:
+                      - id: '148'
+                        name: 2014 NYC hotel show
+                      - id: '157'
+                        name: Startup Alley NYC
+                      - id: '180'
+                        name: My Autoresponder Audience
+                      - id: '480'
+                        name: Content Automation Center Funnel
+                      - id: '481'
+                        name: Content Automation Bottom Funnel
+                      - id: '482'
+                        name: Birthday Audience
+                      - id: '524'
+                        name: TestYogaShopFunnelForm
+                      - '...'
+                properties:
+                  count:
+                    type: integer
+                  items:
+                    type: array
+                    items:
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+              examples:
+                example-1:
+                  value:
+                    audiences:
+                      count: 41
+                      items:
+                      - id: '148'
+                        name: 2014 NYC hotel show
+                      - id: '157'
+                        name: Startup Alley NYC
+                      - id: '180'
+                        name: My Autoresponder Audience
+                      - id: '480'
+                        name: Content Automation Center Funnel
+                      - id: '481'
+                        name: Content Automation Bottom Funnel
+                      - id: '482'
+                        name: Birthday Audience
+                      - id: '524'
+                        name: TestYogaShopFunnelForm
+                      - '...'
+      operationId: get-EmailMarketing-GetAudiences
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+      x-codeSamples:
+      - lang: cURL
+        source: GET https://api.vbout.com/1/emailmarketing/getaudiences.json?key={YOUR_API_ID}
+      - lang: PHP
+        source: "<?php\n require_once('../PATH/TO/services/EmailMarketingWS.php');\t\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new EmailMarketingWS($user_key);\n $results = $app->getMyAudiences();\n print_r($results);\n ?>\n"
+      tags:
+      - Contact
+  EmailMarketing/GetLists:
+    get:
+      summary: Lists
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Check The Response Sample.
+              examples:
+                example-1:
+                  value:
+                    lists:
+                      count: 41
+                      items:
+                      - id: '148'
+                        name: 2014 NYC  hotel show
+                        form_title: 2014 NYC  hotel show
+                        email_subject: ''
+                        reply_to: ''
+                        from_email: ''
+                        from_name: ''
+                        confimation_email: ' Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME] [ADDRESS]'
+                        success_email: ' Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME] [ADDRESS]'
+                        confimation_message: Your signup is almost complete! Please check your email for a confirmation message.
+                        success_message: Your subscription is now complete!
+                        error_message: ''
+                        doubleOptin: '0'
+                        notify_email: Example@gmail.com
+                        creation_date: 04/10/2014 00:00
+                      - id: '157'
+                        name: Startup Alley NYC
+                        form_title: Untitled Form
+                        email_subject: ''
+                        reply_to: ''
+                        from_email: ''
+                        from_name: ''
+                        confimation_email: Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME] [ADDRESS]
+                        success_email: Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME] [ADDRESS]
+                        confimation_message: Your signup is almost complete! Please check your email for a confirmation message.
+                        success_message: Your subscription is now complete!
+                        error_message: You have already been subscribed to this list!
+                        doubleOptin: '0'
+                        notify_email: ''
+                        creation_date: 04/15/2014 00:00
+                      - id: '180'
+                        name: My Autoresponder List
+                        form_title: Untitled Form
+                        email_subject: ''
+                        reply_to: ''
+                        from_email: ''
+                        from_name: ''
+                        confimation_email: Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME] [ADDRESS]
+                        success_email: Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME] [ADDRESS]
+                        confimation_message: Your signup is almost complete! Please check your email for a confirmation message.
+                        success_message: Your subscription is now complete!
+                        error_message: ''
+                        doubleOptin: '0'
+                        notify_email: ''
+                        creation_date: 04/22/2014 00:00
+                      - id: '480'
+                        name: Content Automation Center Funnel
+                        form_title: testing automation
+                        email_subject: Subscription to testing automation
+                        reply_to: no-reply@vbout.com
+                        from_email: Example@gmail.com
+                        from_name: Vbout
+                        confimation_email: ' Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]'
+                        success_email: Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]
+                        confimation_message: Your signup is almost complete! Please check your email for a confirmation message.
+                        success_message: Your subscription is now complete!
+                        error_message: You have already been subscribed to this list!
+                        doubleOptin: '0'
+                        notify_email: Example@gmail.com
+                        creation_date: 09/29/2014 00:00
+                      - id: '481'
+                        name: Content Automation Bottom Funnel
+                        form_title: testing automation
+                        email_subject: ''
+                        reply_to: ''
+                        from_email: ''
+                        from_name: ''
+                        confimation_email: Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]
+                        success_email: Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]
+                        confimation_message: Your signup is almost complete! Please check your email for a confirmation message.
+                        success_message: Your subscription is now complete!
+                        error_message: You have already been subscribed to this list!
+                        doubleOptin: '0'
+                        notify_email: ''
+                        creation_date: 09/30/2014 00:00
+                      - id: '482'
+                        name: Birthday List
+                        form_title: testing automation
+                        email_subject: ''
+                        reply_to: ''
+                        from_email: ''
+                        from_name: ''
+                        confimation_email: Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]
+                        success_email: Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]
+                        confimation_message: Your signup is almost complete! Please check your email for a confirmation message.
+                        success_message: Your subscription is now complete!
+                        error_message: You have already been subscribed to this list!
+                        doubleOptin: '0'
+                        notify_email: ''
+                        creation_date: 10/01/2014 00:00
+                      - id: '524'
+                        name: TestYogaShopFunnelForm
+                        form_title: Untitled Form
+                        email_subject: ''
+                        reply_to: ''
+                        from_email: ''
+                        from_name: ''
+                        confimation_email: Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]
+                        success_email: Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]
+                        confimation_message: Your signup is almost complete! Please check your email for a confirmation message.
+                        success_message: Your subscription is now complete!
+                        error_message: You have already been subscribed to this list!
+                        doubleOptin: '0'
+                        notify_email: ''
+                        creation_date: 11/06/2014 00:00
+                      - '...'
+      operationId: get-EmailMarketing-GetLists
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+      x-codeSamples:
+      - lang: cURL
+        source: 'GET https://api.vbout.com/1/emailmarketing/getlists.json?key={YOUR_API_ID}
+
+          '
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/EmailMarketingWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\n$app = new EmailMarketingWS($user_key);\n$results = $app->getMyLists();\nprint_r($results);\n?>\n"
+      tags:
+      - Contact
+  EmailMarketing/GetList:
+    get:
+      summary: List
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Check The Response Sample.
+              examples:
+                example-1:
+                  value:
+                    list:
+                      id: '524'
+                      name: Landing page subscription form
+                      form_title: Newsletter Signup
+                      email_subject: ''
+                      reply_to: ''
+                      from_email: example@vbout.com
+                      from_name: A person from Vbout
+                      confimation_email: Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]
+                      success_email: Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]
+                      confimation_message: Your signup is almost complete! Please check your email for a confirmation message.
+                      success_message: Your subscription is now complete!
+                      error_message: You have already been subscribed to this list!
+                      doubleOptin: '0'
+                      notify_email: ''
+                      creation_date: 11/06/2014 00:00
+                      fields:
+                        '125': First Name
+                        '325': Date Of Birth
+                        '1204': Last Name
+      operationId: get-EmailMarketing-GetList
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        description: The ID of the list to return.<br>**Possible values:**   (ID)
+        required: true
+      x-codeSamples:
+      - lang: cURL
+        source: GET https://api.vbout.com/1/emailmarketing/getlist.json?key={YOUR_API_ID}&id=524
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/EmailMarketingWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\n$app = new EmailMarketingWS($user_key);\n$results = $app->getMyLists();\nprint_r($results);\n?>\n"
+      tags:
+      - Contact
+  EmailMarketing/AddList:
+    post:
+      summary: Add List
+      operationId: post-EmailMarketing-AddList
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/emailmarketing/addlist.json?key={YOUR_API_ID}\n   name=List 1\n   email_subject=Hello World\n   reply_to=no-reply@example.com\n   fromemail=info@example.com\n   from_name= Name \n   notify=Notify me of new subscribers.\n   notify_email=info@example.com\n   success_email=info@example.com\n   success_message=Subscription Success Message\n   error_message=Subscription Error Message\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/EmailMarketingWS.php');\n$user_key = array('api_key' => '{YOUR_API_KEY}');\n$app = new EmailMarketingWS($user_key);\n$params = array(\n    'name' => 'List 1',\n    'email_subject' => 'Hello World',\n    'reply_to' => 'no-reply@example.com',\n    'fromemail' => 'info@example.com',\n    'from_name' => ' Name ',\n    'notify' => 'Notify me of new subscribers.',\n    'notify_email' => 'info@example.com',\n    'success_email' => 'info@example.com',\n    'success_message' => 'Subscription Success Message',\n    'error_message' => 'Subscription Error Message',\n);\n$results = $app->addNewList( $params );\nprint_r($results);\n?>\n"
+      parameters:
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: name
+        description: The name of the list.<br>**Possible values:**  (Text)
+        required: true
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: email_subject
+        description: The default subscription subject.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+          format: email
+        in: query
+        name: reply_to
+        description: The Reply to email of the list.<br>**Possible values:**  (Email)
+      - schema:
+          type: string
+          format: email
+          default: None
+        in: query
+        name: fromemail
+        description: The From email of the list.<br>**Possible values:**  (Email)
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: from_name
+        description: The From name of the list.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: doubleOptin
+        description: Email confirmation required (Double opt-in)?<br>**Possible values:**  0 | 1
+      - schema:
+          type: string
+        in: query
+        name: notify
+        description: Notify me of new subscribers.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+          format: email
+        in: query
+        name: notify_email
+        description: Notification Email.<br>**Possible values:**  (Email)
+      - schema:
+          type: string
+          format: email
+          default: None
+        in: query
+        name: success_email
+        description: Subscription Success Email.<br>**Possible values:**  (Email)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: success_message
+        description: Subscription Success Message.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: error_message
+        description: Subscription Error Message.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: confirmation_email
+        description: Confirmation Email Message.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: confirmation_message
+        description: Confirmation Message.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: communications
+        description: Turn off Communications? (0-No | 1-Yes)<br>**Possible values:** 0 | 1
+      tags:
+      - Contact
+  EmailMarketing/Editlist:
+    post:
+      summary: Edit List
+      operationId: post-EmailMarketing-Editlist
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/emailmarketing/editlist.json?key={YOUR_API_ID}\n   id=1\n   name=List 1\n   email_subject=Hello World\n   reply_to=no-reply@example.com\n   fromemail=info@example.com\n   from_name= Name \n   notify=Notify me of new subscribers.\n   notify_email=info@example.com\n   success_email=info@example.com\n   success_message=Subscription Success Message\n   error_message=Subscription Error Message\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/EmailMarketingWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new EmailMarketingWS($user_key);\n$params = array(\n    'id' => '1',\n    'name' => 'List 1',\n    'email_subject' => 'Hello World',\n    'reply_to' => 'no-reply@example.com',\n    'fromemail' => 'info@example.com',\n    'from_name' => ' Name ',\n    'notify' => 'Notify me of new subscribers.',\n    'notify_email' => 'info@example.com',\n    'success_email' => 'info@example.com',\n    'success_message' => 'Subscription Success Message',\n    'error_message' => 'Subscription Error Message',\n);\n$results = $app->updateList( $params );\nprint_r($results);\n?>\n"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        required: true
+        description: The id of the list.<br>**Possible values:**  (Number)
+      - schema:
+          type: string
+          default: None
+        in: query
+        required: true
+        name: name
+        description: The name of the list.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: email_subject
+        description: The default subject line of subscription.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          format: email
+          default: None
+        in: query
+        name: reply_to
+        description: The Reply to email of the list.<br>**Possible values:**  (Email)
+      - schema:
+          type: string
+          format: email
+          default: None
+        in: query
+        name: fromemail
+        description: The From email of the list.<br>**Possible values:**  (Email)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: from_name
+        description: The From name of the list.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: doubleOptin
+        description: Email confirmation required (Double opt-in)?.<br>**Possible values:**  0 | 1
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: notify
+        description: Notify me of new subscribers.<br>**Possible values:** (Text)
+      - schema:
+          type: string
+          default: None
+          format: email
+        in: query
+        name: notify_email
+        description: Notification Email.<br>**Possible values:**(Email)
+      - schema:
+          type: string
+          default: None
+          format: email
+        in: query
+        name: success_email
+        description: Subscription Success Email.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: success_message
+        description: Subscription Success Message.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: error_message
+        description: Subscription Error Message.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: confirmation_email
+        description: Confirmation Email Message.<br>**Possible values:**  (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: Confirmation Email Message.
+        description: Confirmation Message.<br>**Possible values:** (Text)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: communications
+        description: Turn off Communications? (0-No | 1-Yes)<br>**Possible values:** 0 | 1
+      tags:
+      - Contact
+  EmailMarketing/DeleteList:
+    delete:
+      summary: Delete List
+      operationId: delete-EmailMarketing-DeleteList
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/emailmarketing/deletelist.json?key={YOUR_API_ID}\n id=320\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/EmailMarketingWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new EmailMarketingWS($user_key);\n$id = '320';\n$results = $app->removeList($id);\nprint_r($results);\n?>\n"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        required: true
+        description: The ID of the list to delete.<br>**Possible values:** (ID)
+      tags:
+      - Contact
+  EmailMarketing/AddActivity:
+    post:
+      summary: Add Activity
+      operationId: post-EmailMarketing-AddActivity
+      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      x-codeSamples:
+      - lang: cURL
+        source: "POST https://api.vbout.com/1/emailmarketing/addactivity.json?key={YOUR_API_ID}\n   id=xxxxx\n   description=this is my first activity\n   datetime=2022-10-04 08:03\n"
+      - lang: PHP
+        source: "<?php\nrequire_once('../PATH/TO/services/EmailMarketingWS.php');\t\n$user_key = array('api_key' => '{YOUR_API_KEY}');\t\n$app = new EmailMarketingWS($user_key);\n$id = '320';\n$results = $app->removeList($id);\nprint_r($results);\n?>\n"
+      parameters:
+      - schema:
+          type: integer
+          default: None
+        in: query
+        name: id
+        required: true
+        description: The id of the contact.<br> **Possible values:** (ID)
+      - schema:
+          type: string
+          default: None
+        in: query
+        name: description
+        required: true
+        description: The description of the activity.<br> **Possible values:** (Text)
+      - schema:
+          type: string
+          default: None
+          format: date-time
+          pattern: Y-m-d h:m
+        in: query
+        required: true
+        name: datetime
+        description: The date and time to activity.<br> **Possible values:** (DateTime)
+      tags:
+      - Contact
