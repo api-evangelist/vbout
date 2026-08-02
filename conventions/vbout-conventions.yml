@@ -1,0 +1,77 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.vbout.com/quickstart
+docs: https://developers.vbout.com/docs
+description: >-
+  Cross-cutting request/response semantics of the VBOUT API, captured from the
+  developer quickstart and the provider-published OpenAPI 3.1.0
+  (info.description) and derived from its operation parameters.
+base_url: https://api.vbout.com/1
+api_style: >-
+  RPC-flavored REST over HTTPS — paths are Resource/Action pairs
+  (EmailMarketing/AddContact, SocialMedia/GetPost); reads are GET, writes are
+  POST, removals are DELETE. Responses available in JSON or XML (.json/.xml
+  extension on the endpoint, e.g. /1/app/me.json).
+
+authentication:
+  scheme: API key
+  parameter: key
+  detail: authentication/vbout-authentication.yml
+  notes: >-
+    User Key or Application Key from Account Settings, passed as the `key`
+    parameter (JSON body in the quickstart example, query parameter in the
+    legacy console). OAuth exists for third-party apps via VBOUT Connect
+    (app.vbout.com/Authorize) but has no public scope catalog.
+
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header or replay-safety contract is documented anywhere
+    on the developer portal or in the OpenAPI (checked 2026-07-21). Writes are
+    plain POSTs; only EmailMarketing/SyncContact ("add or update") offers an
+    upsert-style alternative to AddContact.
+
+pagination:
+  style: page
+  request_params:
+    page: Set which page you want to get (number).
+    limit: Set your record limit number per page (number).
+  applies_to:
+    - EmailMarketing/Campaigns
+    - SocialMedia/Calendar
+  notes: >-
+    Page/limit parameters are declared only on the campaign and social-calendar
+    list operations; other list endpoints (GetContacts, GetLists) take only
+    filter ids. Derived from openapi/vbout-openapi-original.json.
+
+field_expansion:
+  supported: false
+  notes: No expand/sparse-fieldset mechanism documented.
+
+metadata:
+  supported: false
+  notes: >-
+    No free-form metadata object on API resources; contact records instead
+    carry list-defined custom fields (the `fields` parameter on
+    AddContact/EditContact/SyncContact).
+
+request_tracing:
+  supported: false
+  notes: No request-id header documented.
+
+versioning:
+  scheme: uri-path
+  current: '1.0'
+  detail: lifecycle/vbout-lifecycle.yml
+
+error_envelope:
+  shape: |-
+    {"response": {"header": {"status": "ok|error", "dataType": "...", "limit": ...},
+                  "data": {"errorCode": ..., "errorMessage": "..."}}}
+  detail: errors/vbout-problem-types.yml
+
+rate_limiting:
+  limit: 15 requests / 1 second
+  exceeded_status: 429
+  signaling: rate-limit JSON object on every response + x-rate-limit-* headers
+  detail: rate-limits/vbout-rate-limits.yml

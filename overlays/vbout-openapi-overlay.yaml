@@ -1,0 +1,59 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for VBOUT
+  version: 1.0.0
+extends: openapi/vbout-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist:
+      harvested: '2026-07-21'
+      source: https://developers.vbout.com/scripts/openapi.json
+      notes: Provider-published OpenAPI 3.1.0 rendered by ReDoc at developers.vbout.com/docs.
+- target: $.info
+  update:
+    contact:
+      name: VBOUT API Team
+      email: apiteam@vbout.com
+      url: https://developers.vbout.com
+- target: $
+  update:
+    components:
+      securitySchemes:
+        api_key:
+          type: apiKey
+          in: query
+          name: key
+          description: VBOUT user or application API key from Account Settings (spec omits securitySchemes;
+            documented in the quickstart).
+- target: $
+  update:
+    security:
+    - api_key: []
+- target: $
+  update:
+    tags:
+    - name: Application
+      description: Account profile (App/Me).
+    - name: Social Media
+      description: Channels, calendar, stats, and post management.
+    - name: Email Marketing
+      description: Campaigns, stats, tags, coupons, templates.
+    - name: Contact
+      description: Contacts, lists, audiences, activities, timelines.
+    - name: Users & Workflow
+      description: Sub-users, managers, and groups.
+    - name: Goals
+      description: Conversion goals per domain.
+    - name: Popups
+      description: On-site engagement actions (Webhook/* operation family).
+    - name: Account
+      description: Account creation and sub-account auto-login.
+    - name: Settings
+      description: Custom shortcodes.
+    - name: Automation
+      description: Automation guides.
+    - name: Pipeline
+      description: Pipeline board guides.
+    - name: AIchatbot
+      description: AI chatbot templates.

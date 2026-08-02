@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.vbout.com/
+description: >-
+  Lifecycle posture of the VBOUT API, captured from the developer portal and
+  the published OpenAPI 3.1.0 document. VBOUT versions the API in the URI path
+  (https://api.vbout.com/1) and has kept a single major version (v1.0) since
+  the developer portal launched. No public deprecation policy, Sunset/
+  Deprecation header support, or SLA page was found.
+versioning:
+  scheme: uri-path
+  current: '1.0'
+  base_url: https://api.vbout.com/1
+  docs: https://developers.vbout.com/docs
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy or RFC 8594 Sunset header support found (checked 2026-07-21).
+sla:
+  url: null
+  notes: No public SLA found.
+status_page: https://developers.vbout.com/apistatus
+status_page_notes: >-
+  Linked as "API Status" from the developer-portal navigation; the page shell
+  returns 200 but its status widgets render client-side.
+deprecated_operations: []

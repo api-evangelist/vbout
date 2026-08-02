@@ -1,0 +1,227 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/vbout-openapi-original.json
+description: Candidate MCP server tool surface for the VBOUT API, derived one tool per operation from
+  the provider-published OpenAPI 3.1.0 document (71 operations across Application, Social Media, Email
+  Marketing, Contacts, Users & Workflow, Goals, Popups, Account, Settings, Automation, Pipeline, and AI
+  Chatbot). No official hosted VBOUT MCP server was found; VBOUT does publish a ChatGPT plugin manifest
+  at https://www.vbout.com/.well-known/ai-plugin.json (see well-known/vbout-ai-plugin.json), which is
+  the closest agent-facing surface the provider ships today.
+server:
+  name: vbout
+  transport: stdio
+tools:
+- name: get_app_me
+  description: 'Application: Application'
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- name: get_socialmedia_channels
+  description: 'Social Media: Channels'
+  source_operation: openapi/vbout-openapi-original.json#get-SocialMedia-Channels
+- name: get_socialmedia_calendar
+  description: 'Social Media: Calendar'
+  source_operation: openapi/vbout-openapi-original.json#get-SocialMedia-Calendar
+- name: get_socialmedia_stats
+  description: 'Social Media: Stats'
+  source_operation: openapi/vbout-openapi-original.json#get-SocialMedia-Stats
+- name: get_socialmedia_getpost
+  description: 'Social Media: Post'
+  source_operation: openapi/vbout-openapi-original.json#get-SocialMedia-post
+- name: post_socialmedia_addpost
+  description: 'Social Media: Add Post'
+  source_operation: openapi/vbout-openapi-original.json#post-SocialMedia-AddPost
+- name: post_socialmedia_editpost
+  description: 'Social Media: Edit Post'
+  source_operation: openapi/vbout-openapi-original.json#post-SocialMedia-EditPost
+- name: delete_socialmedia_deletepost
+  description: 'Social Media: Delete Post'
+  source_operation: openapi/vbout-openapi-original.json#delete-SocialMedia-DeletePost
+- name: get_emailmarketing_campaigns
+  description: 'Email Marketing: Campaigns'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-Campaigns
+- name: get_emailmarketing_getcampaign
+  description: 'Email Marketing: Campaign'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetCampaign
+- name: get_emailmarketing_stats
+  description: 'Email Marketing: Stats'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-Stats
+- name: post_emailmarketing_addcampaign
+  description: 'Email Marketing: Add Campaign'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-AddCampaign
+- name: post_emailmarketing_editcampaign
+  description: 'Email Marketing: Edit Campaign'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-EditCampaign
+- name: delete_emailmarketing_deletecampaign
+  description: 'Email Marketing: Delete Campaign'
+  source_operation: openapi/vbout-openapi-original.json#delete-EmailMarketing-DeleteCampaign
+- name: get_emailmarketing_getcontacts
+  description: 'Contact: Contacts'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetContacts
+- name: get_emailmarketing_getcontactsbyphonenumber
+  description: 'Contact: Contacts By Phone Number'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetContactsByPhoneNumber
+- name: get_emailmarketing_getcontactbyemail
+  description: 'Contact: Contact By Email'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetContactByEmail
+- name: get_emailmarketing_getcontact
+  description: 'Contact: Contact'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetContact
+- name: post_emailmarketing_addcontact
+  description: 'Contact: Add Contact'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-AddContact
+- name: post_emailmarketing_editcontact
+  description: 'Contact: Edit Contact'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-EditContact
+- name: post_emailmarketing_synccontact
+  description: 'Contact: Sync Contact'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-SyncContact
+- name: delete_emailmarketing_deletecontact
+  description: 'Contact: Delete Contact'
+  source_operation: openapi/vbout-openapi-original.json#delete-EmailMarketing-DeleteContact
+- name: post_emailmarketing_movecontact
+  description: 'Contact: Move Contact'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-MoveContact
+- name: get_emailmarketing_getcontacttimeline
+  description: 'Contact: Contact Timeline'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetContactTimeline
+- name: get_emailmarketing_getcontacttimelinebyemailaddress
+  description: 'Contact: Contact Timeline By Email Address'
+  source_operation: openapi/vbout-openapi-original.json#get-GetContactTimelineByEmailAddress
+- name: get_emailmarketing_getaudiences
+  description: 'Contact: Audiences'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetAudiences
+- name: get_emailmarketing_getlists
+  description: 'Contact: Lists'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetLists
+- name: get_emailmarketing_getlist
+  description: 'Contact: List'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetList
+- name: post_emailmarketing_addlist
+  description: 'Contact: Add List'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-AddList
+- name: post_emailmarketing_editlist
+  description: 'Contact: Edit List'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-Editlist
+- name: delete_emailmarketing_deletelist
+  description: 'Contact: Delete List'
+  source_operation: openapi/vbout-openapi-original.json#delete-EmailMarketing-DeleteList
+- name: post_emailmarketing_addactivity
+  description: 'Contact: Add Activity'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-AddActivity
+- name: post_emailmarketing_addtag
+  description: 'Email Marketing: Add Tag'
+  source_operation: openapi/vbout-openapi-original.json#post-EmailMarketing-AddTag
+- name: delete_emailmarketing_removetag
+  description: 'Email Marketing: Remove Tag'
+  source_operation: openapi/vbout-openapi-original.json#delete-EmailMarketing-RemoveTag
+- name: get_emailmarketing_getcoupon
+  description: 'Email Marketing: Coupon'
+  source_operation: openapi/vbout-openapi-original.json#get-EmailMarketing-GetCoupon
+- name: get_user_lists
+  description: 'Users & Workflow: Lists'
+  source_operation: openapi/vbout-openapi-original.json#get-User-Lists
+- name: get_user_managers
+  description: 'Users & Workflow: Managers'
+  source_operation: openapi/vbout-openapi-original.json#get-User-Managers
+- name: post_user_status
+  description: 'Users & Workflow: Status'
+  source_operation: openapi/vbout-openapi-original.json#post-User-Status
+- name: post_user_add
+  description: 'Users & Workflow: Add'
+  source_operation: openapi/vbout-openapi-original.json#post-User-Add
+- name: post_user_edit
+  description: 'Users & Workflow: Edit'
+  source_operation: openapi/vbout-openapi-original.json#post-User-Edit
+- name: delete_user_delete
+  description: 'Users & Workflow: Delete'
+  source_operation: openapi/vbout-openapi-original.json#delete-User-Delete
+- name: get_user_groups
+  description: 'Users & Workflow: Groups'
+  source_operation: openapi/vbout-openapi-original.json#get-User-Groups
+- name: delete_user_groupdelete
+  description: 'Users & Workflow: Group Delete'
+  source_operation: openapi/vbout-openapi-original.json#delete-User-GroupDelete
+- name: get_user_groupstatus
+  description: 'Users & Workflow: Group Status'
+  source_operation: openapi/vbout-openapi-original.json#get-User-GroupStatus
+- name: get_goal_lists
+  description: 'Goals: Lists'
+  source_operation: openapi/vbout-openapi-original.json#get-Goal-Lists
+- name: get_goal_listbydomain
+  description: 'Goals: List By Domain'
+  source_operation: openapi/vbout-openapi-original.json#get-Goal-ListByDomain
+- name: get_goal_show
+  description: 'Goals: Show'
+  source_operation: openapi/vbout-openapi-original.json#get-Goal-Show
+- name: post_goal_add
+  description: 'Goals: Add'
+  source_operation: openapi/vbout-openapi-original.json#post-Goal-Add
+- name: post_goal_edit
+  description: 'Goals: Edit'
+  source_operation: openapi/vbout-openapi-original.json#post-Goal-Edit
+- name: delete_goal_delete
+  description: 'Goals: Delete'
+  source_operation: openapi/vbout-openapi-original.json#delete-Goal-Delete
+- name: get_webhook_lists
+  description: 'Popups: lists'
+  source_operation: openapi/vbout-openapi-original.json#get-WebHook-lists
+- name: get_webhook_show
+  description: 'Popups: Show'
+  source_operation: openapi/vbout-openapi-original.json#get-Webhook-show
+- name: post_webhook_add
+  description: 'Popups: Add'
+  source_operation: openapi/vbout-openapi-original.json#post-Webhook-Add
+- name: post_webhook_edit
+  description: 'Popups: Edit'
+  source_operation: openapi/vbout-openapi-original.json#post-Webhook-Edit
+- name: delete_webhook_delete
+  description: 'Popups: Delete'
+  source_operation: openapi/vbout-openapi-original.json#delete-Webhook-Delete
+- name: post_register_createaccount
+  description: 'Account: Create Account'
+  source_operation: openapi/vbout-openapi-original.json#post-Register-CreateAccount
+- name: post_account_getsubaccountautologin
+  description: 'Account: Subscriber Account Auto Login'
+  source_operation: openapi/vbout-openapi-original.json#post-GetSubAccountAutoLogin
+- name: get_settings_customshortcodes
+  description: 'Settings: Custom Short codes'
+  source_operation: openapi/vbout-openapi-original.json#GET-Settings-CustomShortcodes
+- name: post_settings_addcustomshortcode
+  description: 'Settings: Add Custom Short Code'
+  source_operation: openapi/vbout-openapi-original.json#post-settings-addcustomshortcode
+- name: post_settings_editcustomshortcode
+  description: 'Settings: Edit Custom Short Code'
+  source_operation: openapi/vbout-openapi-original.json#post-settings-editcustomshortcode
+- name: delete_settings_deletecustomshortcode
+  description: 'Settings: Delete Custom Short Code'
+  source_operation: openapi/vbout-openapi-original.json#delete-settings-deletecustomshortcode
+- name: get_emailmarketing_getemailtemplates
+  description: 'Email Marketing: GetEmailTemplates'
+  source_operation: openapi/vbout-openapi-original.json#GET-EmailMarketing-GetEmailTemplates
+- name: get_automation_getguides
+  description: 'Automation: GetGuides'
+  source_operation: openapi/vbout-openapi-original.json#post-automation-getguides
+- name: post_automation_createautomationfromguide
+  description: 'Automation: CreateAutomationFromGuide'
+  source_operation: openapi/vbout-openapi-original.json#post-automation-CreateAutomationFromGuide
+- name: get_pipeline_getboardguidecategories
+  description: 'Pipeline: GetBoardGuideCategories'
+  source_operation: openapi/vbout-openapi-original.json#post-pipeline-GetBoardGuideCategories
+- name: get_pipeline_getboardguides
+  description: 'Pipeline: GetBoardGuides'
+  source_operation: openapi/vbout-openapi-original.json#post-pipeline-GetBoardGuides
+- name: post_pipeline_createboardfromguide
+  description: 'Pipeline: CreateBoardFromGuide'
+  source_operation: openapi/vbout-openapi-original.json#post-pipeline-CreateBoardFromGuide
+- name: get_aichatbot_aichatbottemplates
+  description: 'AIchatbot: aichatbottemplates'
+  source_operation: openapi/vbout-openapi-original.json#post-aichatbot-aichatbottemplates
+- name: get_aichatbot_categories
+  description: 'AIchatbot: categories'
+  source_operation: openapi/vbout-openapi-original.json#post-aichatbot-aichatbotcategories
+- name: get_aichatbot_tags
+  description: 'AIchatbot: tags'
+  source_operation: openapi/vbout-openapi-original.json#post-aichatbot-aichatbottags
+- name: post_aichatbot_copy
+  description: 'AIchatbot: copy'
+  source_operation: openapi/vbout-openapi-original.json#post-aichatbot-aichatbotcopy

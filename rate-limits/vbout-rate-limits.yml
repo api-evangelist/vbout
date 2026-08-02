@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.vbout.com/scripts/openapi.json
+docs: https://developers.vbout.com/docs
+description: >-
+  VBOUT API rate limits, captured verbatim from the Rate Limits section of the
+  provider's published OpenAPI 3.1.0 info.description (the same text ReDoc
+  renders at developers.vbout.com/docs).
+limit_count: 1
+rate_limits:
+  - name: Global request rate limit
+    limit: 15
+    window: 1 second
+    scope: account (API key)
+    exceeded_status: 429
+    exceeded_behavior: >-
+      HTTP 429 Too Many Requests is returned for all subsequent API calls once
+      the per-second limit is exceeded.
+    response_object: >-
+      Every API response (including the 429) carries a `rate-limit` JSON object
+      with fields: limit (max requests per second), requests (requests
+      performed this second), remaining (limit - requests), reached (whether
+      this request was blocked), reset (timestamp when the window resets),
+      after (seconds to wait before the next request when the limit is
+      reached).
+    headers:
+      - x-rate-limit-limit
+      - x-rate-limit-requests
+      - x-rate-limit-remaining
+      - x-rate-limit-reached
+      - x-rate-limit-reset
+      - x-rate-limit-after

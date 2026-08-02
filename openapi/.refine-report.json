@@ -1,0 +1,47 @@
+{
+  "provider": "vbout",
+  "sources": [
+    "vbout-emailmarketing-api-openapi.yml",
+    "vbout-help-api-openapi.yml",
+    "vbout-openapi-original.json",
+    "vbout-settings-api-openapi.yml",
+    "vbout-socialmedia-api-openapi.yml"
+  ],
+  "outputs": [
+    "vbout-emailmarketing-api-openapi.yml",
+    "vbout-help-api-openapi.yml",
+    "vbout-aichatbot-api-openapi.yml",
+    "vbout-account-api-openapi.yml",
+    "vbout-application-api-openapi.yml",
+    "vbout-automation-api-openapi.yml",
+    "vbout-contact-api-openapi.yml",
+    "vbout-email-marketing-api-openapi.yml",
+    "vbout-goals-api-openapi.yml",
+    "vbout-pipeline-api-openapi.yml",
+    "vbout-popups-api-openapi.yml",
+    "vbout-settings-api-openapi.yml",
+    "vbout-social-media-api-openapi.yml",
+    "vbout-users-workflow-api-openapi.yml",
+    "vbout-socialmedia-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/vbout-openapi-original.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "vbout-openapi-original.json: declared missing tag: AIchatbot",
+    "vbout-openapi-original.json: declared missing tag: Account",
+    "vbout-openapi-original.json: declared missing tag: Application",
+    "vbout-openapi-original.json: declared missing tag: Automation",
+    "vbout-openapi-original.json: declared missing tag: Contact",
+    "vbout-openapi-original.json: declared missing tag: Email Marketing",
+    "vbout-openapi-original.json: declared missing tag: Goals",
+    "vbout-openapi-original.json: declared missing tag: Pipeline",
+    "vbout-openapi-original.json: declared missing tag: Popups",
+    "vbout-openapi-original.json: declared missing tag: Settings",
+    "vbout-openapi-original.json: declared missing tag: Social Media",
+    "vbout-openapi-original.json: declared missing tag: Users & Workflow"
+  ],
+  "skipped": []
+}

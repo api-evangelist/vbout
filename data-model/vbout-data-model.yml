@@ -1,0 +1,151 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/vbout-openapi-original.json
+description: Entity-relationship graph of the VBOUT platform, derived from the operation families and
+  id-reference parameters of the provider OpenAPI (the spec publishes no components.schemas, so relationships
+  are read from parameter names such as listid, campaignid, channel, domainid, and list_id).
+entities:
+- name: Account
+  description: The VBOUT business account (App/Me); owns every other object.
+- name: Contact
+  description: A person/lead in email marketing lists.
+- name: List
+  description: A contact list with custom fields.
+- name: Audience
+  description: A grouping of lists/contacts (EmailMarketing/GetAudiences).
+- name: Campaign
+  description: An email marketing campaign.
+- name: EmailTemplate
+  description: Reusable email template (GetEmailTemplates).
+- name: Tag
+  description: Label applied to contacts (AddTag/RemoveTag by email).
+- name: Activity
+  description: Custom activity appended to a contact timeline.
+- name: SocialPost
+  description: A scheduled/published social media post.
+- name: Channel
+  description: A connected social media channel (Facebook, X, LinkedIn, ...).
+- name: Goal
+  description: A conversion goal tracked on a domain.
+- name: Domain
+  description: A tracked website domain.
+- name: Popup
+  description: On-site engagement action (the Webhook/* operation family manages popups/sticky bars).
+- name: User
+  description: A sub-user of the account (Users & Workflow).
+- name: Group
+  description: A group of users.
+- name: Coupon
+  description: Coupon code surfaced to email campaigns (GetCoupon).
+- name: CustomShortcode
+  description: Custom merge shortcode (Settings family).
+- name: Automation
+  description: Marketing automation built from a guide (Automation family).
+- name: PipelineBoard
+  description: CRM pipeline board built from a guide (Pipeline family).
+- name: AIChatbotTemplate
+  description: AI chatbot template (AIchatbot family).
+relationships:
+- from: List
+  to: Contact
+  type: has_many
+  via: listid parameter on EmailMarketing/GetContacts and AddContact
+- from: Contact
+  to: List
+  type: belongs_to
+  via: listid
+- from: Audience
+  to: List
+  type: has_many
+  via: EmailMarketing/GetAudiences groups lists
+- from: Contact
+  to: Activity
+  type: has_many
+  via: contact timeline (GetContactTimeline, AddActivity)
+- from: Contact
+  to: Tag
+  type: has_many
+  via: email parameter on AddTag/RemoveTag
+- from: Campaign
+  to: List
+  type: belongs_to
+  via: lists parameter on AddCampaign/EditCampaign
+- from: Channel
+  to: SocialPost
+  type: has_many
+  via: channel parameter on SocialMedia/AddPost
+- from: Goal
+  to: Domain
+  type: belongs_to
+  via: Goal/ListByDomain domain parameter
+- from: Popup
+  to: Domain
+  type: belongs_to
+  via: domainid parameter on Webhook/Add
+- from: Popup
+  to: List
+  type: belongs_to
+  via: list_id parameter on Webhook/Add (form action)
+- from: Group
+  to: User
+  type: has_many
+  via: User/Groups + group status operations
+- from: Account
+  to: User
+  type: has_many
+  via: User/Add under the account
+parameter_evidence:
+  EmailMarketing/GetContacts:
+    ' listid': The ID of the list to return its contacts.<br>**Possible values:**  (IDs)
+  EmailMarketing/AddCampaign:
+    name: The name of the campaign.<br>**Possible values:**  (Text)
+    subject: The subject line for the campaign.<br>**Possible values:**  (Text)
+    fromemail: The from email of the campaign.<br>**Possible values:**  (Email)
+    from_name: The from name of the campaign.<br>**Possible values:**  (Text)
+    reply_to: The reply to email of the campaign.<br>**Possible values:** (Email)
+    body: Message body.<br>**Possible values:** (Text)
+    type: The type of the campaign.<br>**Possible values:** standard | automated
+    isscheduled: The flag to schedule the campaign for the future.<br>**Possible values:**  true | false
+    isdraft: The flag to set the campaign to draft.<br>**Possible values:**  true | false
+    scheduled_datetime: The date and time to schedule the campaign.<br>**Possible values:**  (Date)
+    audiences: IDs of audience campaign recipients.(comma separated)<br>**Possible values:**  (IDs)
+    lists: IDs of list campaign recipients.(comma separated)<br>**Possible values:**  (IDs)
+  SocialMedia/AddPost:
+    message: The post message to be scheduled/sent<br> **Possible values:**"Text"
+    channel: 'The channels which the post will be sent to.<br>**Possible values:** facebook | twitter
+      | '
+    channelid: The channels which the post will be sent to.<br> **Possible values:** 1 | 2 | 3 | 4
+    photo: The photo which will be attached to the post.<br> **Possible values:** (Link) or (Uploaded
+    isscheduled: This flag will make the post to be scheduled for future.<br> **Possible values:** true
+      | f
+    scheduleddate: Date of the post to be scheduled.<br> **Possible values:** (Date)
+    scheduledhours: Time of the post to be scheduled.<br> **Possible values:** (Time)
+    scheduledampm: AMPM of the post to be scheduled.<br> **Possible values:** AM | PM | am | pm
+    trackableLinks: Convert all links inside message to short urls.<br> **Possible values:** true | false
+  Webhook/Add:
+    name: The name of the Popup.<br>**Possible values:**  (Text)
+    type: The type of the Popup.<br>**Possible values:**  page_exit | page_entry | goal_trigger
+    domainid: The Domain id of the Popup.<br>**Possible values:**  (ID)
+    action_url: Page Url.<br>**Possible values:**   (Text)
+    action_type: The type of the action.<br>**Possible values:**   html_msg | form | poll | redirection
+      | t
+    redirection_url: Redirection URL.<br>**Possible values:**   (Link)
+    list_id: The List ID.<br>**Possible values:**   (ID)
+    poll_question: The Polling Question.<br>**Possible values:**   (Text)
+    poll_choices: The polling Choices.<br>**Possible values:**   (Text)<br>**Allow multiple:**  `yes`
+    js_code: The Javascript Code.<br>**Possible values:**   (Text)
+    action_startdate: The Action Trigger Start Date.<br>**Possible values:**  (Date)
+    action_enddate: The Action Trigger End Date.<br>**Possible values:**  (Date)
+    action_targetusers: The Target Users.<br>**Possible values:**  all | subscribers | anonymous
+    action_devicefilter: The Device Filter.<br>**Possible values:**  all | desktop | mobile
+    action_ppcfilter: The PPC Referral Network Filter.<br>**Possible values:**   google | bing | facebook
+      | twit
+    action_geofilter: The Geo-Location Filter.<br>**Possible values:**    (Text)<br>**Allow Multiple:**  `yes`
+    action_frequency: The Action Frequency.<br>**Possible values:**    repeat | one_time
+    delay_hours: The Delay Number of Hours.<br>**Possible values:**   (Number)
+    delay_minutes: The Delay Number of Minutes.<br>**Possible values:**   (Number)
+    delay_seconds: The Delay Number of Seconds.<br>**Possible values:**   (Number)
+    action_style: Choose Action Style.<br>**Possible values:**   popup | sticky_bar
+    action_text: Action Text.<br>**Possible values:**    (Text)
+  Goal/ListByDomain:
+    domainid: The ID of the domain to return its goals.<br>**Possible values:**  (ID)

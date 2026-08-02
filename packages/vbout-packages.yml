@@ -1,0 +1,54 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.vbout.com/libraries
+description: >-
+  VBOUT client libraries and platform plugins. The developer portal states
+  "Currently we only support PHP code libraries to interact with our API" and
+  links the official PHP helper library (hosted on the API team's GitHub
+  account, irajab). First-party platform plugins are published on WordPress.org
+  (author: vbout) and the vbout GitHub org (Magento). Community/integration
+  packages found on Packagist and npm are recorded as unofficial. No PyPI,
+  RubyGems, Maven, NuGet, Go, or crates.io packages found (pypi.org/pypi/vbout
+  returned 404; registry searches checked 2026-07-21).
+packages:
+  - language: php
+    registry: github
+    name: VboutAPI
+    url: https://github.com/irajab/VboutAPI
+    install: 'Download: https://github.com/irajab/VBOUTAPI/archive/master.zip'
+    official: true
+    notes: Linked from https://developers.vbout.com/libraries as the official PHP helper library.
+  - language: php
+    registry: wordpress.org
+    name: marketing-automation (VBOUT Marketing Automation plugin)
+    url: https://wordpress.org/plugins/marketing-automation/
+    install: 'Download: https://downloads.wordpress.org/plugin/marketing-automation.zip'
+    official: true
+    notes: 'WordPress.org plugin, author "vbout", v1.2.6.9, last updated 2024-12-10; source: https://github.com/irajab/VBOUTWPlugin.'
+  - language: php
+    registry: github
+    name: vbout-magento-plugin
+    url: https://github.com/vbout/vbout-magento-plugin
+    official: true
+    notes: Magento plugin published under the vbout GitHub organization.
+  - language: php
+    registry: packagist
+    name: podcasthosting/vbout-api-client
+    url: https://packagist.org/packages/podcasthosting/vbout-api-client
+    install: composer require podcasthosting/vbout-api-client
+    official: false
+    notes: Community PHP client (github.com/podcasthosting/vbout-api-client).
+  - language: javascript
+    registry: npm
+    name: '@pipedream/vbout'
+    url: https://www.npmjs.com/package/@pipedream/vbout
+    install: npm install @pipedream/vbout
+    official: false
+    notes: Pipedream integration component for the VBOUT API.
+  - language: javascript
+    registry: npm
+    name: '@activepieces/piece-vbout'
+    url: https://www.npmjs.com/package/@activepieces/piece-vbout
+    install: npm install @activepieces/piece-vbout
+    official: false
+    notes: Activepieces integration piece for the VBOUT API.

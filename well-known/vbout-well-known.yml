@@ -1,0 +1,64 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  /.well-known/ discovery probe across VBOUT's three public hosts, recorded
+  2026-07-21. www.vbout.com publishes a real ChatGPT plugin manifest
+  (ai-plugin.json) that points at a second OpenAPI document
+  (https://vbout.com/.well-known/openapi.yaml, saved to
+  openapi/vbout-plugin-openapi-original.yaml). api.vbout.com answers every
+  unknown path with a 12-byte soft-200 body ({"ok": "OK"}), so its 200s are
+  recorded as soft-200 catch-alls, not real documents.
+hosts:
+  - host: https://www.vbout.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: vbout-ai-plugin.json
+        notes: >-
+          ChatGPT plugin manifest "VBOUT AI MARKETING" (name_for_model
+          VBOUT_v51); auth type oauth via https://app.vbout.com/Authorize;
+          api.url https://vbout.com/.well-known/openapi.yaml (200, OpenAPI
+          3.1.0, 37 paths); contact rich@vbout.com.
+      - path: /llms.txt
+        status: 404
+  - host: https://developers.vbout.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+  - host: https://api.vbout.com
+    soft_200: true
+    notes: >-
+      Every probed path returned HTTP 200 with the same 12-byte body
+      {"ok": "OK"} — a catch-all, not real well-known documents. Recorded as
+      no discovery surface.
+    documents:
+      - path: /.well-known/security.txt
+        status: soft-200
+      - path: /.well-known/openid-configuration
+        status: soft-200
+      - path: /.well-known/oauth-authorization-server
+        status: soft-200
+      - path: /.well-known/api-catalog
+        status: soft-200
+      - path: /.well-known/ai-plugin.json
+        status: soft-200
+      - path: /llms.txt
+        status: soft-200

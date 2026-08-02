@@ -1,0 +1,161 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/vbout-openapi-original.json
+format: vendor-envelope
+description: 'VBOUT API error surface. The API is not RFC 9457: errors are returned inside the vendor
+  envelope {"response": {"header": {"status": "error", "dataType": ...}, "data": {"errorCode": ..., "errorMessage":
+  ...}}}. The 4xx/5xx table below is derived from the provider OpenAPI (the App/Me operation enumerates
+  the platform-wide HTTP status table). One vendor error code was observed live: errorCode 1000 "Missing
+  or Invalid authentication key." on an unauthenticated call (HTTP 401). HTTP 429 is documented for rate-limit
+  breaches with x-rate-limit-* headers (see rate-limits/vbout-rate-limits.yml).'
+envelope:
+  status_field: response.header.status
+  code_field: response.data.errorCode
+  message_field: response.data.errorMessage
+vendor_codes:
+- code: 1000
+  http_status: 401
+  message: Missing or Invalid authentication key.
+  observed: 2026-07-21 live probe of https://api.vbout.com/1/apidocs.json
+problems:
+- status: 400
+  title: Bad Request
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 401
+  title: Unauthorized
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 402
+  title: Payment Required
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 403
+  title: Forbidden
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 404
+  title: Not Found
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 405
+  title: Method Not Allowed
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 406
+  title: Not Acceptable
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 407
+  title: Proxy Authentication Required
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 408
+  title: Request Timeout
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 409
+  title: Conflict
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 410
+  title: Gone
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 411
+  title: Length Required
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 412
+  title: Precondition Failed
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 413
+  title: Request Entity Too Large
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 414
+  title: Request-URI Too Long
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 415
+  title: Unsupported Media Type
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 416
+  title: Requested Range Not Satisfiable
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 417
+  title: Expectation Failed
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 418
+  title: I'm a teapot (RFC 2324)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 420
+  title: Enhance Your Calm (Twitter)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 422
+  title: Unprocessable Entity (WebDAV)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 423
+  title: Locked (WebDAV)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 424
+  title: Failed Dependency (WebDAV)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 425
+  title: Too Early
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 426
+  title: Upgrade Required
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 428
+  title: Precondition Required
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 429
+  title: Too Many Requests
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 431
+  title: Request Header Fields Too Large
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 444
+  title: No Response (Nginx)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 449
+  title: Retry With (Microsoft)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 450
+  title: Blocked by Windows Parental Controls (Microsoft)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 451
+  title: Unavailable For Legal Reasons
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 499
+  title: Client Closed Request (Nginx)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 500
+  title: Internal Server Error
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 501
+  title: Not Implemented
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 502
+  title: Bad Gateway
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 503
+  title: Service Unavailable
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 504
+  title: Gateway Timeout
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 505
+  title: HTTP Version Not Supported
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 506
+  title: Variant Also Negotiates (Experimental)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 507
+  title: Insufficient Storage (WebDAV)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 508
+  title: Loop Detected (WebDAV)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 509
+  title: Bandwidth Limit Exceeded (Apache)
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 510
+  title: Not Extended
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 511
+  title: Network Authentication Required
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 598
+  title: Network read timeout error
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me
+- status: 599
+  title: Network connect timeout error
+  source_operation: openapi/vbout-openapi-original.json#get-App-Me

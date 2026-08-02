@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/vbout-openapi-original.json
+description: >-
+  Industry / cross-cutting standards posture of the VBOUT API, derived from the
+  provider-published OpenAPI 3.1.0, the developer quickstart, and live probes
+  of the /.well-known/ surface (2026-07-21). No published compliance program
+  (SOC 2 / ISO 27001 / trust center) was found, so no Compliance claim is made.
+standards:
+  - id: openapi-3.1
+    conforms: true
+    evidence: Provider publishes OpenAPI 3.1.0 at https://developers.vbout.com/scripts/openapi.json (rendered by ReDoc) and a second 3.1.0 document at https://vbout.com/.well-known/openapi.yaml.
+  - id: oauth2
+    conforms: partial
+    evidence: >-
+      OAuth authorization for third-party apps exists (VBOUT Connect;
+      ai-plugin.json declares auth type oauth with authorization_url
+      https://app.vbout.com/Authorize) but no RFC 8414 metadata, no token
+      endpoint documentation, and an empty scope catalog. Primary auth is a
+      static API key.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration returns 404 on www and developers hosts; api.vbout.com serves a soft-200 catch-all.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a vendor envelope (response.header.status + response.data.errorCode/errorMessage), not application/problem+json.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: /.well-known/security.txt returns 404 on www and developers hosts.
+  - id: pagination
+    conforms: partial
+    evidence: page/limit parameters on EmailMarketing/Campaigns and SocialMedia/Calendar only; other list endpoints are unpaginated.
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key mechanism documented; EmailMarketing/SyncContact provides upsert semantics only.
+  - id: rate-limit-signaling
+    conforms: true
+    evidence: >-
+      Documented 15 req/s limit with HTTP 429 and x-rate-limit-limit /
+      x-rate-limit-requests / x-rate-limit-remaining / x-rate-limit-reached /
+      x-rate-limit-reset / x-rate-limit-after headers plus a rate-limit JSON
+      object on every response (vendor header names, not the IETF
+      RateLimit-Policy draft).
+  - id: json-api
+    conforms: false
+    evidence: Vendor envelope, not JSON:API media type.
+  - id: scim
+    conforms: false
+    evidence: No SCIM paths; user management is the proprietary User/* family.

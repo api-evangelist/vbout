@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.vbout.com/quickstart
+docs: https://developers.vbout.com/quickstart
+description: >-
+  VBOUT API authentication profile. The API authenticates every call with a
+  single account-level API key. The published OpenAPI (3.1.0, harvested from
+  https://developers.vbout.com/scripts/openapi.json) declares no
+  components.securitySchemes, so this profile is captured from the developer
+  quickstart, the legacy Swagger console, and the live /.well-known/ai-plugin.json
+  manifest on www.vbout.com.
+summary:
+  types: [apiKey, oauth2]
+  api_key_in: [query, body]
+  oauth2_flows: [authorizationCode]
+schemes:
+  - name: api_key
+    type: apiKey
+    in: query
+    parameter: key
+    description: >-
+      A unique user API key generated from Account Settings. Passed as the
+      `key` parameter — the quickstart shows it in a JSON request body
+      ({"key":"YOUR_API_ID"}) and the legacy API console adds it as an
+      `api_key`/`key` query parameter. Two key types exist: a User Key
+      (generated directly from Account Settings) and an Application Key
+      (generated from Account Settings and activated through VBOUT Connect
+      for third-party apps).
+    sources:
+      - https://developers.vbout.com/quickstart
+      - https://developers.vbout.com/console
+  - name: vbout_connect_oauth
+    type: oauth2
+    description: >-
+      OAuth authorization surface used by third-party applications (VBOUT
+      Connect) and the published ChatGPT plugin manifest. The live
+      /.well-known/ai-plugin.json on www.vbout.com declares auth type "oauth"
+      with client_url https://app.vbout.com/Login and authorization_url
+      https://app.vbout.com/Authorize, with an empty scope string. No public
+      scope catalog or token-endpoint documentation was found.
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://app.vbout.com/Authorize
+    sources:
+      - https://www.vbout.com/.well-known/ai-plugin.json
+errors:
+  missing_or_invalid_key:
+    http_status: 401
+    envelope:
+      response:
+        header: {status: error, dataType: array}
+        data: {errorCode: 1000, errorMessage: Missing or Invalid authentication key.}
+    observed: '2026-07-21 — live response from https://api.vbout.com/1/apidocs.json with no key'
