@@ -32,7 +32,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-13'
 image: https://developers.vbout.com/images/front/icons/logo-square-114x114.png
 tags:
 - Marketing Automation
@@ -297,8 +297,16 @@ common:
   url: llms/vbout-llms.txt
 - type: AgentSkill
   url: skills/_index.yml
+- type: Plans
+  url: plans/vbout-plans-pricing.yml
+- type: Webhooks
+  url: asyncapi/vbout-webhooks.yml
+- type: Components
+  url: components/vbout-components.yml
+- type: Sandbox
+  url: sandbox/vbout-sandbox.yml
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-13'
   status: enriched
-  artifacts_added: 21
+  artifacts_added: 4
   pass: local-v1
