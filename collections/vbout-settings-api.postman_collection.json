@@ -1,0 +1,780 @@
+{
+  "item": [
+    {
+      "id": "91b37bc5-1761-4e28-898b-616cb2fc15f3",
+      "name": "Settings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ac7afeb6-15c9-4c2f-8477-332b1993ddef",
+          "name": "Custom Short codes",
+          "request": {
+            "name": "Custom Short codes",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`  \r\n - - -  \r\n **Parameters:** `None`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Settings",
+                "CustomShortcodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e1ee4c4-3181-433a-ad9a-2facfd3d47d6",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Settings",
+                    "CustomShortcodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"shortcodes\": {\n    \"count\": 3,\n    \"items\": [\n      {\n        \"id\": 12,\n        \"name\": \"Vbout Product Info\",\n        \"title\": \"Title for Vbout Product Info\",\n        \"content\": \"Check out our latest product: {vbout_product_name}. It's only {vbout_product_price}!\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9250ac4a-ad13-4922-b110-24e09063123a",
+          "name": "Add Custom Short Code",
+          "request": {
+            "name": "Add Custom Short Code",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Settings",
+                "AddCustomShortcode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Content",
+                  "value": "none",
+                  "description": "(Required) The content of the short code.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "Name ",
+                  "value": "none",
+                  "description": "(Required) The name of the short code.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "Title ",
+                  "value": "none",
+                  "description": "(Required) The title of the short code.<br>**Possible values:**  (Text)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cffd906f-0669-43f5-a897-d35bfda7a4bf",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Settings",
+                    "AddCustomShortcode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Content",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Name ",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Title ",
+                      "value": "none"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"item\": \"Shortcode created successfully.\",\n  \"recid\": \"[shortcode_id]\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39c2466c-408c-4804-8c1d-324d62b35d52",
+          "name": "Edit Custom Short Code",
+          "request": {
+            "name": "Edit Custom Short Code",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Settings",
+                "EditCustomShortCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ID",
+                  "value": "none",
+                  "description": "(Required) The id of the short code.<br>**Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "Title ",
+                  "value": "none",
+                  "description": "(Required) The title of the short code.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "Name",
+                  "value": "none",
+                  "description": "(Required) The name of the short code.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "Content",
+                  "value": "none",
+                  "description": "(Required) The content of the short code.<br>**Possible values:**  (Text)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1649a1d-8f5d-48fe-95b8-e39691a13f97",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Settings",
+                    "EditCustomShortCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ID",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Title ",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Name",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Content",
+                      "value": "none"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"item\": \"Shortcode updated successfully.\",\n  \"recid\": \"[shortcode_id]\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0655efac-822e-4bdd-aafc-ef1abffea624",
+          "name": "Delete Custom Short Code",
+          "request": {
+            "name": "Delete Custom Short Code",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`  ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Settings",
+                "DeleteCustomShortcode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ID",
+                  "value": "none",
+                  "description": "(Required) The id of the short code.<br>**Possible values:** (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0fc55602-2ad0-4c53-aa8f-2479a5dec702",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Settings",
+                    "DeleteCustomShortcode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ID",
+                      "value": "none"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"item\": \"Your shortcode has been removed successfully.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c50e6ef5-8f5b-4581-ae20-633bbe7c1c8e",
+          "name": "get-Settings-Custom Short Codes",
+          "request": {
+            "name": "get-Settings-Custom Short Codes",
+            "description": {
+              "content": "Get Custom Shortcodes",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Settings",
+                "CustomShortCodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "610f2560-224a-4827-845b-27bf62f564d8",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Settings",
+                    "CustomShortCodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"shortcodes\": {\n    \"count\": 4324,\n    \"items\": [\n      {\n        \"id\": 1487,\n        \"name\": \"string\",\n        \"title\": \"string\",\n        \"content\": \"string\"\n      },\n      {\n        \"id\": 7105,\n        \"name\": \"string\",\n        \"title\": \"string\",\n        \"content\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68583c2c-aece-4fa2-87b9-2a6c691cf8eb",
+          "name": "post-Settings-Add Custom Short Code",
+          "request": {
+            "name": "post-Settings-Add Custom Short Code",
+            "description": {
+              "content": "Add Custom Shortcode",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Settings",
+                "AddCustomShortCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "content",
+                  "value": "<string>",
+                  "description": "(Required) The content of the shortcode."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) The name of the shortcode."
+                },
+                {
+                  "disabled": false,
+                  "key": "title",
+                  "value": "<string>",
+                  "description": "(Required) The title of the shortcode."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "558b2001-c151-4f46-87f1-1c235a08cc45",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Settings",
+                    "AddCustomShortCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "content",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"recid\": 3468,\n  \"item\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "48c64d33-0d0d-4f97-ad95-755e263cedaa",
+          "name": "post-Settings-Edit Custom Short Code",
+          "request": {
+            "name": "post-Settings-Edit Custom Short Code",
+            "description": {
+              "content": "Edit Custom Shortcode",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Settings",
+                "EditCustomShortCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "content",
+                  "value": "<string>",
+                  "description": "(Required) The content of the shortcode."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) The name of the shortcode."
+                },
+                {
+                  "disabled": false,
+                  "key": "title",
+                  "value": "<string>",
+                  "description": "(Required) The title of the shortcode."
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>",
+                  "description": "(Required) The id of the shortcode."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b311637b-0762-46f3-a15e-953e4f273729",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Settings",
+                    "EditCustomShortCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "content",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"recid\": 3468,\n  \"item\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0e491d2-4b8c-484f-b393-c91628fb800a",
+          "name": "post-Settings-Delete Custom Short Code",
+          "request": {
+            "name": "post-Settings-Delete Custom Short Code",
+            "description": {
+              "content": "Delete Custom Shortcode",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Settings",
+                "DeleteCustomShortCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>",
+                  "description": "(Required) The id of the shortcode."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e3a11d6-a30a-408f-9b12-499f883fc139",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Settings",
+                    "DeleteCustomShortCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"item\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e7f0bbb2-4f5c-470a-af7e-ad87c0aff948",
+    "name": "VBOUT EmailMarketing Settings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

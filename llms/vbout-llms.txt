@@ -16,10 +16,12 @@ No provider-published /llms.txt was found on vbout.com or developers.vbout.com (
 - [Quickstart & authentication](https://developers.vbout.com/quickstart): User Key vs Application Key, sample request
 - [Helper libraries](https://developers.vbout.com/libraries): official PHP library (https://github.com/irajab/VboutAPI)
 - [Third-party plugins](https://developers.vbout.com/plugins): WordPress plugin (wordpress.org/plugins/marketing-automation)
-- [Ecommerce integration](https://developers.vbout.com/ecommerceIntegration): ecommerce event surface
+- [Ecommerce integration](https://developers.vbout.com/ecommerceIntegration): 14 POST endpoints under api.vbout.com/1/Ecommerce/* (cart, order, transaction, intent, customer) plus a browser tracker — documented in HTML only, present in NEITHER published OpenAPI
+- [API console](https://developers.vbout.com/console): live Swagger UI against production; its spec source api.vbout.com/1/apidocs.json is key-gated (401). No sandbox, no test mode, no test keys
+- [Webhooks](https://help.vbout.com/knowledge-base/how-to-setup-a-webhook/): inbound receiver + automation trigger; outbound push via the "Sync to Third Party" automation action (GET/POST). No AsyncAPI
 - [API status](https://developers.vbout.com/apistatus)
 - [Help center](https://help.vbout.com/)
-- [Pricing](https://www.vbout.com/pricing/)
+- [Pricing](https://www.vbout.com/pricing/): API access starts at the Professional tier — the Free and Starter plans do not include it, so the 14-day trial cannot exercise the API
 
 ## API Evangelist artifacts
 
@@ -29,3 +31,10 @@ No provider-published /llms.txt was found on vbout.com or developers.vbout.com (
 - [Rate limits](https://raw.githubusercontent.com/api-evangelist/vbout/refs/heads/main/rate-limits/vbout-rate-limits.yml)
 - [Error catalog](https://raw.githubusercontent.com/api-evangelist/vbout/refs/heads/main/errors/vbout-problem-types.yml)
 - [Data model](https://raw.githubusercontent.com/api-evangelist/vbout/refs/heads/main/data-model/vbout-data-model.yml)
+- [Plans & pricing](https://raw.githubusercontent.com/api-evangelist/vbout/refs/heads/main/plans/vbout-plans-pricing.yml)
+- [Webhooks / event surface](https://raw.githubusercontent.com/api-evangelist/vbout/refs/heads/main/asyncapi/vbout-webhooks.yml)
+- [Embeddable components](https://raw.githubusercontent.com/api-evangelist/vbout/refs/heads/main/components/vbout-components.yml)
+- [Sandbox & console](https://raw.githubusercontent.com/api-evangelist/vbout/refs/heads/main/sandbox/vbout-sandbox.yml)
+- [Packages / SDKs](https://raw.githubusercontent.com/api-evangelist/vbout/refs/heads/main/packages/vbout-packages.yml): the only library VBOUT calls official was last committed 2016-08-04
+
+_Last refreshed 2026-08-13 by the API Evangelist enrichment pipeline._

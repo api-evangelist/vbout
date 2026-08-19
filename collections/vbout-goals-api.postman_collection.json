@@ -1,0 +1,596 @@
+{
+  "item": [
+    {
+      "id": "b1d4acbb-1ae8-42d5-8333-2b92baa728ab",
+      "name": "Goals",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b956868c-eadd-4f57-9a26-3d3ef5c95c22",
+          "name": "Lists",
+          "request": {
+            "name": "Lists",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Goal",
+                "Lists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d250c6aa-e7cc-4197-9ef0-cf2049b92d98",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Goal",
+                    "Lists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"goals\": {\n    \"count\": 8,\n    \"items\": [\n      {\n        \"id\": \"41\",\n        \"name\": \"Cart conversion (All Links)\",\n        \"goal_value\": {\n          \"type\": \"Fixed\",\n          \"value\": \"80.0000\"\n        },\n        \"type\": \"Event Triggered\",\n        \"event_type\": \"Link(s) Clicked\",\n        \"event_link_rule\": \"All of these link(s) clicked\",\n        \"links\": [\n          \"http://yogashop.com/index.php?route=information/contact\",\n          \"http://yogashop.com/index.php?route=blog/blog\"\n        ],\n        \"has_action\": \"Yes\",\n        \"action\": {\n          \"id\": \"69\",\n          \"name\": \"Action is deleted!\"\n        }\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ae509ba-95f9-4767-aff5-c837f83cbe21",
+          "name": "List By Domain",
+          "request": {
+            "name": "List By Domain",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Goal",
+                "ListByDomain"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "domainid",
+                  "value": "None",
+                  "description": "(Required) The ID of the domain to return its goals.<br>**Possible values:**  (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09544131-a942-4b85-b0d6-15623be5515d",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Goal",
+                    "ListByDomain"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domainid",
+                      "value": "None"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"goals\": {\n    \"count\": 7,\n    \"items\": [\n      {\n        \"id\": \"41\",\n        \"name\": \"Test Goal Action (All Links)\",\n        \"goal_value\": {\n          \"type\": \"Fixed\",\n          \"value\": \"0.0000\"\n        },\n        \"type\": \"Event Triggered\",\n        \"event_type\": \"Link(s) Clicked\",\n        \"event_link_rule\": \"All of these link(s) clicked\",\n        \"links\": [\n          \"http://yogashop.com/index.php?route=information/contact\",\n          \"http://yogashop.com/index.php?route=blog/blog\"\n        ],\n        \"has_action\": \"Yes\",\n        \"action\": {\n          \"id\": \"69\",\n          \"name\": \"Action is deleted!\"\n        }\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cd7cab2e-5393-4ee6-b01b-1661d2507013",
+          "name": "Show",
+          "request": {
+            "name": "Show",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Goal",
+                "Show"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the goal.<br>**Possible values:**  (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "37c1b664-c35c-41ab-a668-8561770ba1b5",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Goal",
+                    "Show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "None"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"goal\": {\n    \"id\": \"41\",\n    \"name\": \"Test Goal Action (All Links)\",\n    \"goal_value\": {\n      \"type\": \"Fixed\",\n      \"value\": \"0.0000\"\n    },\n    \"type\": \"Event Triggered\",\n    \"event_type\": \"Link(s) Clicked\",\n    \"event_link_rule\": \"All of these link(s) clicked\",\n    \"links\": [\n      \"http://yogashop.com/index.php?route=information/contact\",\n      \"http://yogashop.com/index.php?route=blog/blog\"\n    ],\n    \"has_action\": \"Yes\",\n    \"action\": {\n      \"id\": \"69\",\n      \"name\": \"Action is deleted!\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41053d58-f6e3-4910-bfa6-042b788fd953",
+          "name": "Add",
+          "request": {
+            "name": "Add",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Goal",
+                "Add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "domainid",
+                  "value": "None",
+                  "description": "(Required) The Domain id of the goal.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "None",
+                  "description": "(Required) The name of the goal.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "Url",
+                  "description": "(Required) The type of the goal.<br>**Possible values:**  url | duration | pages | ppc | event | funnel"
+                },
+                {
+                  "disabled": false,
+                  "key": "value_type",
+                  "value": "Fixed",
+                  "description": "Goal Value Type.<br>**Possible values:**  fixed | variable"
+                },
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "0",
+                  "description": "Goal Value if the value type is fixed.<br>**Possible values:**  (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "destination_url",
+                  "value": "None",
+                  "description": "The Destination URL.<br>**Possible values:**   (Link)"
+                },
+                {
+                  "disabled": false,
+                  "key": "duration_hours",
+                  "value": "0",
+                  "description": "The Duration Number of Hours.<br>**Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "duration_minutes",
+                  "value": "0",
+                  "description": "The Duration Number of Minutes.<br>**Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "duration_seconds",
+                  "value": "0",
+                  "description": "The Duration Number of Seconds.<br>**Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pages",
+                  "value": "None",
+                  "description": "The Number of Pages.<br>**Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "ppc_networks",
+                  "value": "<string>",
+                  "description": "The type of Referral Networks.<br>**Possible values:**   google | bing | facebook | twitter | linkedin"
+                },
+                {
+                  "disabled": false,
+                  "key": "event_type",
+                  "value": "None",
+                  "description": "The type of Event.<br>**Possible values:**    links | videos | form"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_event_filter",
+                  "value": "any",
+                  "description": "Goal will be met if.<br>**Possible values:**   any | all"
+                },
+                {
+                  "disabled": false,
+                  "key": "event_links",
+                  "value": "None",
+                  "description": "The Event Links.<br>**Possible values:**   (Link)"
+                },
+                {
+                  "disabled": false,
+                  "key": "event_videos",
+                  "value": "yes",
+                  "description": "links of embedded video.<br>**Possible values:**   (Links) <br>**Allow Multiple:**  `yes`"
+                },
+                {
+                  "disabled": false,
+                  "key": "form_identity_type",
+                  "value": "id",
+                  "description": "Form catch by<br>**Possible values:**  id | name"
+                },
+                {
+                  "disabled": false,
+                  "key": "form_identity",
+                  "value": "None",
+                  "description": "The Form identity.<br>**Possible values:**  (Text)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "445e78b4-6eab-4250-86e9-341b95e0b2e9",
+          "name": "Edit",
+          "request": {
+            "name": "Edit",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Goal",
+                "Edit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the goal.<br> **Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "None",
+                  "description": "(Required) The name of the goal.<br> **Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "url",
+                  "description": "(Required) The type of the goal.<br> **Possible values:**  url | duration | pages | ppc | event | funnel"
+                },
+                {
+                  "disabled": false,
+                  "key": "value_type",
+                  "value": "fixed",
+                  "description": "Goal Value Type.<br> **Possible values:**  fixed | variable"
+                },
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "0",
+                  "description": "Goal Value if the value type is fixed.<br> **Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "destination_url",
+                  "value": "None",
+                  "description": "The Destination URL.<br> **Possible values:**   (Link)"
+                },
+                {
+                  "disabled": false,
+                  "key": "duration_hours",
+                  "value": "0",
+                  "description": "The Duration Number of Hours.<br> **Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "duration_minutes",
+                  "value": "0",
+                  "description": "The Duration Number of Minutes.<br> **Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "duration_seconds",
+                  "value": "0",
+                  "description": "The Duration Number of Minutes.<br> **Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pages",
+                  "value": "0",
+                  "description": "The Number of Pages.<br> **Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "ppc_networks",
+                  "value": "None",
+                  "description": "The type of Referral Networks.<br> **Possible values:**  google | bing | facebook | twitter | linkedin"
+                },
+                {
+                  "disabled": false,
+                  "key": "event_type",
+                  "value": "None",
+                  "description": "The type of Event.<br> **Possible values:** links | videos | form"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_event_filter",
+                  "value": "Any",
+                  "description": "Goal will be met if.<br> **Possible values:**  any | all | all"
+                },
+                {
+                  "disabled": false,
+                  "key": "event_links",
+                  "value": "None",
+                  "description": "The Event Links.<br> **Possible values:**  Link"
+                },
+                {
+                  "disabled": false,
+                  "key": "event_videos",
+                  "value": "None",
+                  "description": "links of embedded video.<br> **Allow multiple:**  `yes` <br> **Possible values:** (Links)"
+                },
+                {
+                  "disabled": false,
+                  "key": "form_identity_type",
+                  "value": "id",
+                  "description": "Form catch by.<br> **Possible values:**  id | name"
+                },
+                {
+                  "disabled": false,
+                  "key": "form_identity",
+                  "value": "None",
+                  "description": "The Form identity.<br> **Possible values:** (Text)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a464ef8-75cf-4aeb-8b1f-1b86993c6707",
+          "name": "Delete",
+          "request": {
+            "name": "Delete",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Goal",
+                "Delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0cc9e80a-ab3c-4da6-9a92-98408a4b89f6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Goal",
+                    "Delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4e4b62a1-8185-4ff4-8772-22ca268c4486",
+    "name": "VBOUT EmailMarketing Goals API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

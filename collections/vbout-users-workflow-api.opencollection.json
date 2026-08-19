@@ -1,0 +1,263 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Users & Workflow API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users & Workflow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1User/Lists",
+            "params": [
+              {
+                "name": "businessid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the business if it's an agency to return its contacts.<br> **Possible values:**  (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Managers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1User/Managers"
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n- - -\n**Parameters:** `None`"
+        },
+        {
+          "info": {
+            "name": "Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1User/Status",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the user to change status.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the user.<br>**Possible values:**  user | manager"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "The status of the user.<br>**Possible values:**  enable | disable"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1User/Add",
+            "params": [
+              {
+                "name": "fullname",
+                "value": "",
+                "type": "query",
+                "description": "The name of the user.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query",
+                "description": "The username of the user.<br>**Possible values:**  (Email Address)"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "The password of the user.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the user.<br>**Possible values:**  user | manager"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query",
+                "description": "The group id of the user.<br>**Possible values:**   (ID)"
+              },
+              {
+                "name": "permissions",
+                "value": "",
+                "type": "query",
+                "description": "Optional<br>`Required`: if **no group** is selected.<br>The permissions of the user. (comma-separated values) <br>**Possible values:**   all | reputation_center | foursquare | pinterest | social_media | email_marketing | master_reporting | users_and_workflow | user_groups | smart_calendar | site_builder | asset_manager | task_manager | notes | social_tracker | google_analytics | email_automation_workflow | live_hashtags | goal_conversion_tracking | expedia_affiliate_network | behavioral_webhooks | lead_scoring | landingpages | sms_automation | heatmap | email_test | salesforce_sync | browser_push | hubspot_sync | zoho_sync | pipeline_manager | campaign_groups | webinars | content_bank | insightly_sync | ftp_sync | simplifi_reports | custom_smtp | call_center"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Edit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1User/Edit",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the user.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "fullname",
+                "value": "",
+                "type": "query",
+                "description": "The name of the user.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query",
+                "description": "The username of the user.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the user.<br>**Possible values:**   (user | manager)"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "The password of the user.<br>**Possible values:**    (Text)"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query",
+                "description": "The group id of the user.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "permissions",
+                "value": "",
+                "type": "query",
+                "description": "Optional<br>`Required`: if **no group** is selected.<br>The permissions of the user. (comma-separated values) <br>**Possible values:**  all | reputation_center | foursquare | pinterest | social_media | email_marketing | master_reporting | users_and_workflow | user_groups | smart_calendar | site_builder | asset_manager | task_manager | notes | social_tracker | google_analytics | email_automation_workflow | live_hashtags | goal_conversion_tracking | expedia_affiliate_network | behavioral_webhooks | lead_scoring | landingpages | sms_automation | heatmap | email_test | salesforce_sync | browser_push | hubspot_sync | zoho_sync | pipeline_manager | campaign_groups | webinars | content_bank | insightly_sync | ftp_sync | simplifi_reports | custom_smtp | call_center"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1User/Delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the user to delete.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the user.<br>**Possible values:**  user | manager"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1User/Groups"
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+        },
+        {
+          "info": {
+            "name": "Group Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1User/GroupDelete",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the group to delete.<br>**Possible values:**  (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Group Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1User/GroupStatus",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the group to change status.<br>**Possible values:**   (ID)"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "The status of the group.<br>**Possible values:**    enable | disable"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

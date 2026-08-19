@@ -1,0 +1,858 @@
+{
+  "item": [
+    {
+      "id": "00c77092-7376-4487-b92d-0cdc190f92df",
+      "name": "Email Marketing",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f07d0e87-d54a-4c67-b2f3-254dc5549649",
+          "name": "Campaigns",
+          "request": {
+            "name": "Campaigns",
+            "description": {
+              "content": "**Authentication:** `Required`  \n  - - -\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "Campaigns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "all",
+                  "description": "(Required) The timeline during which the reviews are returned.<br>**Possible values:**  all | sent | scheduled | draft | automation"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "none",
+                  "description": "The from date which the reviews are returned. The filter must be 'date' for this parameter to work.<br>**Possible values:**   (Date)"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "none",
+                  "description": "The from date which the reviews are returned. The filter must be 'date' for this parameter to work.<br>**Possible values:**  (Date)  "
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Set your record limit number per page.<br>**Possible values:**  (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Set which page you wanna get.<br>**Possible values:**  (Number)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5bf8d9da-995b-4e06-9d0b-d0af8d726476",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "Campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "all"
+                    },
+                    {
+                      "key": "from",
+                      "value": "none"
+                    },
+                    {
+                      "key": "to",
+                      "value": "none"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"campaigns\": {\n    \"count\": 1,\n    \"items\": {\n      \"Draft\": {\n        \"data\": [\n          {\n            \"id\": \"889\",\n            \"subject\": \"Hop Hop, Happy Fridays have never been happier \",\n            \"message\": \"...\",\n            \"replyto\": \"info@mycompany.com\",\n            \"from_email\": \"no-reply@mycompany.com\",\n            \"from_name\": \"Rick's Club American\",\n            \"creation_date\": \"11/04/2014 16:33\"\n          }\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f36a409e-a43c-415e-88ea-6614a1ce7f9d",
+          "name": "Campaign",
+          "request": {
+            "name": "Campaign",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetCampaign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": " id",
+                  "value": "none",
+                  "description": "(Required) The ID of the campaign to return.<br>**Possible Values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "standard",
+                  "description": "The type of the campaign.<br>**Possible Values:**  standard | automated"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "482e0371-3236-4acf-a00b-3bc0b59e43ef",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetCampaign"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": " id",
+                      "value": "none"
+                    },
+                    {
+                      "key": "type",
+                      "value": "standard"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"item\": {\n    \"id\": \"889\",\n    \"subject\": \"Reservations were never that easy!\",\n    \"message\": \"...\",\n    \"replyto\": \"no-reply@lofthotels.com\",\n    \"from_email\": \"reservations@lofthotels.com\",\n    \"from_name\": \"Loft Hotels\",\n    \"creation_date\": \"11/04/2014 16:33\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99dd0a44-4348-4b42-a82e-011812466e65",
+          "name": "Stats",
+          "request": {
+            "name": "Stats",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "Stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "none",
+                  "description": "(Required) The ID of the campaign to return.<br>**Possible values:**  (ID)  "
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "standard",
+                  "description": "The type of the campaign.<br>**Possible values:**  standard | automated"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d859a6c9-fac2-40dc-a0f4-6abbd0bd1961",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "Stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "none"
+                    },
+                    {
+                      "key": "type",
+                      "value": "standard"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"campaign\": {\n    \"stats\": {\n      \"open\": \"1 (33.33%)\",\n      \"unopened\": \"2 (66.67%)\",\n      \"bounced\": \"0 (0%)\",\n      \"unsubscribed\": \"11 (366.67%)\"\n    },\n    \"clicks\": [\n      {\n        \"url\": \"http://www.netalinissim.com/img/logo.jpg?1400686763\",\n        \"message\": \"\"\n      },\n      {\n        \"url\": \"http://www.netalinissim.com\",\n        \"message\": \"\",\n        \"clickers\": [\n          \"Example@gmail.com(2 clicks)\"\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbac8948-2907-47a4-b9b1-1fc468c2e3ea",
+          "name": "Add Campaign",
+          "request": {
+            "name": "Add Campaign",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "AddCampaign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "none",
+                  "description": "(Required) The name of the campaign.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject",
+                  "value": "none",
+                  "description": "(Required) The subject line for the campaign.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromemail",
+                  "value": "none",
+                  "description": "(Required) The from email of the campaign.<br>**Possible values:**  (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_name",
+                  "value": "none",
+                  "description": "(Required) The from name of the campaign.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "reply_to",
+                  "value": "none",
+                  "description": "(Required) The reply to email of the campaign.<br>**Possible values:** (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "body",
+                  "value": "none",
+                  "description": "(Required) Message body.<br>**Possible values:** (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "standard",
+                  "description": "The type of the campaign.<br>**Possible values:** standard | automated"
+                },
+                {
+                  "disabled": false,
+                  "key": "isscheduled",
+                  "value": "false",
+                  "description": "The flag to schedule the campaign for the future.<br>**Possible values:**  true | false"
+                },
+                {
+                  "disabled": false,
+                  "key": "isdraft",
+                  "value": "false",
+                  "description": "The flag to set the campaign to draft.<br>**Possible values:**  true | false"
+                },
+                {
+                  "disabled": false,
+                  "key": "scheduled_datetime",
+                  "value": "none",
+                  "description": "The date and time to schedule the campaign.<br>**Possible values:**  (Date)"
+                },
+                {
+                  "disabled": false,
+                  "key": "audiences",
+                  "value": "none",
+                  "description": "IDs of audience campaign recipients.(comma separated)<br>**Possible values:**  (IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lists",
+                  "value": "none",
+                  "description": "IDs of list campaign recipients.(comma separated)<br>**Possible values:**  (IDs)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5110d332-300b-4291-8a97-1372b9249fe1",
+          "name": "Edit Campaign",
+          "request": {
+            "name": "Edit Campaign",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "EditCampaign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "none",
+                  "description": "(Required) The ID of the campaign.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "none",
+                  "description": "(Required) The name of the campaign.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject",
+                  "value": "none",
+                  "description": "(Required) The subject line of the campaign.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "body",
+                  "value": "none",
+                  "description": "(Required) Message body.<br>**Possible values:** (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromemail",
+                  "value": "none",
+                  "description": "(Required) The from email of the campaign.<br>**Possible values:** (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_name",
+                  "value": "none",
+                  "description": "(Required) The from name of the campaign.<br>**Possible values:** (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "reply_to",
+                  "value": "none",
+                  "description": "(Required) The reply to email of the campaign.<br>**Possible values:**(Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "isscheduled",
+                  "value": "false",
+                  "description": "The flag to schedule the campaign for the future.<br>**Possible values:** true | false"
+                },
+                {
+                  "disabled": false,
+                  "key": "isdraft",
+                  "value": "false",
+                  "description": "The flag to set the campaign to draft.<br>**Possible values:** true | false"
+                },
+                {
+                  "disabled": false,
+                  "key": "scheduled_datetime",
+                  "value": "none",
+                  "description": "The date time to schedule the campaign."
+                },
+                {
+                  "disabled": false,
+                  "key": "audiences",
+                  "value": "none",
+                  "description": "IDs of audience campaign recipients.(comma separated)<br>**Possible values:** (IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lists",
+                  "value": "none",
+                  "description": "IDs of list campaign recipients.(comma separated)<br>**Possible values:** (IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "standard",
+                  "description": "The type of the campaign.<br>**Possible values:** standard | automated"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53dc1530-5bfb-4a91-81a1-ae0623d3fa75",
+          "name": "Delete Campaign",
+          "request": {
+            "name": "Delete Campaign",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "DeleteCampaign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "none",
+                  "description": "(Required) The ID of the campaign to delete.<br>**Possible values:**   (ID) "
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "standard",
+                  "description": "The type of the campaign.<br>**Possible values:**  standard | automated"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "024d5df1-636f-4fb2-96d9-93e00cd8d2ea",
+          "name": "Add Tag",
+          "request": {
+            "name": "Add Tag",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Note:** List of tags can be sent as a batch, separated by a comma. Either email or id can be used.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "AddTag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "The id of the contact.<br>**Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "None",
+                  "description": "(Required) The email of the contact.<br>**Possible values:**  (text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "tagname",
+                  "value": "None",
+                  "description": "(Required) Tag(s) to be added.<br>**Possible values:**  (Text)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4130b5f0-b2e2-4fd7-84e8-7296ece9a4e9",
+          "name": "Remove Tag",
+          "request": {
+            "name": "Remove Tag",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Note:**  List of tags can be sent as a batch, separated by a comma. Either email or id can be used",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "RemoveTag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "The id of the contact.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "None",
+                  "description": "(Required) The email of the contact.<br>**Possible values:**  (text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "tagname",
+                  "value": "None",
+                  "description": "(Required) Tag(s) to be added.<br>**Possible values:**  (text)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5815dd20-9df6-48f1-9ffb-2e0b876d3265",
+          "name": "Coupon",
+          "request": {
+            "name": "Coupon",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetCoupon"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "john@doe.com",
+                  "description": "(Required) The email of the contact to return coupons of.<br> **Possible values:**  (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "campaignid",
+                  "value": "1254",
+                  "description": "The ID of the campaign containing coupons.<br> **Possible values:**  (Campaign id)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ea4c73a-34c4-4ac0-a33e-052628d1df42",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetCoupon"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "john@doe.com"
+                    },
+                    {
+                      "key": "campaignid",
+                      "value": "1254"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"coupons\": [\n    {\n      \"id\": \"15817148\",\n      \"email\": \"john@doe.com\",\n      \"couponcode\": \"XXXXXXXXXXXXXX\",\n      \"couponredeemed\": \"0\",\n      \"couponredeemedon\": \"N/A\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7170817-ba91-46cc-a986-02cdf1e13bad",
+          "name": "GetEmailTemplates",
+          "request": {
+            "name": "GetEmailTemplates",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetEmailTemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0659089e-9eb1-41fd-a8ae-e663ecf7b26a",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetEmailTemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"templates\": {\n    \"count\": 2,\n    \"items\": [\n      {\n        \"id\": \"185200\",\n        \"name\": \"Template 1\",\n        \"preview_link\": \"https://app.vbout.com/ricks/template/185200/\"\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0af83f4a-0020-4c25-8e56-f3d8bdb0dc36",
+    "name": "VBOUT EmailMarketing Email Marketing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

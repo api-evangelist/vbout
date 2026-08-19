@@ -1,0 +1,352 @@
+{
+  "item": [
+    {
+      "id": "f3aafe39-707d-484e-8c6d-9c1f70698e33",
+      "name": "AIchatbot",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0f4c07d1-9b2a-4d44-a89d-d24eb013ee79",
+          "name": "aichatbottemplates",
+          "request": {
+            "name": "aichatbottemplates",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AIchatbot",
+                "aichatbottemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3ac3db6a-e16a-48b1-aaf7-6888cf762b64",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AIchatbot",
+                    "aichatbottemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 13,\n    \"name\": \"Internal Knowledge Bot\",\n    \"description\": \"Create a private chatbot for your team using internal documents or APIs. Perfect for onboarding, SOPs, and internal support.\",\n    \"thumbnail\": \"https://assets.vbt.io/uploads/automation_guide/thumb_guide_6573106813.png\",\n    \"category\": {\n      \"id\": 7,\n      \"name\": \"Internal & Custom Bots\"\n    },\n    \"tags\": [\n      \"Internal Use\",\n      \"Documents\",\n      \"API\",\n      \"Custom Data\"\n    ]\n  },\n  {\n    \"id\": 13,\n    \"name\": \"Internal Knowledge Bot\",\n    \"description\": \"Create a private chatbot for your team using internal documents or APIs. Perfect for onboarding, SOPs, and internal support.\",\n    \"thumbnail\": \"https://assets.vbt.io/uploads/automation_guide/thumb_guide_6573106813.png\",\n    \"category\": {\n      \"id\": 7,\n      \"name\": \"Internal & Custom Bots\"\n    },\n    \"tags\": [\n      \"Internal Use\",\n      \"Documents\",\n      \"API\",\n      \"Custom Data\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f42088d7-84e8-49d1-ac61-ca5248b946aa",
+          "name": "categories",
+          "request": {
+            "name": "categories",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AIchatbot",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "db5264d4-55de-4925-ab69-f50184157e65",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AIchatbot",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 5,\n    \"name\": \"Ecommerce & Products\",\n    \"template_count\": 1\n  },\n  {\n    \"id\": 5,\n    \"name\": \"Ecommerce & Products\",\n    \"template_count\": 1\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d3eb781-fd04-4ba4-8091-f7e090d74fc8",
+          "name": "tags",
+          "request": {
+            "name": "tags",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AIchatbot",
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74a87f46-a26d-4eb5-acac-1e9ecfedfcd8",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AIchatbot",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"tag\": \"Documents\",\n    \"template_count\": 3\n  },\n  {\n    \"tag\": \"Documents\",\n    \"template_count\": 3\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "454f7457-7cf5-476d-88ae-58e99922d908",
+          "name": "copy",
+          "request": {
+            "name": "copy",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "AIchatbot",
+                "copy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "API KEY",
+                  "value": "<number>",
+                  "description": "(Required) The API KEY of the Account.<br>**Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "template_id",
+                  "value": "<number>",
+                  "description": "(Required) The template_id from index.<br>**Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "The Custom name of the chatbot.<br>**Possible values:** (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27cf8f65-8771-4b23-bdfe-e4c247991903",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AIchatbot",
+                    "copy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "API KEY",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "template_id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3319,\n    \"name\": \"Template name\"\n  },\n  {\n    \"id\": 3319,\n    \"name\": \"Template name\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d289536a-6672-4f16-9966-ee13db1ce7dc",
+    "name": "VBOUT EmailMarketing AIchatbot API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

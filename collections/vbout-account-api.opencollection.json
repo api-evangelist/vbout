@@ -1,0 +1,134 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Account API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Register/CreateAccount",
+            "params": [
+              {
+                "name": "contact_name",
+                "value": "",
+                "type": "query",
+                "description": "The contact name.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "business_name",
+                "value": "",
+                "type": "query",
+                "description": "The business name.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "business_email",
+                "value": "",
+                "type": "query",
+                "description": "The business email.<br>**Possible values:**  (Email)"
+              },
+              {
+                "name": "business_phone",
+                "value": "",
+                "type": "query",
+                "description": "The business phone.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "business_vbout_name",
+                "value": "",
+                "type": "query",
+                "description": "The business VBOUT name.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "plan_id",
+                "value": "",
+                "type": "query",
+                "description": "The custom plan id.<br>**Possible values:**  (Number)"
+              },
+              {
+                "name": "business_password",
+                "value": "",
+                "type": "query",
+                "description": "The business password.<br>**Possible values:**   (Text)"
+              },
+              {
+                "name": "business_vat_number",
+                "value": "",
+                "type": "query",
+                "description": "The business VAT number.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "timezone",
+                "value": "",
+                "type": "query",
+                "description": "The business timezone.<br>**Possible values:**  https://www.php.net/manual/en/timezones.php"
+              },
+              {
+                "name": "commission_structure",
+                "value": "",
+                "type": "query",
+                "description": "The commission structure.<br>**Possible values:**    (1: Discount to paid amount) | (2: Normal commission payout)"
+              },
+              {
+                "name": "disable_billing_access",
+                "value": "",
+                "type": "query",
+                "description": "Disable Billing Access.<br>**Possible values:**  0 | 1"
+              },
+              {
+                "name": "disable_settings_access",
+                "value": "",
+                "type": "query",
+                "description": "Disable Settings Access.<br>**Possible values:**  0 | 1"
+              },
+              {
+                "name": "pay_on_signup",
+                "value": "",
+                "type": "query",
+                "description": "Pay using agency saved card on success signup, and save the card to the newly created account.<br>**Possible values:**  0 | 1"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Subscriber Account Auto Login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Account/GetSubAccountAutoLogin",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the sub-account.<br>**Possible values:**   (ID)"
+              },
+              {
+                "name": "expire",
+                "value": "",
+                "type": "query",
+                "description": "the number of seconds that the returned auto-login url will remain valid before it expire (MAX 3600 Seconds).<br>**Possible values:**   1800"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n- - -  \n**Note:** `It should work with Agencies only.`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

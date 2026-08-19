@@ -1,0 +1,548 @@
+{
+  "item": [
+    {
+      "id": "91c6425d-023b-45e9-8ac7-29e25e7427fb",
+      "name": "Popups",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "639029b6-ac6a-4ce2-bd3a-bc61b9bfeda1",
+          "name": "lists",
+          "request": {
+            "name": "lists",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "WebHook",
+                "lists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "458d9470-c263-45b2-b75f-b8a36b5de0e0",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "WebHook",
+                    "lists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"webhooks\": {\n    \"count\": 1,\n    \"items\": [\n      {\n        \"id\": \"107\",\n        \"name\": \"Doctor Request Poll!\",\n        \"type\": \"On Page Exit\",\n        \"domain_id\": \"1\",\n        \"url\": {\n          \"filter\": \"Matches Exactly\",\n          \"link\": \"\"\n        },\n        \"action_type\": \"HTML Message\",\n        \"action_rules\": {\n          \"execute_for\": \"All Visitors\",\n          \"device_filter\": \"All Devices\",\n          \"interval\": \"Repeats\",\n          \"delay\": {\n            \"hours\": \"0\",\n            \"minutes\": \"0\",\n            \"seconds\": \"0\"\n          }\n        },\n        \"action_stype\": \"Popup\"\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5131bfa-8e02-41af-9c73-b43ba9d2d9d4",
+          "name": "Show",
+          "request": {
+            "name": "Show",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Webhook",
+                "show"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the webhook.<br> **Possible values:**  (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23b47de2-e962-4d06-9203-1b94609212b9",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Webhook",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "None"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"webhook\": {\n    \"id\": \"107\",\n    \"name\": \"Poll on who will be elected!\",\n    \"type\": \"On Page Exit\",\n    \"domain_id\": \"1\",\n    \"url\": {\n      \"filter\": \"Matches Exactly\",\n      \"link\": \"\"\n    },\n    \"action_type\": \"HTML Message\",\n    \"action_rules\": {\n      \"execute_for\": \"All Visitors\",\n      \"device_filter\": \"All Devices\",\n      \"interval\": \"Repeats\",\n      \"delay\": {\n        \"hours\": \"0\",\n        \"minutes\": \"0\",\n        \"seconds\": \"0\"\n      }\n    },\n    \"action_stype\": \"Popup\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a6947ad-70f5-434c-a9c3-282ce1546088",
+          "name": "Add",
+          "request": {
+            "name": "Add",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Webhook",
+                "Add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "None",
+                  "description": "(Required) The name of the Popup.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "page_exit",
+                  "description": "(Required) The type of the Popup.<br>**Possible values:**  page_exit | page_entry | goal_trigger"
+                },
+                {
+                  "disabled": false,
+                  "key": "domainid",
+                  "value": "None",
+                  "description": "The Domain id of the Popup.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_url",
+                  "value": "None",
+                  "description": "Page Url.<br>**Possible values:**   (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_type",
+                  "value": "html_msg",
+                  "description": "The type of the action.<br>**Possible values:**   html_msg | form | poll | redirection | trigger_js"
+                },
+                {
+                  "disabled": false,
+                  "key": "redirection_url",
+                  "value": "None",
+                  "description": "Redirection URL.<br>**Possible values:**   (Link)"
+                },
+                {
+                  "disabled": false,
+                  "key": "list_id",
+                  "value": "None",
+                  "description": "The List ID.<br>**Possible values:**   (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "poll_question",
+                  "value": "None",
+                  "description": "The Polling Question.<br>**Possible values:**   (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "poll_choices",
+                  "value": "None",
+                  "description": "The polling Choices.<br>**Possible values:**   (Text)<br>**Allow multiple:**  `yes`"
+                },
+                {
+                  "disabled": false,
+                  "key": "js_code",
+                  "value": "None",
+                  "description": "The Javascript Code.<br>**Possible values:**   (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_startdate",
+                  "value": "None",
+                  "description": "The Action Trigger Start Date.<br>**Possible values:**  (Date)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_enddate",
+                  "value": "None",
+                  "description": "The Action Trigger End Date.<br>**Possible values:**  (Date)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_targetusers",
+                  "value": "all",
+                  "description": "The Target Users.<br>**Possible values:**  all | subscribers | anonymous"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_devicefilter",
+                  "value": "all",
+                  "description": "The Device Filter.<br>**Possible values:**  all | desktop | mobile"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_ppcfilter",
+                  "value": "None",
+                  "description": "The PPC Referral Network Filter.<br>**Possible values:**   google | bing | facebook | twitter | linkedin"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_geofilter",
+                  "value": "None",
+                  "description": "The Geo-Location Filter.<br>**Possible values:**    (Text)<br>**Allow Multiple:**  `yes`"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_frequency",
+                  "value": "repeat",
+                  "description": "The Action Frequency.<br>**Possible values:**    repeat | one_time"
+                },
+                {
+                  "disabled": false,
+                  "key": "delay_hours",
+                  "value": "0",
+                  "description": "The Delay Number of Hours.<br>**Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "delay_minutes",
+                  "value": "0",
+                  "description": "The Delay Number of Minutes.<br>**Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "delay_seconds",
+                  "value": "0",
+                  "description": "The Delay Number of Seconds.<br>**Possible values:**   (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_style",
+                  "value": "popup",
+                  "description": "Choose Action Style.<br>**Possible values:**   popup | sticky_bar"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_text",
+                  "value": "None",
+                  "description": "Action Text.<br>**Possible values:**    (Text)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cd15d7b7-82cb-4905-b2b9-43da5c00e5bf",
+          "name": "Edit",
+          "request": {
+            "name": "Edit",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Webhook",
+                "Edit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "None",
+                  "description": "(Required) The name of the Popup.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "page_exit",
+                  "description": "(Required) The type of the Popup.<br>**Possible values:**  page_exit | page_entry | goal_trigger"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the Popup.<br>**Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_url",
+                  "value": "None",
+                  "description": "Page Url.<br>**Possible values:**  (Link)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_type",
+                  "value": "html_msg",
+                  "description": "The type of the action.<br>**Possible values:**  html_msg | form | poll | redirection | trigger_js"
+                },
+                {
+                  "disabled": false,
+                  "key": "redirection_url",
+                  "value": "None",
+                  "description": "Redirection URL.<br>**Possible values:**  (Link)"
+                },
+                {
+                  "disabled": false,
+                  "key": "list_id",
+                  "value": "None",
+                  "description": "The List ID.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "poll_question",
+                  "value": "None",
+                  "description": "The Polling Question.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "poll_choices",
+                  "value": "None",
+                  "description": "The polling Choices.<br>**Possible values:**  (Text)<br>**Allow multiple:** `Yes`"
+                },
+                {
+                  "disabled": false,
+                  "key": "js_code",
+                  "value": "None",
+                  "description": "The Javascript Code.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_startdate",
+                  "value": "None",
+                  "description": "The Action Trigger Start Date.<br>**Possible values:**  (Date)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_enddate",
+                  "value": "None",
+                  "description": "The Action Trigger End Date.<br>**Possible values:**  (Date)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_targetusers",
+                  "value": "all",
+                  "description": "The Target Users.<br>**Possible values:**  all | subscribers | anonymous"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_devicefilter",
+                  "value": "all",
+                  "description": "The Device Filter.<br>**Possible values:**   all | desktop | mobile"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_ppcfilter",
+                  "value": "None",
+                  "description": "The PPC Referral Network Filter.<br>**Possible values:**  google | bing | facebook | twitter | linkedin"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_geofilter",
+                  "value": "None",
+                  "description": "action_geofilter<br>**Possible values:** (Text)<br>**Allow multiple:** `Yes`"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_frequency",
+                  "value": "repeat",
+                  "description": "The Action Frequency.<br>**Possible values:** repeat | one_time"
+                },
+                {
+                  "disabled": false,
+                  "key": "delay_hours",
+                  "value": "Number",
+                  "description": "The Delay Number of Hours.<br>**Possible values:** (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "delay_minutes",
+                  "value": "Number",
+                  "description": "The Delay Number of Minutes.<br>**Possible values:** (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "delay_seconds",
+                  "value": "Number",
+                  "description": "The Delay Number of Seconds.<br>**Possible values:** (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_style",
+                  "value": "popup",
+                  "description": "Choose Action Style<br>**Possible values:**  popup | sticky_bar"
+                },
+                {
+                  "disabled": false,
+                  "key": "action_text",
+                  "value": "None",
+                  "description": "Action Text.<br>**Possible values:**  (Text)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15ea08f5-0409-42ee-80bc-c6745d92a570",
+          "name": "Delete",
+          "request": {
+            "name": "Delete",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Webhook",
+                "Delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the Popup to delete.<br>**Possible values:**  (ID) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0dd5c603-d600-4017-a922-42b4ba364d90",
+    "name": "VBOUT EmailMarketing Popups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

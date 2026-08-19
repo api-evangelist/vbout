@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Help API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Help",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get-Help-Commands",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/Help/Commands"
+          },
+          "docs": "Get list of available commands when asking for help"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

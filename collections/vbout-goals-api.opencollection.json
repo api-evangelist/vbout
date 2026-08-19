@@ -1,0 +1,308 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Goals API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Goals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1Goal/Lists"
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+        },
+        {
+          "info": {
+            "name": "List By Domain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1Goal/ListByDomain",
+            "params": [
+              {
+                "name": "domainid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the domain to return its goals.<br>**Possible values:**  (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Show",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1Goal/Show",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the goal.<br>**Possible values:**  (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Goal/Add",
+            "params": [
+              {
+                "name": "domainid",
+                "value": "",
+                "type": "query",
+                "description": "The Domain id of the goal.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the goal.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the goal.<br>**Possible values:**  url | duration | pages | ppc | event | funnel"
+              },
+              {
+                "name": "value_type",
+                "value": "",
+                "type": "query",
+                "description": "Goal Value Type.<br>**Possible values:**  fixed | variable"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query",
+                "description": "Goal Value if the value type is fixed.<br>**Possible values:**  (Number)"
+              },
+              {
+                "name": "destination_url",
+                "value": "",
+                "type": "query",
+                "description": "The Destination URL.<br>**Possible values:**   (Link)"
+              },
+              {
+                "name": "duration_hours",
+                "value": "",
+                "type": "query",
+                "description": "The Duration Number of Hours.<br>**Possible values:**   (Number)"
+              },
+              {
+                "name": "duration_minutes",
+                "value": "",
+                "type": "query",
+                "description": "The Duration Number of Minutes.<br>**Possible values:**   (Number)"
+              },
+              {
+                "name": "duration_seconds",
+                "value": "",
+                "type": "query",
+                "description": "The Duration Number of Seconds.<br>**Possible values:**   (Number)"
+              },
+              {
+                "name": "pages",
+                "value": "",
+                "type": "query",
+                "description": "The Number of Pages.<br>**Possible values:**   (Number)"
+              },
+              {
+                "name": "ppc_networks",
+                "value": "",
+                "type": "query",
+                "description": "The type of Referral Networks.<br>**Possible values:**   google | bing | facebook | twitter | linkedin"
+              },
+              {
+                "name": "event_type",
+                "value": "",
+                "type": "query",
+                "description": "The type of Event.<br>**Possible values:**    links | videos | form"
+              },
+              {
+                "name": "goal_event_filter",
+                "value": "",
+                "type": "query",
+                "description": "Goal will be met if.<br>**Possible values:**   any | all"
+              },
+              {
+                "name": "event_links",
+                "value": "",
+                "type": "query",
+                "description": "The Event Links.<br>**Possible values:**   (Link)"
+              },
+              {
+                "name": "event_videos",
+                "value": "",
+                "type": "query",
+                "description": "links of embedded video.<br>**Possible values:**   (Links) <br>**Allow Multiple:**  `yes`"
+              },
+              {
+                "name": "form_identity_type",
+                "value": "",
+                "type": "query",
+                "description": "Form catch by<br>**Possible values:**  id | name"
+              },
+              {
+                "name": "form_identity",
+                "value": "",
+                "type": "query",
+                "description": "The Form identity.<br>**Possible values:**  (Text)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Edit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Goal/Edit",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the goal.<br> **Possible values:**  (ID)"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the goal.<br> **Possible values:**  (Text)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the goal.<br> **Possible values:**  url | duration | pages | ppc | event | funnel"
+              },
+              {
+                "name": "value_type",
+                "value": "",
+                "type": "query",
+                "description": "Goal Value Type.<br> **Possible values:**  fixed | variable"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query",
+                "description": "Goal Value if the value type is fixed.<br> **Possible values:**   (Number)"
+              },
+              {
+                "name": "destination_url",
+                "value": "",
+                "type": "query",
+                "description": "The Destination URL.<br> **Possible values:**   (Link)"
+              },
+              {
+                "name": "duration_hours",
+                "value": "",
+                "type": "query",
+                "description": "The Duration Number of Hours.<br> **Possible values:**   (Number)"
+              },
+              {
+                "name": "duration_minutes",
+                "value": "",
+                "type": "query",
+                "description": "The Duration Number of Minutes.<br> **Possible values:**   (Number)"
+              },
+              {
+                "name": "duration_seconds",
+                "value": "",
+                "type": "query",
+                "description": "The Duration Number of Minutes.<br> **Possible values:**   (Number)"
+              },
+              {
+                "name": "pages",
+                "value": "",
+                "type": "query",
+                "description": "The Number of Pages.<br> **Possible values:**   (Number)"
+              },
+              {
+                "name": "ppc_networks",
+                "value": "",
+                "type": "query",
+                "description": "The type of Referral Networks.<br> **Possible values:**  google | bing | facebook | twitter | linkedin"
+              },
+              {
+                "name": "event_type",
+                "value": "",
+                "type": "query",
+                "description": "The type of Event.<br> **Possible values:** links | videos | form"
+              },
+              {
+                "name": "goal_event_filter",
+                "value": "",
+                "type": "query",
+                "description": "Goal will be met if.<br> **Possible values:**  any | all | all"
+              },
+              {
+                "name": "event_links",
+                "value": "",
+                "type": "query",
+                "description": "The Event Links.<br> **Possible values:**  Link"
+              },
+              {
+                "name": "event_videos",
+                "value": "",
+                "type": "query",
+                "description": "links of embedded video.<br> **Allow multiple:**  `yes` <br> **Possible values:** (Links)"
+              },
+              {
+                "name": "form_identity_type",
+                "value": "",
+                "type": "query",
+                "description": "Form catch by.<br> **Possible values:**  id | name"
+              },
+              {
+                "name": "form_identity",
+                "value": "",
+                "type": "query",
+                "description": "The Form identity.<br> **Possible values:** (Text)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1Goal/Delete"
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

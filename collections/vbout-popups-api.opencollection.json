@@ -1,0 +1,357 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Popups API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Popups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1WebHook/lists"
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+        },
+        {
+          "info": {
+            "name": "Show",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1Webhook/show",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the webhook.<br> **Possible values:**  (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Add",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Webhook/Add",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the Popup.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the Popup.<br>**Possible values:**  page_exit | page_entry | goal_trigger"
+              },
+              {
+                "name": "domainid",
+                "value": "",
+                "type": "query",
+                "description": "The Domain id of the Popup.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "action_url",
+                "value": "",
+                "type": "query",
+                "description": "Page Url.<br>**Possible values:**   (Text)"
+              },
+              {
+                "name": "action_type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the action.<br>**Possible values:**   html_msg | form | poll | redirection | trigger_js"
+              },
+              {
+                "name": "redirection_url",
+                "value": "",
+                "type": "query",
+                "description": "Redirection URL.<br>**Possible values:**   (Link)"
+              },
+              {
+                "name": "list_id",
+                "value": "",
+                "type": "query",
+                "description": "The List ID.<br>**Possible values:**   (ID)"
+              },
+              {
+                "name": "poll_question",
+                "value": "",
+                "type": "query",
+                "description": "The Polling Question.<br>**Possible values:**   (Text)"
+              },
+              {
+                "name": "poll_choices",
+                "value": "",
+                "type": "query",
+                "description": "The polling Choices.<br>**Possible values:**   (Text)<br>**Allow multiple:**  `yes`"
+              },
+              {
+                "name": "js_code",
+                "value": "",
+                "type": "query",
+                "description": "The Javascript Code.<br>**Possible values:**   (Text)"
+              },
+              {
+                "name": "action_startdate",
+                "value": "",
+                "type": "query",
+                "description": "The Action Trigger Start Date.<br>**Possible values:**  (Date)"
+              },
+              {
+                "name": "action_enddate",
+                "value": "",
+                "type": "query",
+                "description": "The Action Trigger End Date.<br>**Possible values:**  (Date)"
+              },
+              {
+                "name": "action_targetusers",
+                "value": "",
+                "type": "query",
+                "description": "The Target Users.<br>**Possible values:**  all | subscribers | anonymous"
+              },
+              {
+                "name": "action_devicefilter",
+                "value": "",
+                "type": "query",
+                "description": "The Device Filter.<br>**Possible values:**  all | desktop | mobile"
+              },
+              {
+                "name": "action_ppcfilter",
+                "value": "",
+                "type": "query",
+                "description": "The PPC Referral Network Filter.<br>**Possible values:**   google | bing | facebook | twitter | linkedin"
+              },
+              {
+                "name": "action_geofilter",
+                "value": "",
+                "type": "query",
+                "description": "The Geo-Location Filter.<br>**Possible values:**    (Text)<br>**Allow Multiple:**  `yes`"
+              },
+              {
+                "name": "action_frequency",
+                "value": "",
+                "type": "query",
+                "description": "The Action Frequency.<br>**Possible values:**    repeat | one_time"
+              },
+              {
+                "name": "delay_hours",
+                "value": "",
+                "type": "query",
+                "description": "The Delay Number of Hours.<br>**Possible values:**   (Number)"
+              },
+              {
+                "name": "delay_minutes",
+                "value": "",
+                "type": "query",
+                "description": "The Delay Number of Minutes.<br>**Possible values:**   (Number)"
+              },
+              {
+                "name": "delay_seconds",
+                "value": "",
+                "type": "query",
+                "description": "The Delay Number of Seconds.<br>**Possible values:**   (Number)"
+              },
+              {
+                "name": "action_style",
+                "value": "",
+                "type": "query",
+                "description": "Choose Action Style.<br>**Possible values:**   popup | sticky_bar"
+              },
+              {
+                "name": "action_text",
+                "value": "",
+                "type": "query",
+                "description": "Action Text.<br>**Possible values:**    (Text)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Edit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Webhook/Edit",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the Popup.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the Popup.<br>**Possible values:**  page_exit | page_entry | goal_trigger"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the Popup.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "action_url",
+                "value": "",
+                "type": "query",
+                "description": "Page Url.<br>**Possible values:**  (Link)"
+              },
+              {
+                "name": "action_type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the action.<br>**Possible values:**  html_msg | form | poll | redirection | trigger_js"
+              },
+              {
+                "name": "redirection_url",
+                "value": "",
+                "type": "query",
+                "description": "Redirection URL.<br>**Possible values:**  (Link)"
+              },
+              {
+                "name": "list_id",
+                "value": "",
+                "type": "query",
+                "description": "The List ID.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "poll_question",
+                "value": "",
+                "type": "query",
+                "description": "The Polling Question.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "poll_choices",
+                "value": "",
+                "type": "query",
+                "description": "The polling Choices.<br>**Possible values:**  (Text)<br>**Allow multiple:** `Yes`"
+              },
+              {
+                "name": "js_code",
+                "value": "",
+                "type": "query",
+                "description": "The Javascript Code.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "action_startdate",
+                "value": "",
+                "type": "query",
+                "description": "The Action Trigger Start Date.<br>**Possible values:**  (Date)"
+              },
+              {
+                "name": "action_enddate",
+                "value": "",
+                "type": "query",
+                "description": "The Action Trigger End Date.<br>**Possible values:**  (Date)"
+              },
+              {
+                "name": "action_targetusers",
+                "value": "",
+                "type": "query",
+                "description": "The Target Users.<br>**Possible values:**  all | subscribers | anonymous"
+              },
+              {
+                "name": "action_devicefilter",
+                "value": "",
+                "type": "query",
+                "description": "The Device Filter.<br>**Possible values:**   all | desktop | mobile"
+              },
+              {
+                "name": "action_ppcfilter",
+                "value": "",
+                "type": "query",
+                "description": "The PPC Referral Network Filter.<br>**Possible values:**  google | bing | facebook | twitter | linkedin"
+              },
+              {
+                "name": "action_geofilter",
+                "value": "",
+                "type": "query",
+                "description": "action_geofilter<br>**Possible values:** (Text)<br>**Allow multiple:** `Yes`"
+              },
+              {
+                "name": "action_frequency",
+                "value": "",
+                "type": "query",
+                "description": "The Action Frequency.<br>**Possible values:** repeat | one_time"
+              },
+              {
+                "name": "delay_hours",
+                "value": "",
+                "type": "query",
+                "description": "The Delay Number of Hours.<br>**Possible values:** (Number)"
+              },
+              {
+                "name": "delay_minutes",
+                "value": "",
+                "type": "query",
+                "description": "The Delay Number of Minutes.<br>**Possible values:** (Number)"
+              },
+              {
+                "name": "delay_seconds",
+                "value": "",
+                "type": "query",
+                "description": "The Delay Number of Seconds.<br>**Possible values:** (Number)"
+              },
+              {
+                "name": "action_style",
+                "value": "",
+                "type": "query",
+                "description": "Choose Action Style<br>**Possible values:**  popup | sticky_bar"
+              },
+              {
+                "name": "action_text",
+                "value": "",
+                "type": "query",
+                "description": "Action Text.<br>**Possible values:**  (Text)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1Webhook/Delete",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the Popup to delete.<br>**Possible values:**  (ID) "
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,304 @@
+{
+  "item": [
+    {
+      "id": "960d8a77-ae22-4a36-91de-619fc970d39e",
+      "name": "Pipeline",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ff1a8a55-bf30-4e75-b6ab-275cab49a404",
+          "name": "GetBoardGuideCategories",
+          "request": {
+            "name": "GetBoardGuideCategories",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Pipeline",
+                "GetBoardGuideCategories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "API KEY",
+                  "value": "<integer>",
+                  "description": "(Required) The API KEY of the Account.<br>**Possible values:** (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f880b1e-8ced-4f79-b314-c551d54cb6b1",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Pipeline",
+                    "GetBoardGuideCategories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "API KEY",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"2\",\n    \"name\": \"Capture Leads & Sell\",\n    \"description\": null,\n    \"order\": \"2\",\n    \"status\": 1\n  },\n  {\n    \"id\": \"2\",\n    \"name\": \"Capture Leads & Sell\",\n    \"description\": null,\n    \"order\": \"2\",\n    \"status\": 1\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe1f0ce2-e166-4cbc-81f3-42ce4c84ae09",
+          "name": "GetBoardGuides",
+          "request": {
+            "name": "GetBoardGuides",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Pipeline",
+                "GetBoardGuides"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "API KEY",
+                  "value": "<integer>",
+                  "description": "(Required) The API KEY of the Account.<br>**Possible values:** (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bc735d23-3b4b-4882-8f01-93d8323b34ef",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Pipeline",
+                    "GetBoardGuides"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "API KEY",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"2\",\n    \"name\": \"Internal custom\",\n    \"description\": \"Internal custom description\",\n    \"category\": {\n      \"id\": \"5\",\n      \"name\": \"Internal & Custom Bots\"\n    },\n    \"status\": 1\n  },\n  {\n    \"id\": \"2\",\n    \"name\": \"Internal custom\",\n    \"description\": \"Internal custom description\",\n    \"category\": {\n      \"id\": \"5\",\n      \"name\": \"Internal & Custom Bots\"\n    },\n    \"status\": 1\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c269aedf-ac17-437f-91d1-e51bb8477d77",
+          "name": "CreateBoardFromGuide",
+          "request": {
+            "name": "CreateBoardFromGuide",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Pipeline",
+                "CreateBoardFromGuide"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "API KEY",
+                  "value": "<number>",
+                  "description": "(Required) The API KEY of the Account.<br>**Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "guideid",
+                  "value": "<integer>",
+                  "description": "(Required) The guideid of the pipeline.<br>**Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "Title",
+                  "value": "<string>",
+                  "description": "(Required) The Title of the pipeline.<br>**Possible values:** (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0b5d3c3-9ef0-48cd-a070-56cacdc475bb",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Pipeline",
+                    "CreateBoardFromGuide"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "API KEY",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "guideid",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "Title",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"item\": \"Your pipeline board has been created successfully.\",\n    \"recid\": \"[ID]\"\n  },\n  {\n    \"item\": \"Your pipeline board has been created successfully.\",\n    \"recid\": \"[ID]\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f7fc6acf-11e5-4b57-ac45-a5d2366e22b6",
+    "name": "VBOUT EmailMarketing Pipeline API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

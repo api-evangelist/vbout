@@ -225,3 +225,9 @@ tools:
 - name: post_aichatbot_copy
   description: 'AIchatbot: copy'
   source_operation: openapi/vbout-openapi-original.json#post-aichatbot-aichatbotcopy
+deployment:
+  mode: none
+  verified: derived
+  tools: 71
+  checked: '2026-08-12'
+  source: catalog MCP census

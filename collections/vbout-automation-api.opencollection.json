@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Automation API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Automation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetGuides",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1Automation/GetGuides",
+            "params": [
+              {
+                "name": "API KEY",
+                "value": "",
+                "type": "query",
+                "description": "list of guideIDs of the automation.<br>**Possible values:** (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "CreateAutomationFromGuide",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Automation/CreateAutomationFromGuide"
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

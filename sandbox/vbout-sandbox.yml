@@ -1,0 +1,59 @@
+generated: '2026-08-13'
+method: searched
+source: https://developers.vbout.com/console
+docs:
+  - https://developers.vbout.com/console
+  - https://developers.vbout.com/quickstart
+description: >-
+  VBOUT's test surface, captured 2026-08-13. The honest finding is a split one:
+  VBOUT DOES publish an interactive API console — a live Swagger UI at
+  developers.vbout.com/console wired to https://api.vbout.com/1/apidocs.json —
+  but it ships NO sandbox. There is no test mode, no test/live key separation,
+  no test fixtures and no magic test values anywhere in the developer portal or
+  help center. Every call made from the console executes against production
+  data with a real account key. That distinction is recorded rather than
+  collapsed, because "has a console" and "has a sandbox" are different
+  guarantees for an agent.
+console:
+  available: true
+  url: https://developers.vbout.com/console
+  http_status: 200
+  technology: Swagger UI (legacy 1.x branch — swagger-ui.js + swagger-client.js + shred.bundle.js)
+  spec_source: https://api.vbout.com/1/apidocs.json
+  spec_source_status: 401
+  spec_source_note: >-
+    The resource listing the console loads is itself key-gated — fetched
+    anonymously on 2026-08-13 it returns HTTP 401 with the vendor envelope
+    {"response":{"header":{"status":"error"},"data":{"errorCode":1000,...}}}.
+    The console therefore renders nothing until a key is supplied, which also
+    means this legacy Swagger 1.x document cannot be harvested anonymously. The
+    modern OpenAPI 3.1.0 at developers.vbout.com/scripts/openapi.json is public
+    and is what this repo holds.
+  auth_field: api_key
+  executes_against: production
+sandbox:
+  available: false
+  test_mode: false
+  test_live_key_separation: false
+  key_prefixes: none
+  key_prefix_note: >-
+    VBOUT keys carry no test/live prefix. The two documented key types are a
+    User Key and an Application Key (VBOUT Connect), and both are live.
+  test_data:
+    test_cards: none
+    test_accounts: none
+    magic_values: none
+    fixtures: none
+    time_simulation: none
+  searched:
+    - {url: 'https://developers.vbout.com/quickstart', result: 'auth walkthrough only; no test credentials'}
+    - {url: 'https://developers.vbout.com/docs', result: 'ReDoc reference; no test-mode section'}
+    - {url: 'https://help.vbout.com/', result: 'no sandbox/test-environment article found'}
+  note: >-
+    The nearest thing to a safe trial surface is the 14-day free trial on the
+    pricing page — but API Access is not included below the Professional tier
+    (see plans/vbout-plans-pricing.yml), so a developer cannot exercise the API
+    during a Free-tier evaluation at all.
+x-evidence:
+  - {url: 'https://developers.vbout.com/console', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://api.vbout.com/1/apidocs.json', status: 401, fetched: '2026-08-13'}

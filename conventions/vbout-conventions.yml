@@ -75,3 +75,70 @@ rate_limiting:
   exceeded_status: 429
   signaling: rate-limit JSON object on every response + x-rate-limit-* headers
   detail: rate-limits/vbout-rate-limits.yml
+
+# --- appended 2026-08-13 (enrichment round 2) ---
+
+undocumented_surfaces:
+  checked: '2026-08-13'
+  note: >-
+    A REST family that VBOUT documents in HTML but ships in NEITHER published
+    OpenAPI document. Both specs in this repo were re-parsed on 2026-08-13:
+    openapi/_original/vbout-openapi-original.json has 71 paths and
+    openapi/_original/vbout-plugin-openapi-original.yaml has 37, and grepping
+    both for "commerce" returns zero matches. The endpoints below are read
+    verbatim from the fully-specified parameter tables at
+    https://developers.vbout.com/ecommerceIntegration. They are recorded here,
+    not synthesized into a spec — API Evangelist does not author contracts on a
+    provider's behalf. This is the single largest contract gap on the VBOUT
+    surface and the correct thing for VBOUT to close.
+  surfaces:
+    - name: Ecommerce API
+      base_url: https://api.vbout.com/1
+      docs: https://developers.vbout.com/ecommerceIntegration
+      in_openapi: false
+      auth: 'key (API key) + domain (verified ecommerce domain identifier, VBT-XXXXXX-XXXXX)'
+      method: POST
+      operation_count: 14
+      operations:
+        - {path: Ecommerce/CreateCart, group: cart}
+        - {path: Ecommerce/UpdateCart, group: cart}
+        - {path: Ecommerce/EmptyCart, group: cart}
+        - {path: Ecommerce/RemoveCart, group: cart}
+        - {path: Ecommerce/AddCartItem, group: cart}
+        - {path: Ecommerce/RemoveCartItem, group: cart}
+        - {path: Ecommerce/CreateOrder, group: order}
+        - {path: Ecommerce/UpdateOrder, group: order}
+        - {path: Ecommerce/CreateOrderTransaction, group: order}
+        - {path: Ecommerce/AddProductSearch, group: intent}
+        - {path: Ecommerce/AddProductView, group: intent}
+        - {path: Ecommerce/AddCategoryView, group: intent}
+        - {path: Ecommerce/UpsertCustomer, group: customer}
+        - {path: Ecommerce/UpdateCustomerPreferences, group: customer}
+      client_side_twin: components/vbout-components.yml
+      client_side_note: >-
+        Every one of these has a browser-side counterpart in the VboutEcommerce
+        tracker (store.cart.send, store.order.send, store.product.view …), so
+        the same capability ships twice — once as an untyped REST family and
+        once as an untyped JS command queue. Neither is machine-readable.
+      status: 'Version 1.0 (BETA), per the page header'
+
+events:
+  webhooks: asyncapi/vbout-webhooks.yml
+  asyncapi_published: false
+  note: >-
+    Inbound webhook receiver + automation webhook trigger + an outbound
+    "Sync to Third Party" automation action (GET or POST to a customer URL).
+    No AsyncAPI document and no published payload schemas.
+
+testing:
+  detail: sandbox/vbout-sandbox.yml
+  sandbox: false
+  console: https://developers.vbout.com/console
+  note: 'Live Swagger UI console against production; no test mode, no test keys, no fixtures.'
+
+plans:
+  detail: plans/vbout-plans-pricing.yml
+  api_access_gated_to: Professional
+  note: >-
+    API access is not sold below the Professional tier, so the 14-day free
+    trial cannot be used to evaluate the API.

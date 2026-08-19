@@ -1,0 +1,234 @@
+{
+  "item": [
+    {
+      "id": "5fc8a8c2-33d9-4efd-9d60-60fcc6f701bd",
+      "name": "Account",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "71a1f859-113d-41cc-bc43-d01c34f62257",
+          "name": "Create Account",
+          "request": {
+            "name": "Create Account",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Register",
+                "CreateAccount"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contact_name",
+                  "value": "None",
+                  "description": "(Required) The contact name.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "business_name",
+                  "value": "None",
+                  "description": "(Required) The business name.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "business_email",
+                  "value": "None",
+                  "description": "(Required) The business email.<br>**Possible values:**  (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "business_phone",
+                  "value": "None",
+                  "description": "(Required) The business phone.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "business_vbout_name",
+                  "value": "None",
+                  "description": "(Required) The business VBOUT name.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "plan_id",
+                  "value": "None",
+                  "description": "(Required) The custom plan id.<br>**Possible values:**  (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "business_password",
+                  "value": "None",
+                  "description": "The business password.<br>**Possible values:**   (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "business_vat_number",
+                  "value": "None",
+                  "description": "The business VAT number.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "timezone",
+                  "value": "America/New_York",
+                  "description": "The business timezone.<br>**Possible values:**  https://www.php.net/manual/en/timezones.php"
+                },
+                {
+                  "disabled": false,
+                  "key": "commission_structure",
+                  "value": "1",
+                  "description": "The commission structure.<br>**Possible values:**    (1: Discount to paid amount) | (2: Normal commission payout)"
+                },
+                {
+                  "disabled": false,
+                  "key": "disable_billing_access",
+                  "value": "0",
+                  "description": "Disable Billing Access.<br>**Possible values:**  0 | 1"
+                },
+                {
+                  "disabled": false,
+                  "key": "disable_settings_access",
+                  "value": "0",
+                  "description": "Disable Settings Access.<br>**Possible values:**  0 | 1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pay_on_signup",
+                  "value": "0",
+                  "description": "Pay using agency saved card on success signup, and save the card to the newly created account.<br>**Possible values:**  0 | 1"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd22eed6-f160-4a30-95a5-ed181e52dda7",
+          "name": "Subscriber Account Auto Login",
+          "request": {
+            "name": "Subscriber Account Auto Login",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n- - -  \n**Note:** `It should work with Agencies only.`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Account",
+                "GetSubAccountAutoLogin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the sub-account.<br>**Possible values:**   (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "expire",
+                  "value": "3600",
+                  "description": "the number of seconds that the returned auto-login url will remain valid before it expire (MAX 3600 Seconds).<br>**Possible values:**   1800"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ac3f2a12-4dcb-4c1e-9b47-3adf535a7232",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Account",
+                    "GetSubAccountAutoLogin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "None"
+                    },
+                    {
+                      "key": "expire",
+                      "value": "3600"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 123,\n  \"name\": \"Sub Account 1\",\n  \"email\": \"test01@example.com\",\n  \"login-url\": \"https://xxxxx\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b248d9f2-dc9a-4b0d-b978-81eb75748cca",
+    "name": "VBOUT EmailMarketing Account API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

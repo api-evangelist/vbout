@@ -1,0 +1,626 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Contact API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contact",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetContacts",
+            "params": [
+              {
+                "name": " listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to return its contacts.<br>**Possible values:**  (IDs)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Contacts By Phone Number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetContactsByPhoneNumber",
+            "params": [
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to return its contacts.<br>**Possible values:**  (IDs)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Contact By Email",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetContactByEmail",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The Email of the contact to return.**Possible values:** (Email)"
+              },
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The List id of which this contact does belong to.**Possible values:**(ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetContact",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact to return.<br>**Possible values:** (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Add Contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/AddContact",
+            "params": [
+              {
+                "name": " status",
+                "value": "",
+                "type": "query",
+                "description": "The status of the contact.<br>**Possible values:** (Active | Disactive)"
+              },
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to assign this contact to.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email of the contact.<br>**Possible values:** (Email)"
+              },
+              {
+                "name": "ipaddress",
+                "value": "",
+                "type": "query",
+                "description": "The ip of the contact.<br>**Possible values:** (IP)"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "The list of custom fields added to a specific list.<br>**Possible values:**  Array('fieldID'=>'fieldValue')<br><b>Accepted Date Formats:</b> Y-m-d | d-m-Y | m/d/Y"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Edit Contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/EditContact",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email of the contact.<br>**Possible values:** (Email)"
+              },
+              {
+                "name": "ipaddress",
+                "value": "",
+                "type": "query",
+                "description": "The ip of the contact.<br>**Possible values:** (IP)"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "The status of the contact.<br>**Possible values:** (Active | Disactive)"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "The list of custom fields added to a specific list.<br>**Possible values:**  Array('fieldID'=>'fieldValue')<br><b>Accepted Date Formats:</b> Y-m-d | d-m-Y | m/d/Y"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Sync Contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/SyncContact",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email of the contact.<br>**Possible values:** (Email)"
+              },
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to assign this contact to.<br>**Possible values:** (ID) "
+              },
+              {
+                "name": "ipaddress",
+                "value": "",
+                "type": "query",
+                "description": "The ip of the contact.<br>**Possible values:** (IP)"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "The status of the contact.<br>**Possible values:** (Active | Disactive)"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "The list of custom fields added to a specific list.<br>**Possible values:** Array('fieldID'=>'fieldValue')<br><b>Accepted Date Formats:</b> Y-m-d | d-m-Y | m/d/Y"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n  - - -  \n**Note:** All emails having the same email text available in the provided list will be updated if exists (case email is not required)."
+        },
+        {
+          "info": {
+            "name": "Delete Contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1EmailMarketing/DeleteContact",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact to delete.<br> **Possible values:** (ID)"
+              },
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to delete from.<br> **Possible values:** (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Move Contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/MoveContact",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact.<br>**Possible Values:** (ID)"
+              },
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to assign this contact to.<br>**Possible values:** (ID) "
+              },
+              {
+                "name": "sourceid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to assign this contact to.<br>**Possible values:** (ID) "
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Contact Timeline",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetContactTimeline",
+            "params": [
+              {
+                "name": " id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact to return his timeline activities.<br>**Possible values:** (ID) "
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "Comma separated keys to return other details with the timeline activities. <br>**Possible values:** utm | automated "
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Contact Timeline By Email Address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetContactTimelineByEmailAddress",
+            "params": [
+              {
+                "name": "Email",
+                "value": "",
+                "type": "query",
+                "description": "The email address for the contact to return his timeline activities.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "Include",
+                "value": "",
+                "type": "query",
+                "description": "Comma separated keys to return other details with the timeline activities.<br>**Possible values:**  utm | automated"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Audiences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetAudiences"
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+        },
+        {
+          "info": {
+            "name": "Lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetLists"
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+        },
+        {
+          "info": {
+            "name": "List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetList",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to return.<br>**Possible values:**   (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Add List",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/AddList",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the list.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "email_subject",
+                "value": "",
+                "type": "query",
+                "description": "The default subscription subject.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "reply_to",
+                "value": "",
+                "type": "query",
+                "description": "The Reply to email of the list.<br>**Possible values:**  (Email)"
+              },
+              {
+                "name": "fromemail",
+                "value": "",
+                "type": "query",
+                "description": "The From email of the list.<br>**Possible values:**  (Email)"
+              },
+              {
+                "name": "from_name",
+                "value": "",
+                "type": "query",
+                "description": "The From name of the list.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "doubleOptin",
+                "value": "",
+                "type": "query",
+                "description": "Email confirmation required (Double opt-in)?<br>**Possible values:**  0 | 1"
+              },
+              {
+                "name": "notify",
+                "value": "",
+                "type": "query",
+                "description": "Notify me of new subscribers.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "notify_email",
+                "value": "",
+                "type": "query",
+                "description": "Notification Email.<br>**Possible values:**  (Email)"
+              },
+              {
+                "name": "success_email",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Success Email.<br>**Possible values:**  (Email)"
+              },
+              {
+                "name": "success_message",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Success Message.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "error_message",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Error Message.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "confirmation_email",
+                "value": "",
+                "type": "query",
+                "description": "Confirmation Email Message.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "confirmation_message",
+                "value": "",
+                "type": "query",
+                "description": "Confirmation Message.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "communications",
+                "value": "",
+                "type": "query",
+                "description": "Turn off Communications? (0-No | 1-Yes)<br>**Possible values:** 0 | 1"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Edit List",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/Editlist",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the list.<br>**Possible values:**  (Number)"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the list.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "email_subject",
+                "value": "",
+                "type": "query",
+                "description": "The default subject line of subscription.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "reply_to",
+                "value": "",
+                "type": "query",
+                "description": "The Reply to email of the list.<br>**Possible values:**  (Email)"
+              },
+              {
+                "name": "fromemail",
+                "value": "",
+                "type": "query",
+                "description": "The From email of the list.<br>**Possible values:**  (Email)"
+              },
+              {
+                "name": "from_name",
+                "value": "",
+                "type": "query",
+                "description": "The From name of the list.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "doubleOptin",
+                "value": "",
+                "type": "query",
+                "description": "Email confirmation required (Double opt-in)?.<br>**Possible values:**  0 | 1"
+              },
+              {
+                "name": "notify",
+                "value": "",
+                "type": "query",
+                "description": "Notify me of new subscribers.<br>**Possible values:** (Text)"
+              },
+              {
+                "name": "notify_email",
+                "value": "",
+                "type": "query",
+                "description": "Notification Email.<br>**Possible values:**(Email)"
+              },
+              {
+                "name": "success_email",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Success Email.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "success_message",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Success Message.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "error_message",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Error Message.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "confirmation_email",
+                "value": "",
+                "type": "query",
+                "description": "Confirmation Email Message.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "Confirmation Email Message.",
+                "value": "",
+                "type": "query",
+                "description": "Confirmation Message.<br>**Possible values:** (Text)"
+              },
+              {
+                "name": "communications",
+                "value": "",
+                "type": "query",
+                "description": "Turn off Communications? (0-No | 1-Yes)<br>**Possible values:** 0 | 1"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Delete List",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1EmailMarketing/DeleteList",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to delete.<br>**Possible values:** (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Add Activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/AddActivity",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the contact.<br> **Possible values:** (ID)"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "The description of the activity.<br> **Possible values:** (Text)"
+              },
+              {
+                "name": "datetime",
+                "value": "",
+                "type": "query",
+                "description": "The date and time to activity.<br> **Possible values:** (DateTime)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

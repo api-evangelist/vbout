@@ -1,0 +1,263 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Social Media API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Social Media",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Channels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1SocialMedia/Channels"
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+        },
+        {
+          "info": {
+            "name": "Calendar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1SocialMedia/Calendar",
+            "params": [
+              {
+                "name": "channels",
+                "value": "",
+                "type": "query",
+                "description": "The channels from where the posts are gathered.<br>**Possible Values:**  all | facebook | twitter | linkedin"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "The from date which the reviews are returned. The filter must be `date` for this parameter to work.<br>**Possible Values:** (Date) "
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "The to date which the reviews are returned. The filter must be `date` for this parameter to work.<br>**Possible Values:** (Date) "
+              },
+              {
+                "name": "includeposted",
+                "value": "",
+                "type": "query",
+                "description": "Include already scheduled posts inside the results.<br>**Possible Values:** true | false"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Set your record limit number per page.<br>**Possible Values:**(Number)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Set which page you wanna get.<br>**Possible Values:**(Number)"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Record Sorting.<br>**Possible Values:**  asc | desc"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1SocialMedia/Stats",
+            "params": [
+              {
+                "name": "channels",
+                "value": "",
+                "type": "query",
+                "description": "The channels where the posts are gathered from.<br>**Possible values:**  all | facebook | twitter | linkedin | pinterest"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Record Sorting.<br>**Possible values:**  asc | desc"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1SocialMedia/GetPost",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "query",
+                "description": "The id of the post<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "Channel",
+                "value": "",
+                "type": "query",
+                "description": "The channel where the post is created.<br>**Possible values:** facebook | twitter | linkedin"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Add Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1SocialMedia/AddPost",
+            "params": [
+              {
+                "name": "message",
+                "value": "",
+                "type": "query",
+                "description": "The post message to be scheduled/sent<br> **Possible values:**\"Text\""
+              },
+              {
+                "name": "channel",
+                "value": "",
+                "type": "query",
+                "description": "The channels which the post will be sent to.<br>**Possible values:** facebook | twitter | linkedin | pinterest | instagram"
+              },
+              {
+                "name": "channelid",
+                "value": "",
+                "type": "query",
+                "description": "The channels which the post will be sent to.<br> **Possible values:** 1 | 2 | 3 | 4"
+              },
+              {
+                "name": "photo",
+                "value": "",
+                "type": "query",
+                "description": "The photo which will be attached to the post.<br> **Possible values:** (Link) or (Uploaded Image)"
+              },
+              {
+                "name": "isscheduled",
+                "value": "",
+                "type": "query",
+                "description": "This flag will make the post to be scheduled for future.<br> **Possible values:** true | false"
+              },
+              {
+                "name": "scheduleddate",
+                "value": "",
+                "type": "query",
+                "description": "Date of the post to be scheduled.<br> **Possible values:** (Date)"
+              },
+              {
+                "name": "scheduledhours",
+                "value": "",
+                "type": "query",
+                "description": "Time of the post to be scheduled.<br> **Possible values:** (Time)"
+              },
+              {
+                "name": "scheduledampm",
+                "value": "",
+                "type": "query",
+                "description": "AMPM of the post to be scheduled.<br> **Possible values:** AM | PM | am | pm"
+              },
+              {
+                "name": "trackableLinks",
+                "value": "",
+                "type": "query",
+                "description": "Convert all links inside message to short urls.<br> **Possible values:** true | false"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Edit Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1SocialMedia/EditPost",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "ID of the post message to be edited.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "channel",
+                "value": "",
+                "type": "query",
+                "description": "The channel where the post was scheduled.<br>**Possible values:** facebook | twitter | linkedin | pinterest | instagram"
+              },
+              {
+                "name": "message",
+                "value": "",
+                "type": "query",
+                "description": "The post message to be scheduled/sent.<br>**Possible values:** (Text)"
+              },
+              {
+                "name": "scheduleddatetime",
+                "value": "",
+                "type": "query",
+                "description": "Date/Time of the post to be scheduled<br>**Possible values:** (Datetime)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Delete Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1SocialMedia/DeletePost",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "ID of the post message to be deleted.<br>**Possible Values:**(ID)"
+              },
+              {
+                "name": "channel",
+                "value": "",
+                "type": "query",
+                "description": "The channels which the post will be sent to.<br>**Possible Values:** facebook | twitter | linkedin"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

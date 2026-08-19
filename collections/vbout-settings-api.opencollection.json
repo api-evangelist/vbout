@@ -1,0 +1,214 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Settings API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Settings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Custom Short codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1Settings/CustomShortcodes"
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`  \r\n - - -  \r\n **Parameters:** `None`"
+        },
+        {
+          "info": {
+            "name": "Add Custom Short Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Settings/AddCustomShortcode",
+            "params": [
+              {
+                "name": "Content",
+                "value": "",
+                "type": "query",
+                "description": "The content of the short code.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "Name ",
+                "value": "",
+                "type": "query",
+                "description": "The name of the short code.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "Title ",
+                "value": "",
+                "type": "query",
+                "description": "The title of the short code.<br>**Possible values:**  (Text)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Edit Custom Short Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Settings/EditCustomShortCode",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "query",
+                "description": "The id of the short code.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "Title ",
+                "value": "",
+                "type": "query",
+                "description": "The title of the short code.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "Name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the short code.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "Content",
+                "value": "",
+                "type": "query",
+                "description": "The content of the short code.<br>**Possible values:**  (Text)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Delete Custom Short Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1Settings/DeleteCustomShortcode",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "query",
+                "description": "The id of the short code.<br>**Possible values:** (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`  "
+        },
+        {
+          "info": {
+            "name": "get-Settings-CustomShortCodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/Settings/CustomShortCodes"
+          },
+          "docs": "Get Custom Shortcodes"
+        },
+        {
+          "info": {
+            "name": "post-Settings-AddCustomShortCode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/Settings/AddCustomShortCode",
+            "params": [
+              {
+                "name": "content",
+                "value": "",
+                "type": "query",
+                "description": "The content of the shortcode."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the shortcode."
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query",
+                "description": "The title of the shortcode."
+              }
+            ]
+          },
+          "docs": "Add Custom Shortcode"
+        },
+        {
+          "info": {
+            "name": "post-Settings-EditCustomShortCode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/Settings/EditCustomShortCode",
+            "params": [
+              {
+                "name": "content",
+                "value": "",
+                "type": "query",
+                "description": "The content of the shortcode."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the shortcode."
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query",
+                "description": "The title of the shortcode."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the shortcode."
+              }
+            ]
+          },
+          "docs": "Edit Custom Shortcode"
+        },
+        {
+          "info": {
+            "name": "post-Settings-DeleteCustomShortCode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/Settings/DeleteCustomShortCode",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the shortcode."
+              }
+            ]
+          },
+          "docs": "Delete Custom Shortcode"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

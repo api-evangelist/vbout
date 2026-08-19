@@ -1,0 +1,102 @@
+generated: '2026-08-13'
+method: searched
+source: https://developers.vbout.com/ecommerceIntegration
+docs:
+  - https://developers.vbout.com/ecommerceIntegration
+  - https://help.vbout.com/knowledge-base/adding-tracking-domain/
+  - https://help.vbout.com/knowledge-base/using-the-form-api-integration/
+  - https://help.vbout.com/knowledge-base/creating-sitepopups/
+description: >-
+  Client-side / embeddable surfaces VBOUT ships for a customer's own website —
+  distinct from the server-side helper libraries in packages/. All three are
+  script-tag components driven by a shared global command queue (_vbset), the
+  same pattern as a classic analytics tag. Verified by fetching the shipped
+  JavaScript on 2026-08-13; the ecommerce tracker returned 200 with 13,133
+  bytes and declares window.VboutEcommerce version 1.0.1.
+families:
+  - family: tracking
+    name: VBOUT Website Tracking Code
+    type: script-tag
+    loader: 'async loader pulling from vbt.io/tracker (200 on 2026-08-13; empty body without an account parameter)'
+    global: _vbset
+    install: >-
+      Settings → Website Tracking Code → Add Website generates a per-domain
+      snippet containing the account code (VBT-XXXXX-XXXX) and domain, installed
+      before </body> or in the site footer. "Verify Installation" confirms it.
+    provides:
+      - page-view and visitor tracking
+      - anonymous-visitor to known-contact identity resolution
+      - the delivery vehicle for site popups
+    docs: https://help.vbout.com/knowledge-base/adding-tracking-domain/
+    verified: searched
+  - family: forms
+    name: Form API integration (native-form capture)
+    type: script-snippet
+    global: _vbset
+    install: >-
+      Copy the API code from the Fields & Form Builder "Embed Code" button and
+      map your native form's field IDs onto VBOUT variables.
+    snippet: |-
+      var _vbset = _vbset || [];
+      _vbset.push(['_account', 'VBT-XXXXX-XXXX']);
+      _vbset.push(['_domain', 'https://example.com']);
+      _vbset.push(['__vbvar__', ['_listID', 'LIST_ID']]);
+      _vbset.push(['__vbvar__', ['_firstname', 'FIELD_ID']]);
+    variables: ['_account', '_domain', '_listID', '_firstname', '_lastname', '_phone', '_email']
+    provides:
+      - binds an existing site form to a VBOUT list without replacing the form
+    docs: https://help.vbout.com/knowledge-base/using-the-form-api-integration/
+    verified: searched
+    note: >-
+      Account code and field IDs above are placeholders written by API
+      Evangelist; the help-center article's own example values were not copied.
+  - family: ecommerce
+    name: VBOUT Ecommerce Tracker (VboutEcommerce)
+    type: javascript-library
+    url: https://www.vbout.com/ext/plugin.ecommerce.js
+    resolved_url: https://app.vbout.com/ext/plugin.ecommerce.js
+    version: 1.0.1
+    version_source: 'this.version = ''1.0.1'' in the shipped bundle, read 2026-08-13'
+    size_bytes: 13133
+    unpinned: true
+    unpinned_note: >-
+      The documented script URL carries no version segment and floats to
+      whatever VBOUT serves; a consumer cannot pin a build.
+    install: '<script src="https://www.vbout.com/ext/plugin.ecommerce.js"></script>'
+    globals: [VboutEcommerce, _vbset]
+    constructor: "new VboutEcommerce(account, {ip, uniqueid})"
+    posts_to: 'https://app.vbout.com/index.php?r=Ecommerce/Index&'
+    commands: [store.cart.item, store.cart.item.remove, store.cart.send, store.cart.clear, store.order.send, store.order.clear, store.product.search, store.product.view, store.category.view, store.customer.add, store.customer.preferences]
+    provides:
+      - cart / abandoned-cart capture
+      - order and transaction capture
+      - product-search, product-view and category-view intent capture
+    prerequisite: 'e-commerce tracking must be enabled under Settings → Website Tracking Code → Domain Settings'
+    docs: https://developers.vbout.com/ecommerceIntegration
+    verified: probed
+  - family: popups
+    name: Site Popups
+    type: hosted-surface
+    delivery: rendered by the Website Tracking Code on the customer's site
+    provides:
+      - on-site popups with per-popup analytics
+    docs: https://help.vbout.com/knowledge-base/creating-sitepopups/
+    api: openapi/vbout-popups-api-openapi.yml
+    verified: searched
+    note: >-
+      The popup objects themselves are addressable through the Popups family of
+      the REST API (5 operations), so this is the one component with a
+      machine-readable server-side counterpart.
+not_found:
+  - name: AI chatbot embed script
+    note: >-
+      The pricing page advertises an AI Chatbot with a "Site Embed" integration
+      and the REST API has an AIchatbot family, but no public embed script or
+      loader URL is documented outside the authenticated app; probes of
+      /ext/chatbot.js and /ext/widget.js returned 503. Not recorded as a
+      component.
+x-evidence:
+  - {url: 'https://www.vbout.com/ext/plugin.ecommerce.js', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://vbt.io/tracker', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://developers.vbout.com/ecommerceIntegration', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://www.vbout.com/ext/chatbot.js', status: 503, fetched: '2026-08-13'}

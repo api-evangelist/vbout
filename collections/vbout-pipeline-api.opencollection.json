@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Pipeline API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pipeline",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetBoardGuideCategories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1Pipeline/GetBoardGuideCategories",
+            "params": [
+              {
+                "name": "API KEY",
+                "value": "",
+                "type": "query",
+                "description": "The API KEY of the Account.<br>**Possible values:** (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "GetBoardGuides",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1Pipeline/GetBoardGuides",
+            "params": [
+              {
+                "name": "API KEY",
+                "value": "",
+                "type": "query",
+                "description": "The API KEY of the Account.<br>**Possible values:** (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "CreateBoardFromGuide",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1Pipeline/CreateBoardFromGuide",
+            "params": [
+              {
+                "name": "API KEY",
+                "value": "",
+                "type": "query",
+                "description": "The API KEY of the Account.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "guideid",
+                "value": "",
+                "type": "query",
+                "description": "The guideid of the pipeline.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "Title",
+                "value": "",
+                "type": "query",
+                "description": "The Title of the pipeline.<br>**Possible values:** (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

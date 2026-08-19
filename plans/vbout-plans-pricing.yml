@@ -1,0 +1,145 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.vbout.com/pricing/
+docs: https://www.vbout.com/pricing/
+description: >-
+  VBOUT public pricing, read from https://www.vbout.com/pricing/ on 2026-08-13
+  (HTTP 200). Two things matter for API consumers and are recorded verbatim
+  below: (1) API Access is NOT included on the Free or Starter tiers — it starts
+  at Professional, and Enterprise is the only tier advertising "Increased API
+  Limits" against the documented 15 requests/second ceiling; (2) the published
+  monthly prices move with an email-volume slider (500 → 100K emails/month), so
+  the same plan card renders $50 at the 500-email setting and $199 at a higher
+  setting. Both observed values are recorded rather than one being picked.
+plan_count: 4
+currency: USD
+billing_periods: [monthly, yearly]
+yearly_discount: '10%'
+trial:
+  available: true
+  length_days: 14
+  credit_card_required: false
+  note: 'Page header: "14-day free trial, no credit-card required."'
+pricing_model: >-
+  Tiered subscription with a monthly-email-volume slider. Contact quantity is
+  unlimited on every tier; the metered dimension is emails sent per month
+  (500 → 100K) plus AI chatbot messages and training characters.
+plans:
+  - name: Free
+    price: 0
+    currency: USD
+    period: month
+    api_access: false
+    quota:
+      emails_per_month: 500
+      contacts: unlimited
+      team_users: 1
+    included:
+      - Lead Management (Unlimited Contacts)
+      - Email Marketing (500 emails/mo)
+      - Drag and Drop Automation
+      - Pipeline Management
+      - Reporting (limited)
+    excluded:
+      - API Access
+      - Lead Scoring
+      - Landing Pages
+      - Calendar Booking
+      - Social Media Management
+      - AI Chatbot
+  - name: Starter
+    price_observed: [50, 199]
+    price_note: >-
+      "$50 /month" on the default plan card at the 500 emails/month slider
+      position; "$199 /month" on the compare-plans card rendered at a higher
+      email-volume position. Both read from the same page on 2026-08-13.
+    currency: USD
+    period: month
+    api_access: false
+    quota:
+      emails_per_month: unlimited-within-selected-volume
+      contacts: unlimited
+      team_users: 5
+    included:
+      - Everything in Free
+      - Landing Pages
+      - Advanced Reporting
+      - Lead Scoring
+      - Forms with Payments
+      - Pop Ups
+      - Advanced AI / AI Content Generation
+      - 'AI Chatbot: up to 1K messages / 1 million training characters (Site Embed)'
+    excluded:
+      - API Access
+      - Calendar Booking
+      - Social Media Management
+  - name: Professional
+    price_observed: [100, 299]
+    price_note: >-
+      "$100 /month" on the default plan card at the 500 emails/month slider
+      position; "$299 /month" on the compare-plans card at a higher volume
+      position. Marked "Most Popular" on the page.
+    currency: USD
+    period: month
+    api_access: true
+    quota:
+      emails_per_month: unlimited-within-selected-volume
+      contacts: unlimited
+      team_users: 10
+      team_groups: true
+    included:
+      - Everything in Starter
+      - API Access
+      - Social Media Tools (Publishing + Moderation)
+      - Calendar Booking
+      - Remove VBOUT Branding
+      - Technical Support
+      - 'AI Chatbot: up to 5K messages / 10 million training characters (Site Embed, Facebook Messenger, SMS & WhatsApp)'
+    notes: >-
+      Lowest tier on which the VBOUT REST API (api.vbout.com/1) is available.
+  - name: Enterprise
+    price: null
+    price_display: Contact Us / Request Pricing
+    currency: USD
+    period: custom
+    api_access: true
+    quota:
+      contacts: unlimited
+      team_users: unlimited
+    included:
+      - Everything in Professional
+      - Salesforce Connector
+      - Increased API Limits
+      - Dedicated IP Pool
+      - Dedicated Account Manager
+      - 'AI Chatbot: up to 10K messages / 20 million training characters'
+    notes: >-
+      The only tier that advertises raised API limits above the documented
+      15 requests/second global ceiling; the raised figure is not published.
+agency_plans:
+  note: >-
+    A separate "Agencies / Your Own Platform" configurator on the same page
+    prices an agency bundle (Full Platform Access with AI, Agency Reseller
+    Portal, Premium Human Support, re-brandable content, VBOUT Agency Academy).
+  example_configuration:
+    total: 499
+    currency: USD
+    period: month
+    components:
+      - {item: Email Pool & Sub-Accounts, price: 299, detail: 10 sub-accounts}
+      - {item: White Label, price: 95, period: month}
+      - {item: Custom Plan Builder, price: 95, period: month}
+add_ons:
+  - {name: White Label, price: 95, currency: USD, period: month}
+  - {name: Custom Plan Builder, price: 95, currency: USD, period: month}
+  - {name: Lightning Bolt Human Support, price: null, note: 'Listed as an add-on on Free/Starter; included on Professional and above.'}
+  - {name: Remove VBOUT Branding, price: null, note: 'Add-on on Starter; included on Professional and above.'}
+overage:
+  documented: false
+  note: >-
+    No overage rate is published; volume is selected up-front via the
+    email-volume slider rather than billed after the fact.
+x-evidence:
+  - url: https://www.vbout.com/pricing/
+    status: 200
+    fetched: '2026-08-13'

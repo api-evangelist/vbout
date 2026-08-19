@@ -1,0 +1,566 @@
+{
+  "item": [
+    {
+      "id": "6e4f9f63-c3a5-4c0b-a1c5-ad82766356d5",
+      "name": "Users & Workflow",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3b24b205-ffae-4aa3-88af-cedfe95c6f88",
+          "name": "Lists",
+          "request": {
+            "name": "Lists",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "User",
+                "Lists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "businessid",
+                  "value": "None",
+                  "description": "The ID of the business if it's an agency to return its contacts.<br> **Possible values:**  (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "01d5dbaa-9b4e-4c27-8b73-e71cb6177de3",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "User",
+                    "Lists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "businessid",
+                      "value": "None"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": {\n    \"count\": 2,\n    \"items\": {\n      \"34\": {\n        \"users\": {\n          \"34\": {\n            \"fullname\": \"John Quil\",\n            \"username\": \"John Quil@example.com\"\n          },\n          \"...\": null\n        }\n      },\n      \"193\": {\n        \"users\": {\n          \"45\": {\n            \"fullname\": \"Test\",\n            \"username\": \"test22@yopmail.com\",\n            \"group\": \"-\",\n            \"status\": \"Active\"\n          },\n          \"...\": null\n        }\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d36dce2-8749-4351-ba8a-44c4d8ce9874",
+          "name": "Managers",
+          "request": {
+            "name": "Managers",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n- - -\n**Parameters:** `None`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "User",
+                "Managers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a8eede16-dedc-4ec4-921d-b4c8b72880fc",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "User",
+                    "Managers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": {\n    \"count\": 7,\n    \"items\": [\n      {\n        \"id\": \"2\",\n        \"fullname\": \"Hank R. Cheef\",\n        \"email\": \"Hank3000@yopmail.com\",\n        \"status\": \"Active\"\n      },\n      {\n        \"id\": \"10\",\n        \"fullname\": \"Oscar Nommanee\",\n        \"email\": \"oscarnom773@yopmail.com\",\n        \"status\": \"Active\"\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af1d1af9-5c83-49a2-a0c9-3f725d004a41",
+          "name": "Status",
+          "request": {
+            "name": "Status",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "User",
+                "Status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the user to change status.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "User",
+                  "description": "(Required) The type of the user.<br>**Possible values:**  user | manager"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "enable",
+                  "description": "(Required) The status of the user.<br>**Possible values:**  enable | disable"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1bd0b8d4-f166-4d47-aa89-d239c9dd7f8b",
+          "name": "Add",
+          "request": {
+            "name": "Add",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "User",
+                "Add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fullname",
+                  "value": "None",
+                  "description": "(Required) The name of the user.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) The username of the user.<br>**Possible values:**  (Email Address)"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "None",
+                  "description": "(Required) The password of the user.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "User",
+                  "description": "(Required) The type of the user.<br>**Possible values:**  user | manager"
+                },
+                {
+                  "disabled": false,
+                  "key": "group",
+                  "value": "0",
+                  "description": "The group id of the user.<br>**Possible values:**   (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "permissions",
+                  "value": "Null",
+                  "description": "Optional<br>`Required`: if **no group** is selected.<br>The permissions of the user. (comma-separated values) <br>**Possible values:**   all | reputation_center | foursquare | pinterest | social_media | email_marketing | master_reporting | users_and_workflow | user_groups | smart_calendar | site_builder | asset_manager | task_manager | notes | social_tracker | google_analytics | email_automation_workflow | live_hashtags | goal_conversion_tracking | expedia_affiliate_network | behavioral_webhooks | lead_scoring | landingpages | sms_automation | heatmap | email_test | salesforce_sync | browser_push | hubspot_sync | zoho_sync | pipeline_manager | campaign_groups | webinars | content_bank | insightly_sync | ftp_sync | simplifi_reports | custom_smtp | call_center"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87b72cdf-cc5c-489b-8180-421f8d3d4082",
+          "name": "Edit",
+          "request": {
+            "name": "Edit",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "User",
+                "Edit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the user.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fullname",
+                  "value": "None",
+                  "description": "(Required) The name of the user.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "None",
+                  "description": "(Required) The username of the user.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "User",
+                  "description": "The type of the user.<br>**Possible values:**   (user | manager)"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "None",
+                  "description": "The password of the user.<br>**Possible values:**    (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "group",
+                  "value": "0",
+                  "description": "The group id of the user.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "permissions",
+                  "value": "Null",
+                  "description": "Optional<br>`Required`: if **no group** is selected.<br>The permissions of the user. (comma-separated values) <br>**Possible values:**  all | reputation_center | foursquare | pinterest | social_media | email_marketing | master_reporting | users_and_workflow | user_groups | smart_calendar | site_builder | asset_manager | task_manager | notes | social_tracker | google_analytics | email_automation_workflow | live_hashtags | goal_conversion_tracking | expedia_affiliate_network | behavioral_webhooks | lead_scoring | landingpages | sms_automation | heatmap | email_test | salesforce_sync | browser_push | hubspot_sync | zoho_sync | pipeline_manager | campaign_groups | webinars | content_bank | insightly_sync | ftp_sync | simplifi_reports | custom_smtp | call_center"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe23d612-2ec1-4ac7-8cd6-8e4ef82bdd7f",
+          "name": "Delete",
+          "request": {
+            "name": "Delete",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "User",
+                "Delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the user to delete.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "User",
+                  "description": "(Required) The type of the user.<br>**Possible values:**  user | manager"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b68d8ae9-927c-4d1c-9602-9231d30ae8b7",
+          "name": "Groups",
+          "request": {
+            "name": "Groups",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "User",
+                "Groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b9b2ba67-a66f-4b15-90de-89632a2a85d9",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "User",
+                    "Groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"groups\": {\n    \"count\": 3,\n    \"items\": [\n      {\n        \"id\": \"4\",\n        \"name\": \"Sales Team #Chicago\",\n        \"status\": \"Active\"\n      },\n      {\n        \"id\": \"5\",\n        \"name\": \"Sales Team #New York\",\n        \"status\": \"Active\"\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "21d9791c-2118-44d3-8e87-30719dea4653",
+          "name": "Group Delete",
+          "request": {
+            "name": "Group Delete",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "User",
+                "GroupDelete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the group to delete.<br>**Possible values:**  (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a1c374f-3a2c-42e2-bb78-dd9355e7b4a2",
+          "name": "Group Status",
+          "request": {
+            "name": "Group Status",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "User",
+                "GroupStatus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the group to change status.<br>**Possible values:**   (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "enable",
+                  "description": "(Required) The status of the group.<br>**Possible values:**    enable | disable"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cf05c914-1cb9-4ea5-ab73-e51337a0ab0e",
+    "name": "VBOUT EmailMarketing Users & Workflow API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

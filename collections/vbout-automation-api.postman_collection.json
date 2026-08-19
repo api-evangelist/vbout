@@ -1,0 +1,188 @@
+{
+  "item": [
+    {
+      "id": "7964c7c6-d4c0-4ea2-b6da-6e76a002960d",
+      "name": "Automation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6d3207e7-cee7-4a68-9960-3aa324ccfaad",
+          "name": "GetGuides",
+          "request": {
+            "name": "GetGuides",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Automation",
+                "GetGuides"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "API KEY",
+                  "value": "<integer>",
+                  "description": "(Required) list of guideIDs of the automation.<br>**Possible values:** (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec1e4cdb-368d-443d-b06c-095bd6b68cdf",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Automation",
+                    "GetGuides"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "API KEY",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"142\",\n    \"name\": \"Facebook Comment Automation\",\n    \"description\": \"Turn Facebook comments to direct message automation, and convert engagement to emails and leads.\",\n    \"tags\": [\n      \"Facebook\",\n      \"Social Automation\"\n    ],\n    \"content\": {\n      \"emails\": [\n        {\n          \"graphid\": \"b1931b5d-9ac7-42c5-8d72-14ad229999db\",\n          \"label\": \"Send Email\"\n        },\n        {\n          \"graphid\": \"b1931b5d-9ac7-42c5-8d72-14ad229999db\",\n          \"label\": \"Send Email\"\n        }\n      ]\n    }\n  },\n  {\n    \"id\": \"142\",\n    \"name\": \"Facebook Comment Automation\",\n    \"description\": \"Turn Facebook comments to direct message automation, and convert engagement to emails and leads.\",\n    \"tags\": [\n      \"Facebook\",\n      \"Social Automation\"\n    ],\n    \"content\": {\n      \"emails\": [\n        {\n          \"graphid\": \"b1931b5d-9ac7-42c5-8d72-14ad229999db\",\n          \"label\": \"Send Email\"\n        },\n        {\n          \"graphid\": \"b1931b5d-9ac7-42c5-8d72-14ad229999db\",\n          \"label\": \"Send Email\"\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc0aa386-6dd3-4f77-adbe-82b610e47ab1",
+          "name": "CreateAutomationFromGuide",
+          "request": {
+            "name": "CreateAutomationFromGuide",
+            "description": {
+              "content": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Automation",
+                "CreateAutomationFromGuide"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "964111d3-df98-4b90-824a-d9bc2c8c6f75",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Automation",
+                    "CreateAutomationFromGuide"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"item\": \"Your automation has been created successfully.\",\n    \"recid\": \"[id]\"\n  },\n  {\n    \"item\": \"Your automation has been created successfully.\",\n    \"recid\": \"[id]\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e2115b88-f82b-46c4-974c-d6e946c680bd",
+    "name": "VBOUT EmailMarketing Automation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

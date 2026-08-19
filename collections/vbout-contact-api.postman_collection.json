@@ -1,0 +1,1382 @@
+{
+  "item": [
+    {
+      "id": "13c9840c-84fb-4ff5-a30f-2d210fd3bb49",
+      "name": "Contact",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dc61b485-62ac-41ae-a70b-0ace312a73d5",
+          "name": "Contacts",
+          "request": {
+            "name": "Contacts",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetContacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": " listid",
+                  "value": "0",
+                  "description": "(Required) The ID of the list to return its contacts.<br>**Possible values:**  (IDs)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a68f5c0b-b0e9-4a10-acfb-8451fa77e3db",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetContacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": " listid",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contacts\": {\n    \"count\": 15,\n    \"items\": [\n      {\n        \"id\": \"3\",\n        \"email\": \"jim@tester.com\",\n        \"status\": \"1\",\n        \"registration_date\": \"11/30/2014 00:00\"\n      },\n      {\n        \"id\": \"4\",\n        \"email\": \"joe@tester.com\",\n        \"status\": \"1\",\n        \"registration_date\": \"11/30/2014 00:00\"\n      },\n      {\n        \"id\": \"62\",\n        \"email\": \"jim@tester222.com\",\n        \"status\": \"1\",\n        \"registration_date\": \"11/30/2014 00:00\"\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b089a76c-d030-4daa-8853-1733b1aed2fd",
+          "name": "Contacts By Phone Number",
+          "request": {
+            "name": "Contacts By Phone Number",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetContactsByPhoneNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "listid",
+                  "value": "0",
+                  "description": "(Required) The ID of the list to return its contacts.<br>**Possible values:**  (IDs)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88d95336-eea1-4b75-b95c-f9b276ae0646",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetContactsByPhoneNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "listid",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contacts\": {\n    \"count\": 15,\n    \"items\": [\n      {\n        \"id\": \"3\",\n        \"email\": \"jim@tester.com\",\n        \"status\": \"1\",\n        \"registration_date\": \"11/30/2014 00:00\"\n      },\n      {\n        \"id\": \"4\",\n        \"email\": \"joe@tester.com\",\n        \"status\": \"1\",\n        \"registration_date\": \"11/30/2014 00:00\"\n      },\n      {\n        \"id\": \"62\",\n        \"email\": \"jim@tester222.com\",\n        \"status\": \"1\",\n        \"registration_date\": \"11/30/2014 00:00\"\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa476918-8c49-4b42-8a32-5d856d9d37fe",
+          "name": "Contact By Email",
+          "request": {
+            "name": "Contact By Email",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetContactByEmail"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "none",
+                  "description": "(Required) The Email of the contact to return.**Possible values:** (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "listid",
+                  "value": "none",
+                  "description": "The List id of which this contact does belong to.**Possible values:**(ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b493cb0d-3b2b-40b4-a420-f3fa894a2699",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetContactByEmail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "none"
+                    },
+                    {
+                      "key": "listid",
+                      "value": "none"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contact\\\"\": {\n    \"id\": \"3\",\n    \"email\": \"jim@tester.com\",\n    \"status\": \"1\",\n    \"registration_date\": \"11/30/1998 00:00\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5537550a-0df7-44de-b563-22f4a35d2d07",
+          "name": "Contact",
+          "request": {
+            "name": "Contact",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetContact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "none",
+                  "description": "(Required) The ID of the contact to return.<br>**Possible values:** (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8fb4f28f-f9b6-4125-966f-b2f07d9d7fcd",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetContact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "none"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contact\\\"\": {\n    \"id\": \"3\",\n    \"email\": \"jim@tester.com\",\n    \"status\": \"1\",\n    \"registration_date\": \"11/30/1998 00:00\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2a0a4f7-1a3b-494b-b432-39deb9d42b6b",
+          "name": "Add Contact",
+          "request": {
+            "name": "Add Contact",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "AddContact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": " status",
+                  "value": "None",
+                  "description": "(Required) The status of the contact.<br>**Possible values:** (Active | Disactive)"
+                },
+                {
+                  "disabled": false,
+                  "key": "listid",
+                  "value": "<integer>",
+                  "description": "(Required) The ID of the list to assign this contact to.<br>**Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "None",
+                  "description": "The email of the contact.<br>**Possible values:** (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "ipaddress",
+                  "value": "None",
+                  "description": "The ip of the contact.<br>**Possible values:** (IP)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "None",
+                  "description": "The list of custom fields added to a specific list.<br>**Possible values:**  Array('fieldID'=>'fieldValue')<br><b>Accepted Date Formats:</b> Y-m-d | d-m-Y | m/d/Y"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ce9313e-6da5-45e4-86ea-bf8886777e1d",
+          "name": "Edit Contact",
+          "request": {
+            "name": "Edit Contact",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "EditContact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the contact.<br>**Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "None",
+                  "description": "The email of the contact.<br>**Possible values:** (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "ipaddress",
+                  "value": "None",
+                  "description": "The ip of the contact.<br>**Possible values:** (IP)"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "None",
+                  "description": "The status of the contact.<br>**Possible values:** (Active | Disactive)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "None",
+                  "description": "The list of custom fields added to a specific list.<br>**Possible values:**  Array('fieldID'=>'fieldValue')<br><b>Accepted Date Formats:</b> Y-m-d | d-m-Y | m/d/Y"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41f2cb02-41af-42a4-a7ab-8a3465a77734",
+          "name": "Sync Contact",
+          "request": {
+            "name": "Sync Contact",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n  - - -  \n**Note:** All emails having the same email text available in the provided list will be updated if exists (case email is not required).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "SyncContact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "None",
+                  "description": "(Required) The email of the contact.<br>**Possible values:** (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "listid",
+                  "value": "None",
+                  "description": "The ID of the list to assign this contact to.<br>**Possible values:** (ID) "
+                },
+                {
+                  "disabled": false,
+                  "key": "ipaddress",
+                  "value": "None",
+                  "description": "The ip of the contact.<br>**Possible values:** (IP)"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "None",
+                  "description": "The status of the contact.<br>**Possible values:** (Active | Disactive)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "None",
+                  "description": "The list of custom fields added to a specific list.<br>**Possible values:** Array('fieldID'=>'fieldValue')<br><b>Accepted Date Formats:</b> Y-m-d | d-m-Y | m/d/Y"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e7643e3-35a4-423d-9ba5-aad1df431f6d",
+          "name": "Delete Contact",
+          "request": {
+            "name": "Delete Contact",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "DeleteContact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the contact to delete.<br> **Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "listid",
+                  "value": "None",
+                  "description": "(Required) The ID of the list to delete from.<br> **Possible values:** (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f132fc64-c813-41ec-9afa-cd63812b55f2",
+          "name": "Move Contact",
+          "request": {
+            "name": "Move Contact",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "MoveContact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the contact.<br>**Possible Values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "listid",
+                  "value": "None",
+                  "description": "(Required) The ID of the list to assign this contact to.<br>**Possible values:** (ID) "
+                },
+                {
+                  "disabled": false,
+                  "key": "sourceid",
+                  "value": "None",
+                  "description": "(Required) The ID of the list to assign this contact to.<br>**Possible values:** (ID) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d33eb51d-7454-4c6e-a33a-58a6802cc088",
+          "name": "Contact Timeline",
+          "request": {
+            "name": "Contact Timeline",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetContactTimeline"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": " id",
+                  "value": "None",
+                  "description": "(Required) The ID of the contact to return his timeline activities.<br>**Possible values:** (ID) "
+                },
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "None",
+                  "description": "Comma separated keys to return other details with the timeline activities. <br>**Possible values:** utm | automated "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "164b41e4-9300-4ce9-bc57-73e361bf7dfd",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetContactTimeline"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": " id",
+                      "value": "None"
+                    },
+                    {
+                      "key": "include",
+                      "value": "None"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 123,\n  \"email\": \"example@example.com\",\n  \"timeline\": {\n    \"data\": [\n      {\n        \"key\": \"email-campaign-sent\",\n        \"snippet\": \"Message: A test email campaign\",\n        \"timestamp\": 1653576048,\n        \"datetime\": \"2022-05-26 05:40 PM\",\n        \"details\": [\n          {\n            \"key\": \"send-date\",\n            \"label\": \"Send Date\",\n            \"value\": \"2022-05-26 05:40PM\"\n          },\n          {\n            \"key\": \"open-date\",\n            \"label\": \"Opened\",\n            \"value\": \"N/A\"\n          },\n          {\n            \"key\": \"links-clicked\",\n            \"label\": \"Links Clicked\",\n            \"value\": 0\n          }\n        ]\n      },\n      {\n        \"key\": \"automation-triggered\",\n        \"snippet\": \"Automation Triggered: Send Automation\",\n        \"timestamp\": 1648048427,\n        \"datetime\": \"23-03-2022 05:13 PM\",\n        \"details\": [\n          {\n            \"key\": \"steps\",\n            \"label\": \"Steps\",\n            \"value\": 6\n          },\n          {\n            \"key\": \"actions\",\n            \"label\": \"Actions\",\n            \"value\": 6\n          }\n        ]\n      }\n    ],\n    \"count\": 2,\n    \"total\": 2\n  },\n  \"utm\": {\n    \"data\": [\n      {\n        \"link\": \"https://www.test.com/page?utm_source=facebook&utm_medium=mobile&utm_campaign=ad-camoaign\",\n        \"utm\": {\n          \"campaign\": \"ad-camoaign\",\n          \"source\": \"facebook\",\n          \"medium\": \"mobile\",\n          \"term\": \"\",\n          \"content\": \"\"\n        },\n        \"timestamp\": 1656056618,\n        \"datetime\": \"24-06-2022 10:43 AM\"\n      }\n    ],\n    \"count\": 1\n  },\n  \"automated\": {\n    \"data\": [\n      {\n        \"name\": \"Followup Message\",\n        \"type\": \"sms\",\n        \"timestamp\": 1648047960,\n        \"datetime\": \"23-03-2022 05:06 PM\",\n        \"details\": [\n          {\n            \"key\": \"message\",\n            \"value\": \"[#FIRSTNAME#], thanks for contacting us! Just sent you an email with more details.\"\n          },\n          {\n            \"key\": \"click-date\",\n            \"value\": \"-\"\n          }\n        ]\n      },\n      {\n        \"name\": \"Welcome Message\",\n        \"type\": \"email\",\n        \"timestamp\": 1648047900,\n        \"datetime\": \"23-03-2022 05:05 PM\",\n        \"details\": [\n          {\n            \"key\": \"subject\",\n            \"value\": \"Welcome to our company\"\n          },\n          {\n            \"key\": \"open-date\",\n            \"value\": \"27-03-2022 11:25 PM\"\n          },\n          {\n            \"key\": \"click-date\",\n            \"value\": \"-\"\n          }\n        ]\n      }\n    ],\n    \"count\": 2\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17f242ea-98ca-40b5-bcda-51c375db25de",
+          "name": "Contact Timeline By Email Address",
+          "request": {
+            "name": "Contact Timeline By Email Address",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetContactTimelineByEmailAddress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Email",
+                  "value": "None",
+                  "description": "(Required) The email address for the contact to return his timeline activities.<br>**Possible values:**  (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "Include",
+                  "value": "None",
+                  "description": "Comma separated keys to return other details with the timeline activities.<br>**Possible values:**  utm | automated"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1089bcd-f43f-438c-863f-839e81acdf70",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetContactTimelineByEmailAddress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Email",
+                      "value": "None"
+                    },
+                    {
+                      "key": "Include",
+                      "value": "None"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 123,\n  \"email\": \"example@example.com\",\n  \"timeline\": {\n    \"data\": [\n      {\n        \"key\": \"email-campaign-sent\",\n        \"snippet\": \"Message: A test email campaign\",\n        \"timestamp\": 1653576048,\n        \"datetime\": \"2022-05-26 05:40 PM\",\n        \"details\": [\n          {\n            \"key\": \"send-date\",\n            \"label\": \"Send Date\",\n            \"value\": \"2022-05-26 05:40PM\"\n          },\n          {\n            \"key\": \"open-date\",\n            \"label\": \"Opened\",\n            \"value\": \"N/A\"\n          },\n          {\n            \"key\": \"links-clicked\",\n            \"label\": \"Links Clicked\",\n            \"value\": 0\n          }\n        ]\n      },\n      {\n        \"key\": \"automation-triggered\",\n        \"snippet\": \"Automation Triggered: Send Automation\",\n        \"timestamp\": 1648048427,\n        \"datetime\": \"23-03-2022 05:13 PM\",\n        \"details\": [\n          {\n            \"key\": \"steps\",\n            \"label\": \"Steps\",\n            \"value\": 6\n          },\n          {\n            \"key\": \"actions\",\n            \"label\": \"Actions\",\n            \"value\": 6\n          }\n        ]\n      }\n    ],\n    \"count\": 2,\n    \"total\": 2\n  },\n  \"utm\": {\n    \"data\": [\n      {\n        \"link\": \"https://www.test.com/page?utm_source=facebook&utm_medium=mobile&utm_campaign=ad-camoaign\",\n        \"utm\": {\n          \"campaign\": \"ad-camoaign\",\n          \"source\": \"facebook\",\n          \"medium\": \"mobile\",\n          \"term\": \"\",\n          \"content\": \"\"\n        },\n        \"timestamp\": 1656056618,\n        \"datetime\": \"24-06-2022 10:43 AM\"\n      }\n    ],\n    \"count\": 1\n  },\n  \"automated\": {\n    \"data\": [\n      {\n        \"name\": \"Followup Message\",\n        \"type\": \"sms\",\n        \"timestamp\": 1648047960,\n        \"datetime\": \"23-03-2022 05:06 PM\",\n        \"details\": [\n          {\n            \"key\": \"message\",\n            \"value\": \"[#FIRSTNAME#], thanks for contacting us! Just sent you an email with more details.\"\n          },\n          {\n            \"key\": \"click-date\",\n            \"value\": \"-\"\n          }\n        ]\n      },\n      {\n        \"name\": \"Welcome Message\",\n        \"type\": \"email\",\n        \"timestamp\": 1648047900,\n        \"datetime\": \"23-03-2022 05:05 PM\",\n        \"details\": [\n          {\n            \"key\": \"subject\",\n            \"value\": \"Welcome to our company\"\n          },\n          {\n            \"key\": \"open-date\",\n            \"value\": \"27-03-2022 11:25 PM\"\n          },\n          {\n            \"key\": \"click-date\",\n            \"value\": \"-\"\n          }\n        ]\n      }\n    ],\n    \"count\": 2\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1d8ad03-9d55-4c73-a2b7-fb1c2919ec0a",
+          "name": "Audiences",
+          "request": {
+            "name": "Audiences",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetAudiences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "25f4005e-f6f7-46c2-a5d0-e67dbd18556e",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetAudiences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"audiences\": {\n    \"count\": 41,\n    \"items\": [\n      {\n        \"id\": \"148\",\n        \"name\": \"2014 NYC hotel show\"\n      },\n      {\n        \"id\": \"157\",\n        \"name\": \"Startup Alley NYC\"\n      },\n      {\n        \"id\": \"180\",\n        \"name\": \"My Autoresponder Audience\"\n      },\n      {\n        \"id\": \"480\",\n        \"name\": \"Content Automation Center Funnel\"\n      },\n      {\n        \"id\": \"481\",\n        \"name\": \"Content Automation Bottom Funnel\"\n      },\n      {\n        \"id\": \"482\",\n        \"name\": \"Birthday Audience\"\n      },\n      {\n        \"id\": \"524\",\n        \"name\": \"TestYogaShopFunnelForm\"\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff877b51-eb03-4ce0-bd4a-6abe315d9466",
+          "name": "Lists",
+          "request": {
+            "name": "Lists",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetLists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "191c624c-2737-452c-8e82-ecacda4ced6c",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetLists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lists\": {\n    \"count\": 41,\n    \"items\": [\n      {\n        \"id\": \"148\",\n        \"name\": \"2014 NYC  hotel show\",\n        \"form_title\": \"2014 NYC  hotel show\",\n        \"email_subject\": \"\",\n        \"reply_to\": \"\",\n        \"from_email\": \"\",\n        \"from_name\": \"\",\n        \"confimation_email\": \" Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME] [ADDRESS]\",\n        \"success_email\": \" Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME] [ADDRESS]\",\n        \"confimation_message\": \"Your signup is almost complete! Please check your email for a confirmation message.\",\n        \"success_message\": \"Your subscription is now complete!\",\n        \"error_message\": \"\",\n        \"doubleOptin\": \"0\",\n        \"notify_email\": \"Example@gmail.com\",\n        \"creation_date\": \"04/10/2014 00:00\"\n      },\n      {\n        \"id\": \"157\",\n        \"name\": \"Startup Alley NYC\",\n        \"form_title\": \"Untitled Form\",\n        \"email_subject\": \"\",\n        \"reply_to\": \"\",\n        \"from_email\": \"\",\n        \"from_name\": \"\",\n        \"confimation_email\": \"Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME] [ADDRESS]\",\n        \"success_email\": \"Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME] [ADDRESS]\",\n        \"confimation_message\": \"Your signup is almost complete! Please check your email for a confirmation message.\",\n        \"success_message\": \"Your subscription is now complete!\",\n        \"error_message\": \"You have already been subscribed to this list!\",\n        \"doubleOptin\": \"0\",\n        \"notify_email\": \"\",\n        \"creation_date\": \"04/15/2014 00:00\"\n      },\n      {\n        \"id\": \"180\",\n        \"name\": \"My Autoresponder List\",\n        \"form_title\": \"Untitled Form\",\n        \"email_subject\": \"\",\n        \"reply_to\": \"\",\n        \"from_email\": \"\",\n        \"from_name\": \"\",\n        \"confimation_email\": \"Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME] [ADDRESS]\",\n        \"success_email\": \"Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME] [ADDRESS]\",\n        \"confimation_message\": \"Your signup is almost complete! Please check your email for a confirmation message.\",\n        \"success_message\": \"Your subscription is now complete!\",\n        \"error_message\": \"\",\n        \"doubleOptin\": \"0\",\n        \"notify_email\": \"\",\n        \"creation_date\": \"04/22/2014 00:00\"\n      },\n      {\n        \"id\": \"480\",\n        \"name\": \"Content Automation Center Funnel\",\n        \"form_title\": \"testing automation\",\n        \"email_subject\": \"Subscription to testing automation\",\n        \"reply_to\": \"no-reply@vbout.com\",\n        \"from_email\": \"Example@gmail.com\",\n        \"from_name\": \"Vbout\",\n        \"confimation_email\": \" Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]\",\n        \"success_email\": \"Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]\",\n        \"confimation_message\": \"Your signup is almost complete! Please check your email for a confirmation message.\",\n        \"success_message\": \"Your subscription is now complete!\",\n        \"error_message\": \"You have already been subscribed to this list!\",\n        \"doubleOptin\": \"0\",\n        \"notify_email\": \"Example@gmail.com\",\n        \"creation_date\": \"09/29/2014 00:00\"\n      },\n      {\n        \"id\": \"481\",\n        \"name\": \"Content Automation Bottom Funnel\",\n        \"form_title\": \"testing automation\",\n        \"email_subject\": \"\",\n        \"reply_to\": \"\",\n        \"from_email\": \"\",\n        \"from_name\": \"\",\n        \"confimation_email\": \"Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]\",\n        \"success_email\": \"Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]\",\n        \"confimation_message\": \"Your signup is almost complete! Please check your email for a confirmation message.\",\n        \"success_message\": \"Your subscription is now complete!\",\n        \"error_message\": \"You have already been subscribed to this list!\",\n        \"doubleOptin\": \"0\",\n        \"notify_email\": \"\",\n        \"creation_date\": \"09/30/2014 00:00\"\n      },\n      {\n        \"id\": \"482\",\n        \"name\": \"Birthday List\",\n        \"form_title\": \"testing automation\",\n        \"email_subject\": \"\",\n        \"reply_to\": \"\",\n        \"from_email\": \"\",\n        \"from_name\": \"\",\n        \"confimation_email\": \"Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]\",\n        \"success_email\": \"Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]\",\n        \"confimation_message\": \"Your signup is almost complete! Please check your email for a confirmation message.\",\n        \"success_message\": \"Your subscription is now complete!\",\n        \"error_message\": \"You have already been subscribed to this list!\",\n        \"doubleOptin\": \"0\",\n        \"notify_email\": \"\",\n        \"creation_date\": \"10/01/2014 00:00\"\n      },\n      {\n        \"id\": \"524\",\n        \"name\": \"TestYogaShopFunnelForm\",\n        \"form_title\": \"Untitled Form\",\n        \"email_subject\": \"\",\n        \"reply_to\": \"\",\n        \"from_email\": \"\",\n        \"from_name\": \"\",\n        \"confimation_email\": \"Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]\",\n        \"success_email\": \"Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]\",\n        \"confimation_message\": \"Your signup is almost complete! Please check your email for a confirmation message.\",\n        \"success_message\": \"Your subscription is now complete!\",\n        \"error_message\": \"You have already been subscribed to this list!\",\n        \"doubleOptin\": \"0\",\n        \"notify_email\": \"\",\n        \"creation_date\": \"11/06/2014 00:00\"\n      },\n      \"...\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1f9bc114-8d16-4d9b-90c4-12a444a2fb10",
+          "name": "List",
+          "request": {
+            "name": "List",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "GetList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the list to return.<br>**Possible values:**   (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d458426d-3505-4aab-9130-00fb1f748d96",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmailMarketing",
+                    "GetList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "None"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"list\": {\n    \"id\": \"524\",\n    \"name\": \"Landing page subscription form\",\n    \"form_title\": \"Newsletter Signup\",\n    \"email_subject\": \"\",\n    \"reply_to\": \"\",\n    \"from_email\": \"example@vbout.com\",\n    \"from_name\": \"A person from Vbout\",\n    \"confimation_email\": \"Please click on the link below to confirm your subscription.[CONFIRMATION_URL][BUSINESS_NAME]\",\n    \"success_email\": \"Your email is now confirmed! we are excited to have you on our list. We will be in touch soon.[BUSINESS_NAME]\",\n    \"confimation_message\": \"Your signup is almost complete! Please check your email for a confirmation message.\",\n    \"success_message\": \"Your subscription is now complete!\",\n    \"error_message\": \"You have already been subscribed to this list!\",\n    \"doubleOptin\": \"0\",\n    \"notify_email\": \"\",\n    \"creation_date\": \"11/06/2014 00:00\",\n    \"fields\": {\n      \"125\": \"First Name\",\n      \"325\": \"Date Of Birth\",\n      \"1204\": \"Last Name\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d28fa791-f5b3-4669-b53b-70a27a213927",
+          "name": "Add List",
+          "request": {
+            "name": "Add List",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "AddList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "None",
+                  "description": "(Required) The name of the list.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "email_subject",
+                  "value": "None",
+                  "description": "The default subscription subject.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "reply_to",
+                  "value": "None",
+                  "description": "The Reply to email of the list.<br>**Possible values:**  (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromemail",
+                  "value": "None",
+                  "description": "The From email of the list.<br>**Possible values:**  (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_name",
+                  "value": "None",
+                  "description": "The From name of the list.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "doubleOptin",
+                  "value": "None",
+                  "description": "Email confirmation required (Double opt-in)?<br>**Possible values:**  0 | 1"
+                },
+                {
+                  "disabled": false,
+                  "key": "notify",
+                  "value": "<string>",
+                  "description": "Notify me of new subscribers.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "notify_email",
+                  "value": "None",
+                  "description": "Notification Email.<br>**Possible values:**  (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "success_email",
+                  "value": "None",
+                  "description": "Subscription Success Email.<br>**Possible values:**  (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "success_message",
+                  "value": "None",
+                  "description": "Subscription Success Message.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "error_message",
+                  "value": "None",
+                  "description": "Subscription Error Message.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "confirmation_email",
+                  "value": "None",
+                  "description": "Confirmation Email Message.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "confirmation_message",
+                  "value": "None",
+                  "description": "Confirmation Message.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "communications",
+                  "value": "None",
+                  "description": "Turn off Communications? (0-No | 1-Yes)<br>**Possible values:** 0 | 1"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a62ae79e-c8ac-4309-8ed8-223fe835847f",
+          "name": "Edit List",
+          "request": {
+            "name": "Edit List",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "Editlist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The id of the list.<br>**Possible values:**  (Number)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "None",
+                  "description": "(Required) The name of the list.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "email_subject",
+                  "value": "None",
+                  "description": "The default subject line of subscription.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "reply_to",
+                  "value": "None",
+                  "description": "The Reply to email of the list.<br>**Possible values:**  (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromemail",
+                  "value": "None",
+                  "description": "The From email of the list.<br>**Possible values:**  (Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_name",
+                  "value": "None",
+                  "description": "The From name of the list.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "doubleOptin",
+                  "value": "None",
+                  "description": "Email confirmation required (Double opt-in)?.<br>**Possible values:**  0 | 1"
+                },
+                {
+                  "disabled": false,
+                  "key": "notify",
+                  "value": "None",
+                  "description": "Notify me of new subscribers.<br>**Possible values:** (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "notify_email",
+                  "value": "None",
+                  "description": "Notification Email.<br>**Possible values:**(Email)"
+                },
+                {
+                  "disabled": false,
+                  "key": "success_email",
+                  "value": "None",
+                  "description": "Subscription Success Email.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "success_message",
+                  "value": "None",
+                  "description": "Subscription Success Message.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "error_message",
+                  "value": "None",
+                  "description": "Subscription Error Message.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "confirmation_email",
+                  "value": "None",
+                  "description": "Confirmation Email Message.<br>**Possible values:**  (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "Confirmation Email Message.",
+                  "value": "None",
+                  "description": "Confirmation Message.<br>**Possible values:** (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "communications",
+                  "value": "None",
+                  "description": "Turn off Communications? (0-No | 1-Yes)<br>**Possible values:** 0 | 1"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61cb2d85-b84e-48c2-8312-aea0d32da4b0",
+          "name": "Delete List",
+          "request": {
+            "name": "Delete List",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "DeleteList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The ID of the list to delete.<br>**Possible values:** (ID)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84be523b-e990-4f09-89e9-26b7c14681f0",
+          "name": "Add Activity",
+          "request": {
+            "name": "Add Activity",
+            "description": {
+              "content": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "EmailMarketing",
+                "AddActivity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "None",
+                  "description": "(Required) The id of the contact.<br> **Possible values:** (ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "None",
+                  "description": "(Required) The description of the activity.<br> **Possible values:** (Text)"
+                },
+                {
+                  "disabled": false,
+                  "key": "datetime",
+                  "value": "None",
+                  "description": "(Required) The date and time to activity.<br> **Possible values:** (DateTime)"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "79515b36-0ba3-4607-be8f-93072415c28b",
+    "name": "VBOUT EmailMarketing Contact API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing SocialMedia API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SocialMedia",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get-SocialMedia-Channels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/SocialMedia/Channels"
+          },
+          "docs": "Get Channels"
+        },
+        {
+          "info": {
+            "name": "get-SocialMedia-Calendar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/SocialMedia/Calendar",
+            "params": [
+              {
+                "name": "channels",
+                "value": "",
+                "type": "query",
+                "description": "The channels from where the posts are gathered (all, facebook, twitter, linkedin)"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "The from date which the reviews are returned. The filter must be date for this parameter to work."
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "The to date which the reviews are returned. The filter must be date for this parameter to work."
+              },
+              {
+                "name": "includeposted",
+                "value": "",
+                "type": "query",
+                "description": "Include already scheduled posts inside the results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Set your record limit number per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Set which page you wanna get."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Record Sorting (asc|desc)"
+              }
+            ]
+          },
+          "docs": "Get Calendar"
+        },
+        {
+          "info": {
+            "name": "get-SocialMedia-Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/SocialMedia/Stats",
+            "params": [
+              {
+                "name": "channels",
+                "value": "",
+                "type": "query",
+                "description": "The channels from where the posts are gathered (all, facebook, twitter, linkedin)"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Record Sorting (asc|desc)"
+              }
+            ]
+          },
+          "docs": "Get Stats"
+        },
+        {
+          "info": {
+            "name": "get-SocialMedia-GetPost",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/SocialMedia/GetPost",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the post."
+              },
+              {
+                "name": "channel",
+                "value": "",
+                "type": "query",
+                "description": "The channel where the post is created. Must be in lower case. Convert it to lower case."
+              }
+            ]
+          },
+          "docs": "Get Post"
+        },
+        {
+          "info": {
+            "name": "post-SocialMedia-AddPost",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/SocialMedia/AddPost",
+            "params": [
+              {
+                "name": "message",
+                "value": "",
+                "type": "query",
+                "description": "The post message to be scheduled/sent."
+              },
+              {
+                "name": "channel",
+                "value": "",
+                "type": "query",
+                "description": "The channels which the post will be sent to. Must be in lower case. Convert it to lower case."
+              },
+              {
+                "name": "channelid",
+                "value": "",
+                "type": "query",
+                "description": "The channels which the post will be sent to."
+              },
+              {
+                "name": "photo",
+                "value": "",
+                "type": "query",
+                "description": "The photo which will be attached to the post."
+              },
+              {
+                "name": "isscheduled",
+                "value": "",
+                "type": "query",
+                "description": "This flag will make the post to be scheduled for future."
+              },
+              {
+                "name": "scheduleddate",
+                "value": "",
+                "type": "query",
+                "description": "Date of the post to be scheduled."
+              },
+              {
+                "name": "scheduledhours",
+                "value": "",
+                "type": "query",
+                "description": "Time of the post to be scheduled."
+              },
+              {
+                "name": "trackableLinks",
+                "value": "",
+                "type": "query",
+                "description": "Convert all links inside message to short urls."
+              },
+              {
+                "name": "scheduledampm",
+                "value": "",
+                "type": "query",
+                "description": "AM/PM of the post to be scheduled."
+              }
+            ]
+          },
+          "docs": "Add Post"
+        },
+        {
+          "info": {
+            "name": "post-SocialMedia-EditPost",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/SocialMedia/EditPost",
+            "params": [
+              {
+                "name": "message",
+                "value": "",
+                "type": "query",
+                "description": "The post message to be scheduled/sent."
+              },
+              {
+                "name": "channel",
+                "value": "",
+                "type": "query",
+                "description": "The channel where the post was scheduled. Must be in lower case. Convert it to lower case."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "ID of the post message to be edited."
+              },
+              {
+                "name": "scheduleddatetime",
+                "value": "",
+                "type": "query",
+                "description": "Date/Time of the post to be scheduled."
+              }
+            ]
+          },
+          "docs": "Edit Post"
+        },
+        {
+          "info": {
+            "name": "post-SocialMedia-DeletePost",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/SocialMedia/DeletePost",
+            "params": [
+              {
+                "name": "channel",
+                "value": "",
+                "type": "query",
+                "description": "The channels which the post will be sent to. Must be in lower case. Convert it to lower case."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "ID of the post message to be deleted."
+              }
+            ]
+          },
+          "docs": "Delete Post"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

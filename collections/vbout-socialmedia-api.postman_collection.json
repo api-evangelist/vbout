@@ -1,0 +1,808 @@
+{
+  "item": [
+    {
+      "id": "bc9bb0a1-2a00-490e-8569-69e07985b493",
+      "name": "SocialMedia",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "29f46cd0-b948-4eba-96e3-87e3e9ea1f00",
+          "name": "get-Social Media-Channels",
+          "request": {
+            "name": "get-Social Media-Channels",
+            "description": {
+              "content": "Get Channels",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "SocialMedia",
+                "Channels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6bf5810-b211-4468-99a4-d767284dc1cb",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SocialMedia",
+                    "Channels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"channels\": {\n    \"Facebook\": {\n      \"count\": 822,\n      \"pages\": [\n        {\n          \"id\": 7437,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 9016,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    \"Twitter\": {\n      \"count\": 2319,\n      \"profiles\": [\n        {\n          \"id\": 4163,\n          \"screenname\": \"string\",\n          \"fullname\": \"string\"\n        },\n        {\n          \"id\": 1567,\n          \"screenname\": \"string\",\n          \"fullname\": \"string\"\n        }\n      ]\n    },\n    \"Linkedin\": {\n      \"count\": 4546\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "616055f3-0106-4c14-b80b-645c665ca4e3",
+          "name": "get-Social Media-Calendar",
+          "request": {
+            "name": "get-Social Media-Calendar",
+            "description": {
+              "content": "Get Calendar",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "SocialMedia",
+                "Calendar"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "channels",
+                  "value": "<string>",
+                  "description": "The channels from where the posts are gathered (all, facebook, twitter, linkedin)"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<date>",
+                  "description": "(Required) The from date which the reviews are returned. The filter must be date for this parameter to work."
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<date>",
+                  "description": "(Required) The to date which the reviews are returned. The filter must be date for this parameter to work."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeposted",
+                  "value": "<boolean>",
+                  "description": "Include already scheduled posts inside the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>",
+                  "description": "Set your record limit number per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>",
+                  "description": "Set which page you wanna get."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Record Sorting (asc|desc)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64f6d8f9-1020-4e0f-89c4-fd5fcb6f2a96",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SocialMedia",
+                    "Calendar"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "channels",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "includeposted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"calendar\": {\n    \"count\": 8284,\n    \"items\": {\n      \"key_0\": {\n        \"id\": 2310,\n        \"message\": \"string\",\n        \"photo\": {\n          \"thumb\": \"string\",\n          \"original\": \"string\"\n        },\n        \"channel\": {\n          \"network\": \"string\",\n          \"type\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"date\": \"string\"\n        }\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e4cdaf52-3fbe-4fb3-a9a1-0ad20418bec0",
+          "name": "get-Social Media-Stats",
+          "request": {
+            "name": "get-Social Media-Stats",
+            "description": {
+              "content": "Get Stats",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "SocialMedia",
+                "Stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "channels",
+                  "value": "<string>",
+                  "description": "The channels from where the posts are gathered (all, facebook, twitter, linkedin)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Record Sorting (asc|desc)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "97e6c45a-c9d5-4305-b781-5525fe19cf77",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SocialMedia",
+                    "Stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "channels",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"stats\": {\n    \"items\": [\n      {\n        \"id\": 6633,\n        \"shortenurl\": \"string\",\n        \"realurl\": \"string\",\n        \"message\": \"string\",\n        \"date\": \"string\",\n        \"tracks\": 2767,\n        \"clicks\": {\n          \"key_0\": 3241,\n          \"key_1\": 6347\n        }\n      },\n      {\n        \"id\": 4485,\n        \"shortenurl\": \"string\",\n        \"realurl\": \"string\",\n        \"message\": \"string\",\n        \"date\": \"string\",\n        \"tracks\": 7043,\n        \"clicks\": {\n          \"key_0\": 2041\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1bf34fb5-f2d0-4a3a-9d0f-3bda9c9bb9cf",
+          "name": "get-Social Media-Get Post",
+          "request": {
+            "name": "get-Social Media-Get Post",
+            "description": {
+              "content": "Get Post",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "SocialMedia",
+                "GetPost"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) The id of the post."
+                },
+                {
+                  "disabled": false,
+                  "key": "channel",
+                  "value": "<string>",
+                  "description": "(Required) The channel where the post is created. Must be in lower case. Convert it to lower case."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c702eead-f532-49b3-92ef-0b576c62553c",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SocialMedia",
+                    "GetPost"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "channel",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"item\": {\n    \"id\": 6273,\n    \"title\": \"string\",\n    \"datetime\": \"string\",\n    \"item\": {\n      \"uid\": 1407\n    },\n    \"type\": \"string\",\n    \"image\": \"string\",\n    \"profile\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5459c96d-e853-4832-9e75-bea00ca6afe8",
+          "name": "post-Social Media-Add Post",
+          "request": {
+            "name": "post-Social Media-Add Post",
+            "description": {
+              "content": "Add Post",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "SocialMedia",
+                "AddPost"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "message",
+                  "value": "<string>",
+                  "description": "(Required) The post message to be scheduled/sent."
+                },
+                {
+                  "disabled": false,
+                  "key": "channel",
+                  "value": "<string>",
+                  "description": "(Required) The channels which the post will be sent to. Must be in lower case. Convert it to lower case."
+                },
+                {
+                  "disabled": false,
+                  "key": "channelid",
+                  "value": "<integer>",
+                  "description": "(Required) The channels which the post will be sent to."
+                },
+                {
+                  "disabled": false,
+                  "key": "photo",
+                  "value": "<string>",
+                  "description": "The photo which will be attached to the post."
+                },
+                {
+                  "disabled": false,
+                  "key": "isscheduled",
+                  "value": "<boolean>",
+                  "description": "This flag will make the post to be scheduled for future."
+                },
+                {
+                  "disabled": false,
+                  "key": "scheduleddate",
+                  "value": "<date>",
+                  "description": "Date of the post to be scheduled."
+                },
+                {
+                  "disabled": false,
+                  "key": "scheduledhours",
+                  "value": "<time>",
+                  "description": "Time of the post to be scheduled."
+                },
+                {
+                  "disabled": false,
+                  "key": "trackableLinks",
+                  "value": "<boolean>",
+                  "description": "Convert all links inside message to short urls."
+                },
+                {
+                  "disabled": false,
+                  "key": "scheduledampm",
+                  "value": "<string>",
+                  "description": "AM/PM of the post to be scheduled."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf989c5a-71f5-4c35-80a1-057c69d10479",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SocialMedia",
+                    "AddPost"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "message",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "channel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "channelid",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "photo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isscheduled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "scheduleddate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "scheduledhours",
+                      "value": "<time>"
+                    },
+                    {
+                      "key": "trackableLinks",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "scheduledampm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"post_id\": 2725,\n  \"item\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "62fc62e2-2e25-48a9-8cbf-941ef0e2d401",
+          "name": "post-Social Media-Edit Post",
+          "request": {
+            "name": "post-Social Media-Edit Post",
+            "description": {
+              "content": "Edit Post",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "SocialMedia",
+                "EditPost"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "message",
+                  "value": "<string>",
+                  "description": "The post message to be scheduled/sent."
+                },
+                {
+                  "disabled": false,
+                  "key": "channel",
+                  "value": "<string>",
+                  "description": "(Required) The channel where the post was scheduled. Must be in lower case. Convert it to lower case."
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) ID of the post message to be edited."
+                },
+                {
+                  "disabled": false,
+                  "key": "scheduleddatetime",
+                  "value": "<dateTime>",
+                  "description": "Date/Time of the post to be scheduled."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9dc4472c-796d-4a1e-ae3e-0478a47f54bf",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SocialMedia",
+                    "EditPost"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "message",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "channel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "scheduleddatetime",
+                      "value": "2023-05-23 10:30:00"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"item\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be399023-04e1-453d-a8e5-aa4414f1f464",
+          "name": "post-Social Media-Delete Post",
+          "request": {
+            "name": "post-Social Media-Delete Post",
+            "description": {
+              "content": "Delete Post",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "SocialMedia",
+                "DeletePost"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "channel",
+                  "value": "<string>",
+                  "description": "The channels which the post will be sent to. Must be in lower case. Convert it to lower case."
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) ID of the post message to be deleted."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f7316538-ef7b-485c-bd6d-d01afdcd0cef",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SocialMedia",
+                    "DeletePost"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "channel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"item\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.vbout.com/1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "53906b47-0662-43f4-8aa8-e8c6ab6a934c",
+    "name": "VBOUT EmailMarketing SocialMedia API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "VBOUT Features API documentation",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,931 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "EmailMarketing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetContacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetContacts",
+            "params": [
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to return its contacts."
+              }
+            ]
+          },
+          "docs": "Get Contacts for a list"
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetContact",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetContact",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact to return."
+              }
+            ]
+          },
+          "docs": "Get contact based on ID"
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetContactsByPhoneNumber",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetContactsByPhoneNumber",
+            "params": [
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "The phone number of the contacts to return."
+              },
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to return its contacts."
+              }
+            ]
+          },
+          "docs": "Get Contacts By PhoneNumber"
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-AddContact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/AddContact",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add contact. The contact has fields like firstname 'john'. The list contains custom fields with an ID as the key (e.g., {'123': 'firstname', '8910': 'lastname'}). In request parameters there is a 'fields' string that contains multiple comma-seperated key-value pairs, such as 123:john,8910:smith."
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetContactByEmail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetContactByEmail",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email of the contact to return."
+              },
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The list id of which this contact does belong to."
+              }
+            ]
+          },
+          "docs": "Get contact based on email"
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-EditContact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/EditContact",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Edit Contact. The contact has fields like firstname 'john'. The list contains custom fields with an ID as the key (e.g., {'123': 'firstname', '8910': 'lastname'}). In request parameters there is a 'fields' string that contains multiple comma-seperated key-value pairs, such as 123:john,8910:smith."
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-SyncContact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/SyncContact",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sync Contact. The contact has fields like firstname 'john'. The list contains custom fields with an ID as the key (e.g., {'123': 'firstname', '8910': 'lastname'}). In request parameters there is a 'fields' string that contains multiple comma-seperated key-value pairs, such as 123:john,8910:smith."
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-DeleteContact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/DeleteContact",
+            "params": [
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list of the list to delete from."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact to delete."
+              }
+            ]
+          },
+          "docs": "Delete Contact"
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-MoveContact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/MoveContact",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact."
+              },
+              {
+                "name": "listid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to move this contact to."
+              },
+              {
+                "name": "sourceid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list where this contact is found."
+              }
+            ]
+          },
+          "docs": "Move Contact from list to list"
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetContactTimeline",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetContactTimeline",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact to return his timeline activities."
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "Comma separated keys to return other details with the timeline activities."
+              }
+            ]
+          },
+          "docs": "Get Contact Timeline By ID"
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetContactTimelineByEmailAddress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetContactTimelineByEmailAddress",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email address for the contact to return his timeline activities."
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "Comma separated keys to return other details with the timeline activities."
+              }
+            ]
+          },
+          "docs": "Get Contact Timeline By Email Address"
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-AddList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/AddList",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the list."
+              },
+              {
+                "name": "email_subject",
+                "value": "",
+                "type": "query",
+                "description": "The default subject line of subscription."
+              },
+              {
+                "name": "reply_to",
+                "value": "",
+                "type": "query",
+                "description": "The Reply to email of the list."
+              },
+              {
+                "name": "fromemail",
+                "value": "",
+                "type": "query",
+                "description": "The From email of the list."
+              },
+              {
+                "name": "from_name",
+                "value": "",
+                "type": "query",
+                "description": "The From name of the list."
+              },
+              {
+                "name": "doubleOptin",
+                "value": "",
+                "type": "query",
+                "description": "Email confirmation required (Double opt-in)."
+              },
+              {
+                "name": "notify",
+                "value": "",
+                "type": "query",
+                "description": "Notify me of new subscribers."
+              },
+              {
+                "name": "notify_email",
+                "value": "",
+                "type": "query",
+                "description": "Notification Email."
+              },
+              {
+                "name": "success_email",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Success Email."
+              },
+              {
+                "name": "success_message",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Success Message."
+              },
+              {
+                "name": "error_message",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Error Message."
+              },
+              {
+                "name": "confirmation_email",
+                "value": "",
+                "type": "query",
+                "description": "Confirmation Email."
+              },
+              {
+                "name": "confirmation_message",
+                "value": "",
+                "type": "query",
+                "description": "Confirmation Message."
+              },
+              {
+                "name": "communications",
+                "value": "",
+                "type": "query",
+                "description": "Turn off Communications."
+              }
+            ]
+          },
+          "docs": "Add / Create List"
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetLists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetLists",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The limit of lists per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "the page number used for pagination, when asking for previous or next page as well as specific page number to get lists from."
+              }
+            ]
+          },
+          "docs": "Get Lists"
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetList",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The Name of the list to return."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to return."
+              }
+            ]
+          },
+          "docs": "Get List by name or Id. Make sure to return the custom fields added to a specific list."
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-EditList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/EditList",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the list."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the list."
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "The default subject line of subscription."
+              },
+              {
+                "name": "reply_to",
+                "value": "",
+                "type": "query",
+                "description": "The Reply to email of the list."
+              },
+              {
+                "name": "fromemail",
+                "value": "",
+                "type": "query",
+                "description": "The From email of the list."
+              },
+              {
+                "name": "from_name",
+                "value": "",
+                "type": "query",
+                "description": "The From name of the list."
+              },
+              {
+                "name": "double_optin",
+                "value": "",
+                "type": "query",
+                "description": "Email confirmation required (Double opt-in)? Must be 0 or 1. Convert True to 1 and False to 0."
+              },
+              {
+                "name": "notify",
+                "value": "",
+                "type": "query",
+                "description": "Notify me of new subscribers. Must be 0 or 1. Convert True to 1 and False to 0."
+              },
+              {
+                "name": "notify_email",
+                "value": "",
+                "type": "query",
+                "description": "Notification Email."
+              },
+              {
+                "name": "success_email",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Success Email."
+              },
+              {
+                "name": "success_message",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Success Message."
+              },
+              {
+                "name": "error_message",
+                "value": "",
+                "type": "query",
+                "description": "Subscription Error Message."
+              },
+              {
+                "name": "confirmation_email",
+                "value": "",
+                "type": "query",
+                "description": "Confirmation Email."
+              },
+              {
+                "name": "confirmation_message",
+                "value": "",
+                "type": "query",
+                "description": "Confirmation Message."
+              },
+              {
+                "name": "communications",
+                "value": "",
+                "type": "query",
+                "description": "Turn off Communications. Must be 0 or 1. Convert True to 1 and False to 0."
+              }
+            ]
+          },
+          "docs": "Edit List"
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-DeleteList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/DeleteList",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the list to delete."
+              }
+            ]
+          },
+          "docs": "Delete List"
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-AddActivity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/AddActivity",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the contact."
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "The description of the activity."
+              },
+              {
+                "name": "datetime",
+                "value": "",
+                "type": "query",
+                "description": "The date and time to activity."
+              }
+            ]
+          },
+          "docs": "Add Activity to contact."
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-AddTag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/AddTag",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email of the contact."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the contact. (ID)"
+              },
+              {
+                "name": "tagname",
+                "value": "",
+                "type": "query",
+                "description": "Tag(s) to be added."
+              }
+            ]
+          },
+          "docs": "Add Tag to contact"
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-RemoveTag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/RemoveTag",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email of the contact."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the contact."
+              },
+              {
+                "name": "tagname",
+                "value": "",
+                "type": "query",
+                "description": "Tag(s) to be deleted."
+              }
+            ]
+          },
+          "docs": "Remove Tag"
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetEmailTemplates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetEmailTemplates",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The limit of templates per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "the page number used for pagination, when asking for previous or next page as well as specific page number to get templates from."
+              }
+            ]
+          },
+          "docs": "Get Email Templates"
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-Campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/Campaigns",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "The status of the returned campaigns. Possible values for the filter are all (default value), sent, scheduled, draft, automation."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "The from date which the reviews are returned."
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "The to date which the reviews are returned."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Set your record limit number per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Set which page you wanna get."
+              }
+            ]
+          },
+          "docs": "Return multiple filtered campaigns from and/or specific date. The raw response must be parsed correctly. Don't make up answer diffrent than what is found the raw response."
+        },
+        {
+          "info": {
+            "name": "get-EmailMarketing-GetCampaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1/EmailMarketing/GetCampaign",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the campaign to return."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the campaign to return."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the campaign."
+              }
+            ]
+          },
+          "docs": "Return single campaign based on ID or name."
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-AddCampaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/AddCampaign",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the campaign."
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "The subject line for the campaign."
+              },
+              {
+                "name": "fromemail",
+                "value": "",
+                "type": "query",
+                "description": "The from email of the campaign."
+              },
+              {
+                "name": "from_name",
+                "value": "",
+                "type": "query",
+                "description": "The from name of the campaign."
+              },
+              {
+                "name": "reply_to",
+                "value": "",
+                "type": "query",
+                "description": "The reply to email of the campaign."
+              },
+              {
+                "name": "body",
+                "value": "",
+                "type": "query",
+                "description": "Message body."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the campaign."
+              },
+              {
+                "name": "template_id",
+                "value": "",
+                "type": "query",
+                "description": "The email template ID assigned to the campaign."
+              },
+              {
+                "name": "template_name",
+                "value": "",
+                "type": "query",
+                "description": "The email template name assigned to the campaign."
+              },
+              {
+                "name": "isscheduled",
+                "value": "",
+                "type": "query",
+                "description": "The flag to schedule the campaign for the future."
+              },
+              {
+                "name": "isdraft",
+                "value": "",
+                "type": "query",
+                "description": "The flag to set the campaign to draft."
+              },
+              {
+                "name": "scheduled_datetime",
+                "value": "",
+                "type": "query",
+                "description": "The date and time to schedule the campaign."
+              },
+              {
+                "name": "audiences",
+                "value": "",
+                "type": "query",
+                "description": "IDs of audience campaign recipients.(comma separated)"
+              },
+              {
+                "name": "lists",
+                "value": "",
+                "type": "query",
+                "description": "IDs of list campaign recipients.(comma separated)"
+              }
+            ]
+          },
+          "docs": "Add / Create Campaign"
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-EditCampaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/EditCampaign",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the campaign."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the campaign."
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "The subject line for the campaign."
+              },
+              {
+                "name": "fromemail",
+                "value": "",
+                "type": "query",
+                "description": "The from email of the campaign."
+              },
+              {
+                "name": "from_name",
+                "value": "",
+                "type": "query",
+                "description": "The from name of the campaign."
+              },
+              {
+                "name": "reply_to",
+                "value": "",
+                "type": "query",
+                "description": "The reply to email of the campaign."
+              },
+              {
+                "name": "body",
+                "value": "",
+                "type": "query",
+                "description": "Message body."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the campaign."
+              },
+              {
+                "name": "isscheduled",
+                "value": "",
+                "type": "query",
+                "description": "The flag to schedule the campaign for the future."
+              },
+              {
+                "name": "isdraft",
+                "value": "",
+                "type": "query",
+                "description": "The flag to set the campaign to draft."
+              },
+              {
+                "name": "scheduled_datetime",
+                "value": "",
+                "type": "query",
+                "description": "The date and time to schedule the campaign."
+              },
+              {
+                "name": "audiences",
+                "value": "",
+                "type": "query",
+                "description": "IDs of audience campaign recipients.(comma separated)"
+              },
+              {
+                "name": "lists",
+                "value": "",
+                "type": "query",
+                "description": "IDs of list campaign recipients.(comma separated)"
+              }
+            ]
+          },
+          "docs": "Edit Campaign"
+        },
+        {
+          "info": {
+            "name": "post-EmailMarketing-DeleteCampaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1/EmailMarketing/DeleteCampaign",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the campaign."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the campaign to delete."
+              }
+            ]
+          },
+          "docs": "Delete Campaign"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

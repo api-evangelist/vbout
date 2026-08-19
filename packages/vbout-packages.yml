@@ -1,15 +1,16 @@
-generated: '2026-07-21'
+generated: '2026-08-13'
 method: searched
 source: https://developers.vbout.com/libraries
 description: >-
-  VBOUT client libraries and platform plugins. The developer portal states
-  "Currently we only support PHP code libraries to interact with our API" and
-  links the official PHP helper library (hosted on the API team's GitHub
-  account, irajab). First-party platform plugins are published on WordPress.org
-  (author: vbout) and the vbout GitHub org (Magento). Community/integration
-  packages found on Packagist and npm are recorded as unofficial. No PyPI,
-  RubyGems, Maven, NuGet, Go, or crates.io packages found (pypi.org/pypi/vbout
-  returned 404; registry searches checked 2026-07-21).
+  VBOUT client libraries and platform plugins, re-checked against the registry
+  metadata endpoints on 2026-08-13. The developer portal states "Currently we
+  only support PHP code libraries to interact with our API" and links one
+  official PHP helper library. THE DECAY SIGNAL IS THE HEADLINE: that official
+  PHP library's last commit is 2016-08-04 — ten years before this check, and
+  years before the AIchatbot, Pipeline and ecommerce families that now make up a
+  third of the API. The Magento plugin last moved in 2021. Only the WordPress
+  plugin is maintained in the current decade. No PyPI, RubyGems, Maven, NuGet,
+  Go, or crates.io packages exist; pypi.org/pypi/vbout returns 404.
 packages:
   - language: php
     registry: github
@@ -17,19 +18,40 @@ packages:
     url: https://github.com/irajab/VboutAPI
     install: 'Download: https://github.com/irajab/VBOUTAPI/archive/master.zip'
     official: true
-    notes: Linked from https://developers.vbout.com/libraries as the official PHP helper library.
+    version: null
+    published: '2016-08-04'
+    version_note: >-
+      No tags and no releases — the GitHub tags API returns an empty array, so
+      there is no version to record. `published` is the last push date
+      (2016-08-04T08:16:59Z) from api.github.com/repos/irajab/VboutAPI. Ten
+      years stale, 1 star, distributed as a master-branch zip. This is the ONLY
+      client library VBOUT's own portal calls official.
+    notes: >-
+      Linked from https://developers.vbout.com/libraries as the official PHP
+      helper library. Hosted on a personal account (irajab), not the vbout org.
   - language: php
     registry: wordpress.org
     name: marketing-automation (VBOUT Marketing Automation plugin)
     url: https://wordpress.org/plugins/marketing-automation/
     install: 'Download: https://downloads.wordpress.org/plugin/marketing-automation.zip'
     official: true
-    notes: 'WordPress.org plugin, author "vbout", v1.2.6.9, last updated 2024-12-10; source: https://github.com/irajab/VBOUTWPlugin.'
+    version: 1.2.6.9
+    published: '2024-12-10'
+    version_note: >-
+      Read from api.wordpress.org/plugins/info/1.0/marketing-automation.json on
+      2026-08-13 (version 1.2.6.9, last_updated 2024-12-10). Author profile is
+      wordpress.org/profiles/vbout — first-party.
+    notes: 'Source repo: https://github.com/irajab/VBOUTWPlugin (last push 2016-08-04, i.e. the public repo no longer tracks the shipped plugin).'
   - language: php
     registry: github
     name: vbout-magento-plugin
     url: https://github.com/vbout/vbout-magento-plugin
     official: true
+    version: null
+    published: '2021-02-23'
+    version_note: >-
+      No tags/releases; `published` is the last push (2021-02-23T14:37:37Z) from
+      api.github.com/repos/vbout/vbout-magento-plugin.
     notes: Magento plugin published under the vbout GitHub organization.
   - language: php
     registry: packagist
@@ -37,6 +59,12 @@ packages:
     url: https://packagist.org/packages/podcasthosting/vbout-api-client
     install: composer require podcasthosting/vbout-api-client
     official: false
+    version: null
+    published: '2025-01-02'
+    version_note: >-
+      No tagged release — Packagist lists only dev-master, so there is no
+      semantic version to pin. `published` is the package's Packagist `time`
+      field (2025-01-02T09:09:07+00:00). 350 total downloads, 19/month.
     notes: Community PHP client (github.com/podcasthosting/vbout-api-client).
   - language: javascript
     registry: npm
@@ -44,11 +72,37 @@ packages:
     url: https://www.npmjs.com/package/@pipedream/vbout
     install: npm install @pipedream/vbout
     official: false
-    notes: Pipedream integration component for the VBOUT API.
+    version: 0.2.1
+    published: '2026-07-02'
+    version_note: 'Read from registry.npmjs.org/@pipedream/vbout on 2026-08-13 (dist-tags.latest 0.2.1, published 2026-07-02T21:41:53Z).'
+    notes: >-
+      Pipedream integration component for the VBOUT API. Notable: this
+      third-party wrapper is 10 years fresher than VBOUT's own official library.
   - language: javascript
     registry: npm
     name: '@activepieces/piece-vbout'
     url: https://www.npmjs.com/package/@activepieces/piece-vbout
     install: npm install @activepieces/piece-vbout
     official: false
+    version: 0.1.6
+    published: '2026-08-04'
+    version_note: 'Read from registry.npmjs.org/@activepieces/piece-vbout on 2026-08-13 (dist-tags.latest 0.1.6, published 2026-08-04T07:54:28Z).'
     notes: Activepieces integration piece for the VBOUT API.
+registries_checked:
+  - {registry: npm, result: 'two community packages, no first-party package'}
+  - {registry: pypi, result: '404 for pypi.org/pypi/vbout/json'}
+  - {registry: packagist, result: 'one community client, dev-master only'}
+  - {registry: rubygems, result: none}
+  - {registry: maven-central, result: none}
+  - {registry: nuget, result: none}
+  - {registry: 'pkg.go.dev', result: none}
+  - {registry: 'crates.io', result: none}
+  - {registry: 'wordpress.org', result: 'first-party plugin, maintained'}
+official_count: 3
+x-evidence:
+  - {url: 'https://api.github.com/repos/irajab/VboutAPI', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://api.wordpress.org/plugins/info/1.0/marketing-automation.json', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://api.github.com/repos/vbout/vbout-magento-plugin', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://registry.npmjs.org/@pipedream/vbout', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://registry.npmjs.org/@activepieces/piece-vbout', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://packagist.org/packages/podcasthosting/vbout-api-client.json', status: 200, fetched: '2026-08-13'}

@@ -1,0 +1,106 @@
+generated: '2026-08-13'
+method: searched
+source: https://help.vbout.com/knowledge-base/how-to-setup-a-webhook/
+spec_type: none
+docs:
+  - https://help.vbout.com/knowledge-base/differences-between-api-and-webhook/
+  - https://help.vbout.com/knowledge-base/how-to-setup-a-webhook/
+  - https://help.vbout.com/knowledge-base/synchronize-user-data-using-automation/
+  - https://developers.vbout.com/ecommerceIntegration
+description: >-
+  VBOUT's event surface, captured 2026-08-13. VBOUT publishes NO AsyncAPI
+  document — searched developers.vbout.com, the vbout GitHub org, and
+  /asyncapi.yaml on every host; nothing found. What VBOUT does ship is a
+  three-part webhook surface documented in the help center: an INBOUND webhook
+  receiver (a VBOUT-generated URL other systems push to), a webhook TRIGGER in
+  the automation builder that starts a workflow when that URL is hit, and an
+  OUTBOUND "Sync to Third Party" automation action that posts contact data to a
+  customer-supplied URL. The outbound side is what makes this a real event
+  surface rather than an ingestion endpoint only. Event payload SHAPES are not
+  published as schemas — they are user-configured field mappings — so no
+  channel/message schemas are asserted here.
+asyncapi:
+  published: false
+  searched:
+    - {url: 'https://developers.vbout.com/', result: 'no events/streaming/AsyncAPI section in portal nav'}
+    - {url: 'https://github.com/vbout', result: 'no asyncapi repo'}
+    - {url: 'https://developers.vbout.com/asyncapi.yaml', result: 404}
+webhooks:
+  supported: true
+  configuration_ui: 'Settings → Integration tab → Webhook section (requires the Webhook add-on from the add-ons section)'
+  directions:
+    - direction: inbound
+      name: Webhook receiver
+      description: >-
+        VBOUT generates a webhook URL inside the account. External systems POST
+        to it to push data into VBOUT — typically to create/update contacts on a
+        list. Incoming payload fields are mapped to list fields via "Capture
+        Response"; array fields are addressed as main_field.sub_field[].
+      docs: https://help.vbout.com/knowledge-base/how-to-setup-a-webhook/
+      payload_schema_published: false
+    - direction: trigger
+      name: Webhook automation trigger
+      description: >-
+        The automation builder exposes a Webhook trigger — an inbound hit on the
+        generated URL starts a workflow. This is the entry point that turns the
+        receiver into an event-driven automation.
+      docs: https://help.vbout.com/knowledge-base/how-to-setup-a-webhook/
+    - direction: outbound
+      name: 'Sync to Third Party (automation action)'
+      description: >-
+        An automation action that pushes contact data from VBOUT to an API
+        listener page on the customer's server. Configurable: the destination
+        webhook URL, what to sync, the sending method (GET or POST), and the
+        data content type. Field values are composed with VBOUT shortcodes
+        (e.g. [#PROPER EMAIL/2#]); the docs state there is no limit on the
+        number of fields passed. The response can be mapped back onto the
+        contact record ("Update contact from response").
+      docs: https://help.vbout.com/knowledge-base/synchronize-user-data-using-automation/
+      sending_methods: [GET, POST]
+      payload_fields_available:
+        - transaction id
+        - basic contact info
+        - custom fields
+        - campaigns opened
+        - links clicked
+        - pages visited
+        - automations triggered
+        - goals reached
+        - webhooks triggered
+        - lead scores
+        - lead status
+      payload_schema_published: false
+      note: >-
+        The payload is user-composed field-by-field, so there is no fixed
+        message schema to capture — which is precisely why no AsyncAPI exists.
+client_side_event_stream:
+  name: VBOUT ecommerce tracking commands
+  description: >-
+    A browser-side command queue (_vbset.push / VboutEcommerce.command) that
+    emits ecommerce events from the customer's storefront into VBOUT. Not a
+    webhook, but it is the provider's only documented, named event vocabulary,
+    so the command names are recorded here.
+  docs: https://developers.vbout.com/ecommerceIntegration
+  commands:
+    - store.cart.item
+    - store.cart.item.remove
+    - store.cart.send
+    - store.cart.clear
+    - store.order.send
+    - store.order.clear
+    - store.product.search
+    - store.product.view
+    - store.category.view
+    - store.customer.add
+    - store.customer.preferences
+  note: >-
+    Eleven command names, extracted verbatim from the ecommerce integration
+    guide and cross-checked against the switch statement in the shipped tracker
+    at https://www.vbout.com/ext/plugin.ecommerce.js (200, 13,133 bytes,
+    window.VboutEcommerce v1.0.1). The tracker also handles cart.data,
+    cart.items and order.data, which the guide does not document.
+x-evidence:
+  - {url: 'https://help.vbout.com/knowledge-base/how-to-setup-a-webhook/', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://help.vbout.com/knowledge-base/synchronize-user-data-using-automation/', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://help.vbout.com/knowledge-base/differences-between-api-and-webhook/', status: 200, fetched: '2026-08-13'}
+  - {url: 'https://www.vbout.com/ext/plugin.ecommerce.js', status: 200, fetched: '2026-08-13'}

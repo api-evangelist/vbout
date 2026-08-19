@@ -1,0 +1,410 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing Email Marketing API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Email Marketing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/Campaigns",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "The timeline during which the reviews are returned.<br>**Possible values:**  all | sent | scheduled | draft | automation"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "The from date which the reviews are returned. The filter must be 'date' for this parameter to work.<br>**Possible values:**   (Date)"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "The from date which the reviews are returned. The filter must be 'date' for this parameter to work.<br>**Possible values:**  (Date)  "
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Set your record limit number per page.<br>**Possible values:**  (Number)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Set which page you wanna get.<br>**Possible values:**  (Number)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`  \n  - - -\n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetCampaign",
+            "params": [
+              {
+                "name": " id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the campaign to return.<br>**Possible Values:**  (ID)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the campaign.<br>**Possible Values:**  standard | automated"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/Stats",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the campaign to return.<br>**Possible values:**  (ID)  "
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the campaign.<br>**Possible values:**  standard | automated"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Add Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/AddCampaign",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the campaign.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "The subject line for the campaign.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "fromemail",
+                "value": "",
+                "type": "query",
+                "description": "The from email of the campaign.<br>**Possible values:**  (Email)"
+              },
+              {
+                "name": "from_name",
+                "value": "",
+                "type": "query",
+                "description": "The from name of the campaign.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "reply_to",
+                "value": "",
+                "type": "query",
+                "description": "The reply to email of the campaign.<br>**Possible values:** (Email)"
+              },
+              {
+                "name": "body",
+                "value": "",
+                "type": "query",
+                "description": "Message body.<br>**Possible values:** (Text)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the campaign.<br>**Possible values:** standard | automated"
+              },
+              {
+                "name": "isscheduled",
+                "value": "",
+                "type": "query",
+                "description": "The flag to schedule the campaign for the future.<br>**Possible values:**  true | false"
+              },
+              {
+                "name": "isdraft",
+                "value": "",
+                "type": "query",
+                "description": "The flag to set the campaign to draft.<br>**Possible values:**  true | false"
+              },
+              {
+                "name": "scheduled_datetime",
+                "value": "",
+                "type": "query",
+                "description": "The date and time to schedule the campaign.<br>**Possible values:**  (Date)"
+              },
+              {
+                "name": "audiences",
+                "value": "",
+                "type": "query",
+                "description": "IDs of audience campaign recipients.(comma separated)<br>**Possible values:**  (IDs)"
+              },
+              {
+                "name": "lists",
+                "value": "",
+                "type": "query",
+                "description": "IDs of list campaign recipients.(comma separated)<br>**Possible values:**  (IDs)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Edit Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/EditCampaign",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the campaign.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the campaign.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "The subject line of the campaign.<br>**Possible values:**  (Text)"
+              },
+              {
+                "name": "body",
+                "value": "",
+                "type": "query",
+                "description": "Message body.<br>**Possible values:** (Text)"
+              },
+              {
+                "name": "fromemail",
+                "value": "",
+                "type": "query",
+                "description": "The from email of the campaign.<br>**Possible values:** (Text)"
+              },
+              {
+                "name": "from_name",
+                "value": "",
+                "type": "query",
+                "description": "The from name of the campaign.<br>**Possible values:** (Text)"
+              },
+              {
+                "name": "reply_to",
+                "value": "",
+                "type": "query",
+                "description": "The reply to email of the campaign.<br>**Possible values:**(Email)"
+              },
+              {
+                "name": "isscheduled",
+                "value": "",
+                "type": "query",
+                "description": "The flag to schedule the campaign for the future.<br>**Possible values:** true | false"
+              },
+              {
+                "name": "isdraft",
+                "value": "",
+                "type": "query",
+                "description": "The flag to set the campaign to draft.<br>**Possible values:** true | false"
+              },
+              {
+                "name": "scheduled_datetime",
+                "value": "",
+                "type": "query",
+                "description": "The date time to schedule the campaign."
+              },
+              {
+                "name": "audiences",
+                "value": "",
+                "type": "query",
+                "description": "IDs of audience campaign recipients.(comma separated)<br>**Possible values:** (IDs)"
+              },
+              {
+                "name": "lists",
+                "value": "",
+                "type": "query",
+                "description": "IDs of list campaign recipients.(comma separated)<br>**Possible values:** (IDs)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the campaign.<br>**Possible values:** standard | automated"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Delete Campaign",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1EmailMarketing/DeleteCampaign",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the campaign to delete.<br>**Possible values:**   (ID) "
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the campaign.<br>**Possible values:**  standard | automated"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "Add Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1EmailMarketing/AddTag",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the contact.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email of the contact.<br>**Possible values:**  (text)"
+              },
+              {
+                "name": "tagname",
+                "value": "",
+                "type": "query",
+                "description": "Tag(s) to be added.<br>**Possible values:**  (Text)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Note:** List of tags can be sent as a batch, separated by a comma. Either email or id can be used."
+        },
+        {
+          "info": {
+            "name": "Remove Tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vbout.com/1EmailMarketing/RemoveTag",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The id of the contact.<br>**Possible values:**  (ID)"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email of the contact.<br>**Possible values:**  (text)"
+              },
+              {
+                "name": "tagname",
+                "value": "",
+                "type": "query",
+                "description": "Tag(s) to be added.<br>**Possible values:**  (text)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Note:**  List of tags can be sent as a batch, separated by a comma. Either email or id can be used"
+        },
+        {
+          "info": {
+            "name": "Coupon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetCoupon",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "The email of the contact to return coupons of.<br> **Possible values:**  (Email)"
+              },
+              {
+                "name": "campaignid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the campaign containing coupons.<br> **Possible values:**  (Campaign id)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "GetEmailTemplates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1EmailMarketing/GetEmailTemplates"
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

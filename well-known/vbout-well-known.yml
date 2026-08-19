@@ -62,3 +62,26 @@ hosts:
         status: soft-200
       - path: /llms.txt
         status: soft-200
+
+# --- appended 2026-08-13 (enrichment round 2): A2A agent-card probe ---
+agent_card_probe:
+  checked: '2026-08-13'
+  found: false
+  note: >-
+    /.well-known/agent-card.json (A2A 1.0.0 canonical) and /.well-known/agent.json
+    (pre-0.3 legacy) probed on every VBOUT host. All real hosts 404 with an HTML
+    body; api.vbout.com returns its known 12-byte soft-200 catch-all
+    ({"ok": "OK"}) for both paths, which is not an AgentCard and is recorded as a
+    miss. No a2a/ artifact was written — an agent card is search-only and is
+    never authored on a provider's behalf.
+  results:
+    - {host: vbout.com, path: /.well-known/agent-card.json, status: 404, body: html}
+    - {host: vbout.com, path: /.well-known/agent.json, status: 404, body: html}
+    - {host: www.vbout.com, path: /.well-known/agent-card.json, status: 404, body: html}
+    - {host: www.vbout.com, path: /.well-known/agent.json, status: 404, body: html}
+    - {host: developers.vbout.com, path: /.well-known/agent-card.json, status: 404, body: html}
+    - {host: developers.vbout.com, path: /.well-known/agent.json, status: 404, body: html}
+    - {host: app.vbout.com, path: /.well-known/agent-card.json, status: 404, body: html}
+    - {host: app.vbout.com, path: /.well-known/agent.json, status: 404, body: html}
+    - {host: api.vbout.com, path: /.well-known/agent-card.json, status: soft-200, body: '{"ok": "OK"}'}
+    - {host: api.vbout.com, path: /.well-known/agent.json, status: soft-200, body: '{"ok": "OK"}'}

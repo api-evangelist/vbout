@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "VBOUT EmailMarketing AIchatbot API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AIchatbot",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "aichatbottemplates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1AIchatbot/aichatbottemplates"
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1AIchatbot/categories"
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vbout.com/1AIchatbot/tags"
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        },
+        {
+          "info": {
+            "name": "copy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vbout.com/1AIchatbot/copy",
+            "params": [
+              {
+                "name": "API KEY",
+                "value": "",
+                "type": "query",
+                "description": "The API KEY of the Account.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "template_id",
+                "value": "",
+                "type": "query",
+                "description": "The template_id from index.<br>**Possible values:** (ID)"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The Custom name of the chatbot.<br>**Possible values:** (ID)"
+              }
+            ]
+          },
+          "docs": "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
