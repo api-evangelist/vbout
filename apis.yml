@@ -37,6 +37,16 @@ image: https://developers.vbout.com/images/front/icons/logo-square-114x114.png
 tags:
 - Marketing Automation
 - Email Marketing
+- Social-Media
+- Lead Management
+- Landing Pages
+- Chatbots
+- Contacts
+- Campaigns
+- Software-as-a-Service
+tags_raw:
+- Marketing Automation
+- Email Marketing
 - Social Media
 - Lead Management
 - Landing Pages
@@ -63,6 +73,8 @@ apis:
   humanURL: https://developers.vbout.com
   baseURL: https://api.vbout.com/1
   tags:
+  - AI Chatbot
+  tags_raw:
   - AIchatbot
   properties:
   - type: OpenAPI
@@ -123,6 +135,8 @@ apis:
   humanURL: https://developers.vbout.com
   baseURL: https://api.vbout.com/1
   tags:
+  - Email Marketing
+  tags_raw:
   - EmailMarketing
   properties:
   - type: OpenAPI
@@ -195,6 +209,8 @@ apis:
   humanURL: https://developers.vbout.com
   baseURL: https://api.vbout.com/1
   tags:
+  - Social-Media
+  tags_raw:
   - Social Media
   properties:
   - type: OpenAPI
@@ -207,6 +223,8 @@ apis:
   humanURL: https://developers.vbout.com
   baseURL: https://api.vbout.com/1
   tags:
+  - Social-Media
+  tags_raw:
   - SocialMedia
   properties:
   - type: OpenAPI
