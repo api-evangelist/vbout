@@ -1,0 +1,54 @@
+slug: vbout
+provider: VBOUT
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Social Media
+  spec_file: vbout-social-media-api-openapi.yml
+  capability_id: BC-400.60
+  capability_id_l1: BC-400
+  capability_name: Digital Marketing Management
+  confidence: 0.85
+  evidence: GET SocialMedia/Channels, GET SocialMedia/Calendar, GET SocialMedia/Stats, POST SocialMedia/AddPost
+  reason: Operations manage connected social channels, a publishing calendar, post lifecycle and performance
+    stats — that is social media publishing and measurement, squarely Digital Marketing Management within
+    Marketing Management.
+- tag: SocialMedia
+  spec_file: vbout-socialmedia-api-openapi.yml
+  capability_id: BC-400.60
+  capability_id_l1: BC-400
+  capability_name: Digital Marketing Management
+  confidence: 0.85
+  evidence: GET /SocialMedia/Channels, GET /SocialMedia/Stats, POST /SocialMedia/AddPost
+  reason: 'Duplicate surface of the Social Media tag: channel connection, scheduling calendar, post create/edit/delete
+    and stats — social publishing under Digital Marketing Management.'
+- tag: Email Marketing
+  spec_file: vbout-email-marketing-api-openapi.yml
+  capability_id: BC-400.60
+  capability_id_l1: BC-400
+  capability_name: Digital Marketing Management
+  confidence: 0.75
+  evidence: POST EmailMarketing/AddCampaign  Add Campaign; GET EmailMarketing/Stats  Stats; GET EmailMarketing/GetEmailTemplates
+  reason: Email campaign lifecycle, templates, coupons and campaign statistics is email/digital marketing
+    execution and measurement. Sub-capability could arguably be Demand Generation, hence 0.75.
+- tag: Contact
+  spec_file: vbout-contact-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.7
+  evidence: POST EmailMarketing/AddContact  Add Contact; GET EmailMarketing/GetContactTimeline  Contact
+    Timeline; GET EmailMarketing/GetAudiences  Audiences
+  reason: Full CRUD plus sync, move, timeline and audience retrieval over contact records — this is marketing/customer
+    contact master data stewardship. Some ambiguity between Customer Data Management and Segmentation
+    (audiences), so 0.7.

@@ -261,6 +261,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/vbout-capability-edges.yml
+  name: VBOUT Business Capability Map
 - type: Overlay
   url: overlays/vbout-openapi-overlay.yaml
 - type: AgenticAccess
