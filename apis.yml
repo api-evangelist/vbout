@@ -85,7 +85,7 @@ apis:
   humanURL: https://developers.vbout.com
   baseURL: https://api.vbout.com/1
   tags:
-  - AIchatbot
+  - AI Chatbot
   tags_raw:
   - AIchatbot
   properties:
@@ -147,7 +147,7 @@ apis:
   humanURL: https://developers.vbout.com
   baseURL: https://api.vbout.com/1
   tags:
-  - EmailMarketing
+  - Email Marketing
   tags_raw:
   - EmailMarketing
   properties:
@@ -235,7 +235,7 @@ apis:
   humanURL: https://developers.vbout.com
   baseURL: https://api.vbout.com/1
   tags:
-  - SocialMedia
+  - Social-Media
   tags_raw:
   - SocialMedia
   properties:
