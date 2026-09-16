@@ -1,19 +1,501 @@
-generated: '2026-07-21'
+generated: '2026-09-16'
 method: generated
-source: openapi/vbout-plugin-openapi-original.yaml
+source: openapi/vbout-account-api-openapi.yml, openapi/vbout-ai-chatbot-api-openapi.yml, openapi/vbout-application-api-openapi.yml,
+  openapi/vbout-automation-api-openapi.yml, openapi/vbout-contact-api-openapi.yml, openapi/vbout-email-marketing-api-openapi.yml,
+  openapi/vbout-goals-api-openapi.yml, openapi/vbout-help-api-openapi.yml, openapi/vbout-pipeline-api-openapi.yml,
+  openapi/vbout-popups-api-openapi.yml, openapi/vbout-settings-api-openapi.yml, openapi/vbout-social-media-api-openapi.yml,
+  openapi/vbout-users-workflow-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
-  operations: 37
+  operations: 108
   by_action_class:
-    connected: 17
-    acting: 20
+    acting: 56
+    connected: 52
   by_consequence:
-    read: 17
-    write: 20
+    write: 56
+    read: 52
   human_in_the_loop_required: 0
 operations:
+- path: Register/CreateAccount
+  method: post
+  operationId: post-Register-CreateAccount
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: Account/GetSubAccountAutoLogin
+  method: post
+  operationId: post-GetSubAccountAutoLogin
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: AIchatbot/aichatbottemplates
+  method: get
+  operationId: post-aichatbot-aichatbottemplates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: AIchatbot/categories
+  method: get
+  operationId: post-aichatbot-aichatbotcategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: AIchatbot/tags
+  method: get
+  operationId: post-aichatbot-aichatbottags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: AIchatbot/copy
+  method: post
+  operationId: post-aichatbot-aichatbotcopy
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: App/Me
+  method: get
+  operationId: get-App-Me
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Automation/GetGuides
+  method: get
+  operationId: post-automation-getguides
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Automation/CreateAutomationFromGuide
+  method: post
+  operationId: post-automation-CreateAutomationFromGuide
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/GetContacts
+  method: get
+  operationId: get-EmailMarketing-GetContacts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/GetContactsByPhoneNumber
+  method: get
+  operationId: get-EmailMarketing-GetContactsByPhoneNumber
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/GetContactByEmail
+  method: get
+  operationId: get-EmailMarketing-GetContactByEmail
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/GetContact
+  method: get
+  operationId: get-EmailMarketing-GetContact
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/AddContact
+  method: post
+  operationId: post-EmailMarketing-AddContact
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/EditContact
+  method: post
+  operationId: post-EmailMarketing-EditContact
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/SyncContact
+  method: post
+  operationId: post-EmailMarketing-SyncContact
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/DeleteContact
+  method: delete
+  operationId: delete-EmailMarketing-DeleteContact
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/MoveContact
+  method: post
+  operationId: post-EmailMarketing-MoveContact
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/GetContactTimeline
+  method: get
+  operationId: get-EmailMarketing-GetContactTimeline
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/GetContactTimelineByEmailAddress
+  method: get
+  operationId: get-GetContactTimelineByEmailAddress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/GetAudiences
+  method: get
+  operationId: get-EmailMarketing-GetAudiences
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/GetLists
+  method: get
+  operationId: get-EmailMarketing-GetLists
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/GetList
+  method: get
+  operationId: get-EmailMarketing-GetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/AddList
+  method: post
+  operationId: post-EmailMarketing-AddList
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/Editlist
+  method: post
+  operationId: post-EmailMarketing-Editlist
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/DeleteList
+  method: delete
+  operationId: delete-EmailMarketing-DeleteList
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/AddActivity
+  method: post
+  operationId: post-EmailMarketing-AddActivity
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/Campaigns
+  method: get
+  operationId: get-EmailMarketing-Campaigns
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/GetCampaign
+  method: get
+  operationId: get-EmailMarketing-GetCampaign
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/Stats
+  method: get
+  operationId: get-EmailMarketing-Stats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/AddCampaign
+  method: post
+  operationId: post-EmailMarketing-AddCampaign
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/EditCampaign
+  method: post
+  operationId: post-EmailMarketing-EditCampaign
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/DeleteCampaign
+  method: delete
+  operationId: delete-EmailMarketing-DeleteCampaign
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/AddTag
+  method: post
+  operationId: post-EmailMarketing-AddTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/RemoveTag
+  method: delete
+  operationId: delete-EmailMarketing-RemoveTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: EmailMarketing/GetCoupon
+  method: get
+  operationId: get-EmailMarketing-GetCoupon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: EmailMarketing/GetEmailTemplates
+  method: get
+  operationId: GET-EmailMarketing-GetEmailTemplates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /EmailMarketing/GetContacts
   method: get
   operationId: get-EmailMarketing-GetContacts
@@ -348,6 +830,402 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: Goal/Lists
+  method: get
+  operationId: get-Goal-Lists
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Goal/ListByDomain
+  method: get
+  operationId: get-Goal-ListByDomain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Goal/Show
+  method: get
+  operationId: get-Goal-Show
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Goal/Add
+  method: post
+  operationId: post-Goal-Add
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: Goal/Edit
+  method: post
+  operationId: post-Goal-Edit
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: Goal/Delete
+  method: delete
+  operationId: delete-Goal-Delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Help/Commands
+  method: get
+  operationId: get-Help-Commands
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Pipeline/GetBoardGuideCategories
+  method: get
+  operationId: post-pipeline-GetBoardGuideCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Pipeline/GetBoardGuides
+  method: get
+  operationId: post-pipeline-GetBoardGuides
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Pipeline/CreateBoardFromGuide
+  method: post
+  operationId: post-pipeline-CreateBoardFromGuide
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: WebHook/lists
+  method: get
+  operationId: get-WebHook-lists
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Webhook/show
+  method: get
+  operationId: get-Webhook-show
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Webhook/Add
+  method: post
+  operationId: post-Webhook-Add
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: Webhook/Edit
+  method: post
+  operationId: post-Webhook-Edit
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: Webhook/Delete
+  method: delete
+  operationId: delete-Webhook-Delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: Settings/CustomShortcodes
+  method: get
+  operationId: GET-Settings-CustomShortcodes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: Settings/AddCustomShortcode
+  method: post
+  operationId: post-settings-addcustomshortcode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: Settings/EditCustomShortCode
+  method: post
+  operationId: post-settings-editcustomshortcode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: Settings/DeleteCustomShortcode
+  method: delete
+  operationId: delete-settings-deletecustomshortcode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Settings/CustomShortCodes
+  method: get
+  operationId: get-Settings-CustomShortCodes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /Settings/AddCustomShortCode
+  method: post
+  operationId: post-Settings-AddCustomShortCode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Settings/EditCustomShortCode
+  method: post
+  operationId: post-Settings-EditCustomShortCode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Settings/DeleteCustomShortCode
+  method: post
+  operationId: post-Settings-DeleteCustomShortCode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: SocialMedia/Channels
+  method: get
+  operationId: get-SocialMedia-Channels
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: SocialMedia/Calendar
+  method: get
+  operationId: get-SocialMedia-Calendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: SocialMedia/Stats
+  method: get
+  operationId: get-SocialMedia-Stats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: SocialMedia/GetPost
+  method: get
+  operationId: get-SocialMedia-post
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: SocialMedia/AddPost
+  method: post
+  operationId: post-SocialMedia-AddPost
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: SocialMedia/EditPost
+  method: post
+  operationId: post-SocialMedia-EditPost
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: SocialMedia/DeletePost
+  method: delete
+  operationId: delete-SocialMedia-DeletePost
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /SocialMedia/Channels
   method: get
   operationId: get-SocialMedia-Channels
@@ -436,9 +1314,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /Settings/CustomShortCodes
+- path: User/Lists
   method: get
-  operationId: get-Settings-CustomShortCodes
+  operationId: get-User-Lists
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -446,57 +1324,109 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /Settings/AddCustomShortCode
-  method: post
-  operationId: post-Settings-AddCustomShortCode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /Settings/EditCustomShortCode
-  method: post
-  operationId: post-Settings-EditCustomShortCode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /Settings/DeleteCustomShortCode
-  method: post
-  operationId: post-Settings-DeleteCustomShortCode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /Help/Commands
+- path: User/Managers
   method: get
-  operationId: get-Help-Commands
+  operationId: get-User-Managers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: User/Status
+  method: post
+  operationId: post-User-Status
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: User/Add
+  method: post
+  operationId: post-User-Add
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: User/Edit
+  method: post
+  operationId: post-User-Edit
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: User/Delete
+  method: delete
+  operationId: delete-User-Delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: User/Groups
+  method: get
+  operationId: get-User-Groups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: User/GroupDelete
+  method: delete
+  operationId: delete-User-GroupDelete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: User/GroupStatus
+  method: get
+  operationId: get-User-GroupStatus
   x-agentic-access:
     action-class: connected
     consequence: read
