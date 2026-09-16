@@ -79,20 +79,6 @@ apis:
     url: openapi/vbout-account-api-openapi.yml
   - type: Documentation
     url: https://developers.vbout.com/docs
-- aid: vbout:vbout-aichatbot-api
-  name: VBOUT AIchatbot API
-  description: The AIchatbot API from VBOUT — 4 operation(s) for aichatbot.
-  humanURL: https://developers.vbout.com
-  baseURL: https://api.vbout.com/1
-  tags:
-  - AI Chatbot
-  tags_raw:
-  - AIchatbot
-  properties:
-  - type: OpenAPI
-    url: openapi/vbout-aichatbot-api-openapi.yml
-  - type: Documentation
-    url: https://developers.vbout.com/docs
 - aid: vbout:vbout-application-api
   name: VBOUT Application API
   description: The Application API from VBOUT — 1 operation(s) for application.
@@ -139,20 +125,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/vbout-email-marketing-api-openapi.yml
-  - type: Documentation
-    url: https://developers.vbout.com/docs
-- aid: vbout:vbout-emailmarketing-api
-  name: VBOUT EmailMarketing API
-  description: The EmailMarketing API from VBOUT — 25 operation(s) for emailmarketing.
-  humanURL: https://developers.vbout.com
-  baseURL: https://api.vbout.com/1
-  tags:
-  - Email Marketing
-  tags_raw:
-  - EmailMarketing
-  properties:
-  - type: OpenAPI
-    url: openapi/vbout-emailmarketing-api-openapi.yml
   - type: Documentation
     url: https://developers.vbout.com/docs
 - aid: vbout:vbout-goals-api
@@ -229,20 +201,6 @@ apis:
     url: openapi/vbout-social-media-api-openapi.yml
   - type: Documentation
     url: https://developers.vbout.com/docs
-- aid: vbout:vbout-socialmedia-api
-  name: VBOUT SocialMedia API
-  description: The SocialMedia API from VBOUT — 7 operation(s) for socialmedia.
-  humanURL: https://developers.vbout.com
-  baseURL: https://api.vbout.com/1
-  tags:
-  - Social-Media
-  tags_raw:
-  - SocialMedia
-  properties:
-  - type: OpenAPI
-    url: openapi/vbout-socialmedia-api-openapi.yml
-  - type: Documentation
-    url: https://developers.vbout.com/docs
 - aid: vbout:vbout-users-workflow-api
   name: VBOUT Users & Workflow API
   description: The Users & Workflow API from VBOUT — 9 operation(s) for users & workflow.
@@ -253,6 +211,18 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/vbout-users-workflow-api-openapi.yml
+  - type: Documentation
+    url: https://developers.vbout.com/docs
+- aid: vbout:vbout-ai-chatbot-api
+  name: VBOUT AI Chatbot API
+  description: The AI Chatbot API from VBOUT — 4 operation(s) for ai chatbot.
+  humanURL: https://developers.vbout.com
+  baseURL: https://api.vbout.com/1
+  tags:
+  - AI Chatbot
+  properties:
+  - type: OpenAPI
+    url: openapi/vbout-ai-chatbot-api-openapi.yml
   - type: Documentation
     url: https://developers.vbout.com/docs
 maintainers:
