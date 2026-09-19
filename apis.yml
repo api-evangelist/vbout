@@ -157,6 +157,8 @@ apis:
   humanURL: https://developers.vbout.com
   baseURL: https://api.vbout.com/1
   tags:
+  - Pipelines
+  tags_raw:
   - Pipeline
   properties:
   - type: OpenAPI
