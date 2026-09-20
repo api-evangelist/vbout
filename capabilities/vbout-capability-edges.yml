@@ -24,7 +24,8 @@ edges:
     stats — that is social media publishing and measurement, squarely Digital Marketing Management within
     Marketing Management.
 - tag: SocialMedia
-  spec_file: vbout-socialmedia-api-openapi.yml
+  spec_file: vbout-social-media-api-openapi.yml
+  reanchored_from: vbout-socialmedia-api-openapi.yml
   capability_id: BC-400.60
   capability_id_l1: BC-400
   capability_name: Digital Marketing Management
