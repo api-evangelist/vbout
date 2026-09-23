@@ -1,10 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: VBOUT EmailMarketing Settings API
+  title: Vbout Settings API
   version: '1.0'
-  description: VBOUT Features API documentation
+  description: 'Operations tagged Settings across 2 of this provider''s published API definitions: vbout-openapi-original.json, vbout-plugin-openapi-original.yaml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://api.vbout.com/1
+  description: Resource URL
 tags:
 - name: Settings
 paths:
@@ -12,7 +13,16 @@ paths:
     get:
       summary: Custom Short codes
       operationId: GET-Settings-CustomShortcodes
-      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`  \r\n - - -  \r\n **Parameters:** `None`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`
+
+        - - -
+
+        **Parameters:** `None`'
       tags:
       - Settings
       responses:
@@ -49,11 +59,19 @@ paths:
                     name: Vbout Product Info
                     title: Title for Vbout Product Info
                     content: 'Check out our latest product: {vbout_product_name}. It''s only {vbout_product_price}!'
+    servers:
+    - url: https://api.vbout.com/1
+      description: Resource URL
   Settings/AddCustomShortcode:
     post:
       summary: Add Custom Short Code
       operationId: post-settings-addcustomshortcode
-      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       tags:
       - Settings
       responses:
@@ -95,11 +113,19 @@ paths:
           type: string
           default: none
           format: none
+    servers:
+    - url: https://api.vbout.com/1
+      description: Resource URL
   Settings/EditCustomShortCode:
     post:
       summary: Edit Custom Short Code
       operationId: post-settings-editcustomshortcode
-      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       tags:
       - Settings
       responses:
@@ -149,11 +175,19 @@ paths:
           type: string
           default: none
           format: none
+    servers:
+    - url: https://api.vbout.com/1
+      description: Resource URL
   Settings/DeleteCustomShortcode:
     delete:
       summary: Delete Custom Short Code
       operationId: delete-settings-deletecustomshortcode
-      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`  "
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       tags:
       - Settings
       responses:
@@ -178,6 +212,9 @@ paths:
           type: number
           default: none
           format: none
+    servers:
+    - url: https://api.vbout.com/1
+      description: Resource URL
   /Settings/CustomShortCodes:
     get:
       responses:
@@ -210,6 +247,10 @@ paths:
       description: Get Custom Shortcodes
       tags:
       - Settings
+      summary: Get settings custom short codes
+      x-summary-source: derived
+    servers:
+    - url: https://api.vbout.com/1
   /Settings/AddCustomShortCode:
     post:
       responses:
@@ -247,6 +288,10 @@ paths:
         required: true
       tags:
       - Settings
+      summary: Post settings add custom short code
+      x-summary-source: derived
+    servers:
+    - url: https://api.vbout.com/1
   /Settings/EditCustomShortCode:
     post:
       responses:
@@ -290,6 +335,10 @@ paths:
         required: true
       tags:
       - Settings
+      summary: Post settings edit custom short code
+      x-summary-source: derived
+    servers:
+    - url: https://api.vbout.com/1
   /Settings/DeleteCustomShortCode:
     post:
       responses:
@@ -313,3 +362,10 @@ paths:
         required: true
       tags:
       - Settings
+      summary: Post settings delete custom short code
+      x-summary-source: derived
+    servers:
+    - url: https://api.vbout.com/1
+x-refined-from:
+- vbout-openapi-original.json
+- vbout-plugin-openapi-original.yaml

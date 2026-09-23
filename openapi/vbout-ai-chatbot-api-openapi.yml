@@ -1,20 +1,29 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: VBOUT EmailMarketing AIchatbot API
+  title: Vbout A Ichatbot API
   version: '1.0'
-  description: VBOUT Features API documentation
+  description: '# Introduction
+
+    VBOUT API provides programmatic access to read and write VBOUT data.'
+  summary: Vbout's API documentation
 servers:
 - url: https://api.vbout.com/1
+  description: Resource URL
 tags:
-- name: AIchatbot
+- name: AI Chatbot
 paths:
   AIchatbot/aichatbottemplates:
     get:
       summary: aichatbottemplates
       operationId: post-aichatbot-aichatbottemplates
-      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       tags:
-      - AIchatbot
+      - AI Chatbot
       responses:
         '200':
           description: Successful Operation
@@ -65,9 +74,14 @@ paths:
     get:
       summary: categories
       operationId: post-aichatbot-aichatbotcategories
-      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       tags:
-      - AIchatbot
+      - AI Chatbot
       responses:
         '200':
           description: Successful Operation
@@ -91,9 +105,14 @@ paths:
     get:
       summary: tags
       operationId: post-aichatbot-aichatbottags
-      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       tags:
-      - AIchatbot
+      - AI Chatbot
       responses:
         '200':
           description: Successful Operation
@@ -114,9 +133,14 @@ paths:
     post:
       summary: copy
       operationId: post-aichatbot-aichatbotcopy
-      description: "**Authentication:** `Required`    \r\n  - - -  \r\n  \r\n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       tags:
-      - AIchatbot
+      - AI Chatbot
       responses:
         '200':
           description: Successful Operation

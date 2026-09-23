@@ -1,10 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: VBOUT EmailMarketing Popups API
+  title: Vbout Popups API
   version: '1.0'
-  description: VBOUT Features API documentation
+  description: '# Introduction
+
+    VBOUT API provides programmatic access to read and write VBOUT data.'
+  summary: Vbout's API documentation
 servers:
 - url: https://api.vbout.com/1
+  description: Resource URL
 tags:
 - name: Popups
 paths:
@@ -43,7 +47,16 @@ paths:
                         action_stype: Popup
                       - '...'
       operationId: get-WebHook-lists
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`
+
+        - - -
+
+        **Parameters:** `None`'
       x-codeSamples:
       - lang: cURL
         source: 'GET https://api.vbout.com/1/webhook/lists.json?key={YOUR_API_ID}
@@ -83,7 +96,12 @@ paths:
                           seconds: '0'
                       action_stype: Popup
       operationId: get-Webhook-show
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: string
@@ -105,7 +123,12 @@ paths:
       tags:
       - Popups
       operationId: post-Webhook-Add
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       x-codeSamples:
       - lang: cURL
         source: "POST https://api.vbout.com/1/webhook/add.json?key={YOUR_API_ID}\n  id=1\n  name=webhook Name\n  action_type=page_exit\n"
@@ -254,7 +277,12 @@ paths:
       tags:
       - Popups
       operationId: post-Webhook-Edit
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       x-codeSamples:
       - lang: cURL
         source: "POST https://api.vbout.com/1/webhook/edit.json?key={YOUR_API_ID}\n   id=1\n   name=webhook Name\n   action_type=page_exit\n"
@@ -407,7 +435,12 @@ paths:
         source: "POST https://api.vbout.com/1/webhook/delete.json?key={YOUR_API_ID}\n   id=1\n"
       - lang: PHP
         source: "<?php\n require_once('../PATH/TO/services/WebhookWS.php');\t\n $user_key = array('api_key' => '{YOUR_API_KEY}');\t\n $app = new WebhookWS($user_key);\n $params = array(\n     'id' => '1',\n );\n $results = $app->removeWebhook( $params );\n print_r($results);\n ?>\n"
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: string

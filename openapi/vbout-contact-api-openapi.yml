@@ -1,10 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: VBOUT EmailMarketing Contact API
+  title: Vbout Contact API
   version: '1.0'
-  description: VBOUT Features API documentation
+  description: '# Introduction
+
+    VBOUT API provides programmatic access to read and write VBOUT data.'
+  summary: Vbout's API documentation
 servers:
 - url: https://api.vbout.com/1
+  description: Resource URL
 tags:
 - name: Contact
 paths:
@@ -94,7 +98,12 @@ paths:
                         registration_date: 11/30/2014 00:00
                       - '...'
       operationId: get-EmailMarketing-GetContacts
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: integer
@@ -197,7 +206,12 @@ paths:
                         registration_date: 11/30/2014 00:00
                       - '...'
       operationId: get-EmailMarketing-GetContactsByPhoneNumber
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: integer
@@ -269,7 +283,12 @@ paths:
                       status: '1'
                       registration_date: 11/30/1998 00:00
       operationId: get-EmailMarketing-GetContactByEmail
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       x-codeSamples:
       - lang: cURL
         source: https://api.vbout.com/1/emailmarketing/getcontactbyemail
@@ -348,7 +367,12 @@ paths:
                       status: '1'
                       registration_date: 11/30/1998 00:00
       operationId: get-EmailMarketing-GetContact
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: integer
@@ -388,7 +412,12 @@ paths:
       operationId: post-EmailMarketing-AddContact
       tags:
       - Contact
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: string
@@ -449,7 +478,12 @@ paths:
       operationId: post-EmailMarketing-EditContact
       tags:
       - Contact
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: integer
@@ -492,7 +526,16 @@ paths:
     post:
       summary: Sync Contact
       operationId: post-EmailMarketing-SyncContact
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n  - - -  \n**Note:** All emails having the same email text available in the provided list will be updated if exists (case email is not required)."
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`
+
+        - - -
+
+        **Note:** All emails having the same email text available in the provided list will be updated if exists (case email is not required).'
       tags:
       - Contact
       parameters:
@@ -539,7 +582,12 @@ paths:
       operationId: delete-EmailMarketing-DeleteContact
       tags:
       - Contact
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: integer
@@ -566,7 +614,12 @@ paths:
       operationId: post-EmailMarketing-MoveContact
       tags:
       - Contact
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: integer
@@ -838,7 +891,12 @@ paths:
                           value: '-'
                       count: 2
       operationId: get-EmailMarketing-GetContactTimeline
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: integer
@@ -1100,7 +1158,12 @@ paths:
                           value: '-'
                       count: 2
       operationId: get-GetContactTimelineByEmailAddress
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: string
@@ -1210,7 +1273,16 @@ paths:
                         name: TestYogaShopFunnelForm
                       - '...'
       operationId: get-EmailMarketing-GetAudiences
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`
+
+        - - -
+
+        **Parameters:** `None`'
       x-codeSamples:
       - lang: cURL
         source: GET https://api.vbout.com/1/emailmarketing/getaudiences.json?key={YOUR_API_ID}
@@ -1342,7 +1414,16 @@ paths:
                         creation_date: 11/06/2014 00:00
                       - '...'
       operationId: get-EmailMarketing-GetLists
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`  \n - - -  \n **Parameters:** `None`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`
+
+        - - -
+
+        **Parameters:** `None`'
       x-codeSamples:
       - lang: cURL
         source: 'GET https://api.vbout.com/1/emailmarketing/getlists.json?key={YOUR_API_ID}
@@ -1387,7 +1468,12 @@ paths:
                         '325': Date Of Birth
                         '1204': Last Name
       operationId: get-EmailMarketing-GetList
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       parameters:
       - schema:
           type: integer
@@ -1407,7 +1493,12 @@ paths:
     post:
       summary: Add List
       operationId: post-EmailMarketing-AddList
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       x-codeSamples:
       - lang: cURL
         source: "POST https://api.vbout.com/1/emailmarketing/addlist.json?key={YOUR_API_ID}\n   name=List 1\n   email_subject=Hello World\n   reply_to=no-reply@example.com\n   fromemail=info@example.com\n   from_name= Name \n   notify=Notify me of new subscribers.\n   notify_email=info@example.com\n   success_email=info@example.com\n   success_message=Subscription Success Message\n   error_message=Subscription Error Message\n"
@@ -1508,7 +1599,12 @@ paths:
     post:
       summary: Edit List
       operationId: post-EmailMarketing-Editlist
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       x-codeSamples:
       - lang: cURL
         source: "POST https://api.vbout.com/1/emailmarketing/editlist.json?key={YOUR_API_ID}\n   id=1\n   name=List 1\n   email_subject=Hello World\n   reply_to=no-reply@example.com\n   fromemail=info@example.com\n   from_name= Name \n   notify=Notify me of new subscribers.\n   notify_email=info@example.com\n   success_email=info@example.com\n   success_message=Subscription Success Message\n   error_message=Subscription Error Message\n"
@@ -1617,7 +1713,12 @@ paths:
     delete:
       summary: Delete List
       operationId: delete-EmailMarketing-DeleteList
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       x-codeSamples:
       - lang: cURL
         source: "POST https://api.vbout.com/1/emailmarketing/deletelist.json?key={YOUR_API_ID}\n id=320\n"
@@ -1637,7 +1738,12 @@ paths:
     post:
       summary: Add Activity
       operationId: post-EmailMarketing-AddActivity
-      description: "**Authentication:** `Required`    \n  - - -  \n  \n**Response Formats:** `XML | JSON`"
+      description: '**Authentication:** `Required`
+
+        - - -
+
+
+        **Response Formats:** `XML | JSON`'
       x-codeSamples:
       - lang: cURL
         source: "POST https://api.vbout.com/1/emailmarketing/addactivity.json?key={YOUR_API_ID}\n   id=xxxxx\n   description=this is my first activity\n   datetime=2022-10-04 08:03\n"
