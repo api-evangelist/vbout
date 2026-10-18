@@ -10,6 +10,7 @@ checked:
 - https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/vbout/integrations
 - wordpress/integrations/wordpress-integration-edges.yml
+- zoom/integrations/zoom-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -450,6 +451,23 @@ edges:
   detected: '2026-10-15'
   detected_by: mirror-platform-listings.py
   category: WordPress plugin
+- partner_name: Zoom (own)
+  partner: zoom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.zoom.us/apps/VMeiZ-s0THG5SxXuqYdXlQ
+  mirror_of: zoom/integrations/zoom-integration-edges.yml
+  apps:
+  - VBOUT
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Zoom app
 templates:
 - title: Subscribe new Mailchimp contacts to a Vbout list
   url: https://zapier.com/apps/mailchimp/integrations/vbout/17430/subscribe-new-mailchimp-contacts-to-a-vbout-list
