@@ -17,6 +17,7 @@ checked:
 - https://www.antler.co/portfolio
 - https://www.techstars.com/portfolio
 - https://www.ycombinator.com/companies
+- hubspot/integrations/hubspot-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -59,40 +60,6 @@ marketplace_apps:
     label: Update Contact
   searches: []
 edges:
-- partner_name: WordPress (own)
-  partner: wordpress
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://wordpress.org/plugins/marketing-automation/
-  mirror_of: wordpress/integrations/wordpress-integration-edges.yml
-  apps:
-  - Marketing Automation
-  listing_count: 1
-  detected: '2026-10-15'
-  detected_by: mirror-platform-listings.py
-  category: WordPress plugin
-- partner_name: Zoom (own)
-  partner: zoom
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.zoom.us/apps/VMeiZ-s0THG5SxXuqYdXlQ
-  mirror_of: zoom/integrations/zoom-integration-edges.yml
-  apps:
-  - VBOUT
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Zoom app
 - partner_name: Zapier
   partner: zapier
   partner_match: aggregator
@@ -532,6 +499,57 @@ edges:
     year: '2018'
   detected_by: sweep-accelerator-portfolios.py
   first_seen: '2026-10-21'
+- partner_name: WordPress (own)
+  partner: wordpress
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://wordpress.org/plugins/marketing-automation/
+  mirror_of: wordpress/integrations/wordpress-integration-edges.yml
+  apps:
+  - Marketing Automation
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: WordPress plugin
+- partner_name: Zoom (own)
+  partner: zoom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.zoom.us/apps/VMeiZ-s0THG5SxXuqYdXlQ
+  mirror_of: zoom/integrations/zoom-integration-edges.yml
+  apps:
+  - VBOUT
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Zoom app
+- partner_name: HubSpot (own)
+  partner: hubspot
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://ecosystem.hubspot.com/marketplace/listing/vbout-183901
+  mirror_of: hubspot/integrations/hubspot-integration-edges.yml
+  apps:
+  - VBOUT
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: MARKETING_AUTOMATION
 templates:
 - title: Subscribe new Mailchimp contacts to a Vbout list
   url: https://zapier.com/apps/mailchimp/integrations/vbout/17430/subscribe-new-mailchimp-contacts-to-a-vbout-list
