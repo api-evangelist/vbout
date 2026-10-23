@@ -219,3 +219,9 @@ paths:
         source: GET https://api.vbout.com/1/app/me.json?key={YOUR_API_ID}
       - lang: PHP
         source: "<?php\n require_once('../PATH/TO/services/ApplicationWS.php');\n $user_key = array('api_key' => '{YOUR_API_KEY}');\n $app = new ApplicationWS($user_key);\n $results = $app->getBusinessInfo();\n print_r($results);\n ?>\n"
+x-provenance:
+  method: harvested
+  publisher: VBOUT
+  source: https://developers.vbout.com/scripts/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)

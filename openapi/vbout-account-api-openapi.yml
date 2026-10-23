@@ -178,3 +178,9 @@ paths:
         in: query
         name: expire
         description: the number of seconds that the returned auto-login url will remain valid before it expire (MAX 3600 Seconds).<br>**Possible values:**   1800
+x-provenance:
+  method: harvested
+  publisher: VBOUT
+  source: https://developers.vbout.com/scripts/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
